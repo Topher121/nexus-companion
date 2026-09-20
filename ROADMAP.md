@@ -6,7 +6,7 @@
 - [x] Minimum-games filter for the hero history table.
 - [x] Personal-data export/restore with validation and a safety backup.
 - [x] Standalone Windows installer, separate personal-data directory, release and saved-build update checks.
-- [ ] Publish the first public release after owner approval; private/draft releases cannot serve anonymous app update checks.
+- [x] Publish the first public release after owner approval. Version 0.8.0 is public; anonymous update checks and release downloads verified on 2026-09-20.
 
 ## Better draft advice — shipped in 0.7
 
