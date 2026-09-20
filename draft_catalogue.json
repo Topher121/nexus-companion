@@ -1,0 +1,2675 @@
+{
+  "version": 1,
+  "kind": "guide relationships, not win-rate statistics",
+  "heroes": {
+    "Abathur": {
+      "synergies": [
+        "Genji",
+        "Greymane",
+        "Illidan",
+        "Malthael",
+        "Sonya",
+        "Tracer",
+        "Yrel",
+        "Zeratul"
+      ],
+      "countered_by": [
+        "Dehaka",
+        "Falstad",
+        "Ragnaros",
+        "Sgt. Hammer",
+        "Sylvanas",
+        "Zarya"
+      ],
+      "strong_maps": [
+        "Alterac Pass",
+        "Cursed Hollow",
+        "Garden of Terror",
+        "Sky Temple",
+        "Towers of Doom"
+      ],
+      "weak_maps": [
+        "Battlefield of Eternity",
+        "Braxis Holdout",
+        "Hanamura Temple",
+        "Tomb of the Spider Queen",
+        "Volskaya Foundry"
+      ],
+      "source": "https://www.icy-veins.com/heroes/abathur-build-guide",
+      "source_updated": "Aug 24, 2026",
+      "checked": "2026-09-19"
+    },
+    "Alarak": {
+      "synergies": [
+        "E.T.C.",
+        "Garrosh",
+        "Jaina",
+        "Raynor"
+      ],
+      "countered_by": [
+        "Deathwing",
+        "E.T.C.",
+        "Johanna",
+        "Medivh"
+      ],
+      "strong_maps": [
+        "Battlefield of Eternity",
+        "Towers of Doom"
+      ],
+      "weak_maps": [
+        "Blackheart's Bay",
+        "Infernal Shrines",
+        "Sky Temple"
+      ],
+      "source": "https://www.icy-veins.com/heroes/alarak-build-guide",
+      "source_updated": "Sep 25, 2025",
+      "checked": "2026-09-19"
+    },
+    "Alexstrasza": {
+      "synergies": [
+        "Azmodan",
+        "Blaze",
+        "Johanna",
+        "Kael'thas"
+      ],
+      "countered_by": [
+        "Ana",
+        "Anub'arak",
+        "Junkrat",
+        "Sylvanas",
+        "Yrel"
+      ],
+      "strong_maps": [
+        "Infernal Shrines"
+      ],
+      "weak_maps": [
+        "Battlefield of Eternity",
+        "Blackheart's Bay",
+        "Braxis Holdout",
+        "Hanamura Temple"
+      ],
+      "source": "https://www.icy-veins.com/heroes/alexstrasza-build-guide",
+      "source_updated": "Jul 20, 2026",
+      "checked": "2026-09-19"
+    },
+    "Ana": {
+      "synergies": [
+        "E.T.C.",
+        "Li-Ming"
+      ],
+      "countered_by": [
+        "Anub'arak",
+        "Hanzo",
+        "Lúcio",
+        "Zeratul"
+      ],
+      "strong_maps": [
+        "Hanamura Temple",
+        "Tomb of the Spider Queen",
+        "Towers of Doom"
+      ],
+      "weak_maps": [
+        "Blackheart's Bay",
+        "Cursed Hollow",
+        "Garden of Terror",
+        "Sky Temple",
+        "Warhead Junction"
+      ],
+      "source": "https://www.icy-veins.com/heroes/ana-build-guide",
+      "source_updated": "Jan 27, 2026",
+      "checked": "2026-09-19"
+    },
+    "Anduin": {
+      "synergies": [
+        "Alarak",
+        "Blaze",
+        "Genji",
+        "Johanna",
+        "Sylvanas",
+        "The Butcher"
+      ],
+      "countered_by": [
+        "Kael'thas",
+        "Lunara",
+        "Sonya",
+        "Stukov",
+        "Varian"
+      ],
+      "strong_maps": [
+        "Battlefield of Eternity",
+        "Cursed Hollow",
+        "Infernal Shrines",
+        "Tomb of the Spider Queen"
+      ],
+      "weak_maps": [
+        "Braxis Holdout"
+      ],
+      "source": "https://www.icy-veins.com/heroes/anduin-build-guide",
+      "source_updated": "Jul 12, 2026",
+      "checked": "2026-09-19"
+    },
+    "Anub'arak": {
+      "synergies": [
+        "Greymane",
+        "Jaina",
+        "Kael'thas",
+        "Kerrigan",
+        "Rehgar",
+        "The Butcher"
+      ],
+      "countered_by": [
+        "Leoric",
+        "Malthael",
+        "Tracer",
+        "Valla",
+        "Varian",
+        "Zul'jin"
+      ],
+      "strong_maps": [
+        "Alterac Pass",
+        "Cursed Hollow",
+        "Dragon Shire",
+        "Garden of Terror"
+      ],
+      "weak_maps": [
+        "Battlefield of Eternity",
+        "Braxis Holdout",
+        "Tomb of the Spider Queen"
+      ],
+      "source": "https://www.icy-veins.com/heroes/anubarak-build-guide",
+      "source_updated": "Jul 11, 2026",
+      "checked": "2026-09-19"
+    },
+    "Artanis": {
+      "synergies": [
+        "Arthas",
+        "Garrosh",
+        "Kael'thas",
+        "Lunara",
+        "Malfurion",
+        "Medivh"
+      ],
+      "countered_by": [
+        "Arthas",
+        "E.T.C.",
+        "Jaina",
+        "Li Li",
+        "Lunara",
+        "Varian"
+      ],
+      "strong_maps": [
+        "Battlefield of Eternity",
+        "Braxis Holdout",
+        "Hanamura Temple"
+      ],
+      "weak_maps": [
+        "Infernal Shrines",
+        "Tomb of the Spider Queen",
+        "Towers of Doom"
+      ],
+      "source": "https://www.icy-veins.com/heroes/artanis-build-guide",
+      "source_updated": "Apr 18, 2025",
+      "checked": "2026-09-19"
+    },
+    "Arthas": {
+      "synergies": [
+        "Chromie",
+        "Diablo",
+        "Greymane",
+        "Maiev",
+        "Raynor",
+        "Rehgar",
+        "Stukov",
+        "Tyrael",
+        "Zarya"
+      ],
+      "countered_by": [
+        "Ana",
+        "Garrosh",
+        "Jaina",
+        "Raynor",
+        "Sonya",
+        "Tracer"
+      ],
+      "strong_maps": [
+        "Battlefield of Eternity"
+      ],
+      "weak_maps": [
+        "Braxis Holdout",
+        "Dragon Shire",
+        "Garden of Terror"
+      ],
+      "source": "https://www.icy-veins.com/heroes/arthas-build-guide",
+      "source_updated": "May 26, 2026",
+      "checked": "2026-09-19"
+    },
+    "Auriel": {
+      "synergies": [
+        "Diablo",
+        "Leoric",
+        "Tassadar",
+        "Valla"
+      ],
+      "countered_by": [
+        "Anub'arak",
+        "Chen",
+        "Chromie",
+        "Deckard",
+        "Junkrat"
+      ],
+      "strong_maps": [
+        "Battlefield of Eternity",
+        "Braxis Holdout",
+        "Hanamura Temple"
+      ],
+      "weak_maps": [
+        "Cursed Hollow",
+        "Garden of Terror",
+        "Warhead Junction"
+      ],
+      "source": "https://www.icy-veins.com/heroes/auriel-build-guide",
+      "source_updated": "Jun 01, 2026",
+      "checked": "2026-09-19"
+    },
+    "Azmodan": {
+      "synergies": [
+        "Jaina",
+        "Johanna",
+        "Maiev",
+        "Malfurion"
+      ],
+      "countered_by": [
+        "Anub'arak",
+        "Artanis",
+        "Diablo",
+        "Leoric",
+        "Malthael",
+        "Muradin",
+        "Sonya",
+        "The Butcher"
+      ],
+      "strong_maps": [
+        "Infernal Shrines",
+        "Tomb of the Spider Queen",
+        "Warhead Junction"
+      ],
+      "weak_maps": [
+        "Braxis Holdout"
+      ],
+      "source": "https://www.icy-veins.com/heroes/azmodan-build-guide",
+      "source_updated": "Feb 23, 2026",
+      "checked": "2026-09-19"
+    },
+    "Blaze": {
+      "synergies": [
+        "Arthas",
+        "Kerrigan",
+        "Maiev",
+        "Malfurion"
+      ],
+      "countered_by": [
+        "Leoric",
+        "Lunara",
+        "Malthael",
+        "Nova",
+        "Tracer",
+        "Valla"
+      ],
+      "strong_maps": [
+        "Infernal Shrines",
+        "Sky Temple",
+        "Towers of Doom",
+        "Volskaya Foundry"
+      ],
+      "weak_maps": [
+        "Braxis Holdout",
+        "Dragon Shire"
+      ],
+      "source": "https://www.icy-veins.com/heroes/blaze-build-guide",
+      "source_updated": "Jul 20, 2026",
+      "checked": "2026-09-19"
+    },
+    "Brightwing": {
+      "synergies": [
+        "Cho",
+        "Diablo",
+        "Genji",
+        "Stitches",
+        "Tracer"
+      ],
+      "countered_by": [
+        "Anub'arak",
+        "E.T.C.",
+        "Johanna"
+      ],
+      "strong_maps": [
+        "Alterac Pass",
+        "Cursed Hollow",
+        "Sky Temple",
+        "Towers of Doom",
+        "Warhead Junction"
+      ],
+      "weak_maps": [
+        "Tomb of the Spider Queen"
+      ],
+      "source": "https://www.icy-veins.com/heroes/brightwing-build-guide",
+      "source_updated": "May 31, 2025",
+      "checked": "2026-09-19"
+    },
+    "Cassia": {
+      "synergies": [
+        "Artanis",
+        "Jaina",
+        "Johanna",
+        "Li Li",
+        "Thrall"
+      ],
+      "countered_by": [
+        "E.T.C.",
+        "Imperius",
+        "Johanna",
+        "Kael'thas",
+        "Mal'Ganis",
+        "Xul"
+      ],
+      "strong_maps": [],
+      "weak_maps": [],
+      "source": "https://www.icy-veins.com/heroes/cassia-build-guide",
+      "source_updated": "May 31, 2025",
+      "checked": "2026-09-19"
+    },
+    "Chen": {
+      "synergies": [
+        "Abathur",
+        "Greymane",
+        "Li-Ming",
+        "Rehgar",
+        "Tyrael"
+      ],
+      "countered_by": [
+        "E.T.C.",
+        "Li-Ming",
+        "Lúcio",
+        "Raynor",
+        "The Lost Vikings",
+        "Yrel"
+      ],
+      "strong_maps": [
+        "Battlefield of Eternity",
+        "Braxis Holdout",
+        "Hanamura Temple",
+        "Sky Temple"
+      ],
+      "weak_maps": [
+        "Blackheart's Bay",
+        "Cursed Hollow",
+        "Garden of Terror",
+        "Towers of Doom",
+        "Warhead Junction"
+      ],
+      "source": "https://www.icy-veins.com/heroes/chen-build-guide",
+      "source_updated": "Jun 14, 2026",
+      "checked": "2026-09-19"
+    },
+    "Cho": {
+      "synergies": [
+        "Alexstrasza",
+        "Ana",
+        "Auriel",
+        "Blaze",
+        "Brightwing",
+        "Yrel"
+      ],
+      "countered_by": [
+        "Anub'arak",
+        "Garrosh",
+        "Greymane",
+        "Imperius",
+        "Kharazim",
+        "Leoric",
+        "Maiev",
+        "Malthael",
+        "Raynor"
+      ],
+      "strong_maps": [
+        "Garden of Terror",
+        "Infernal Shrines",
+        "Tomb of the Spider Queen",
+        "Volskaya Foundry"
+      ],
+      "weak_maps": [
+        "Battlefield of Eternity",
+        "Warhead Junction"
+      ],
+      "source": "https://www.icy-veins.com/heroes/cho-build-guide",
+      "source_updated": "May 31, 2025",
+      "checked": "2026-09-19"
+    },
+    "Chromie": {
+      "synergies": [
+        "Ana",
+        "Johanna",
+        "Malfurion"
+      ],
+      "countered_by": [
+        "Diablo",
+        "Illidan",
+        "Tracer",
+        "Zeratul"
+      ],
+      "strong_maps": [
+        "Braxis Holdout",
+        "Volskaya Foundry"
+      ],
+      "weak_maps": [],
+      "source": "https://www.icy-veins.com/heroes/chromie-build-guide",
+      "source_updated": "Aug 18, 2026",
+      "checked": "2026-09-19"
+    },
+    "D.Va": {
+      "synergies": [
+        "Deckard",
+        "Falstad",
+        "Garrosh",
+        "Maiev"
+      ],
+      "countered_by": [
+        "E.T.C.",
+        "Kael'thas",
+        "Malthael",
+        "Raynor",
+        "Stukov"
+      ],
+      "strong_maps": [
+        "Infernal Shrines",
+        "Tomb of the Spider Queen",
+        "Towers of Doom",
+        "Volskaya Foundry"
+      ],
+      "weak_maps": [
+        "Battlefield of Eternity",
+        "Braxis Holdout",
+        "Cursed Hollow",
+        "Hanamura Temple"
+      ],
+      "source": "https://www.icy-veins.com/heroes/dva-build-guide",
+      "source_updated": "Apr 18, 2025",
+      "checked": "2026-09-19"
+    },
+    "Deathwing": {
+      "synergies": [
+        "Arthas",
+        "E.T.C.",
+        "Johanna",
+        "Muradin"
+      ],
+      "countered_by": [
+        "Greymane",
+        "Tracer",
+        "Tychus",
+        "Valla",
+        "Zeratul"
+      ],
+      "strong_maps": [
+        "Cursed Hollow",
+        "Garden of Terror",
+        "Warhead Junction"
+      ],
+      "weak_maps": [
+        "Blackheart's Bay",
+        "Dragon Shire",
+        "Sky Temple"
+      ],
+      "source": "https://www.icy-veins.com/heroes/deathwing-build-guide",
+      "source_updated": "May 12, 2026",
+      "checked": "2026-09-19"
+    },
+    "Deckard": {
+      "synergies": [
+        "Blaze",
+        "Jaina",
+        "Johanna",
+        "Sgt. Hammer"
+      ],
+      "countered_by": [
+        "Deathwing",
+        "Johanna",
+        "Li-Ming",
+        "Malfurion",
+        "Tracer"
+      ],
+      "strong_maps": [
+        "Alterac Pass",
+        "Battlefield of Eternity",
+        "Cursed Hollow",
+        "Garden of Terror",
+        "Infernal Shrines",
+        "Tomb of the Spider Queen"
+      ],
+      "weak_maps": [
+        "Blackheart's Bay",
+        "Hanamura Temple",
+        "Sky Temple",
+        "Warhead Junction"
+      ],
+      "source": "https://www.icy-veins.com/heroes/deckard-build-guide",
+      "source_updated": "Jan 27, 2026",
+      "checked": "2026-09-19"
+    },
+    "Dehaka": {
+      "synergies": [
+        "Anub'arak",
+        "Hanzo",
+        "Jaina",
+        "Maiev"
+      ],
+      "countered_by": [
+        "E.T.C.",
+        "Lúcio",
+        "Raynor",
+        "Sgt. Hammer",
+        "Valla"
+      ],
+      "strong_maps": [
+        "Blackheart's Bay",
+        "Braxis Holdout",
+        "Cursed Hollow",
+        "Dragon Shire",
+        "Garden of Terror",
+        "Sky Temple",
+        "Towers of Doom",
+        "Warhead Junction"
+      ],
+      "weak_maps": [
+        "Hanamura Temple",
+        "Volskaya Foundry"
+      ],
+      "source": "https://www.icy-veins.com/heroes/dehaka-build-guide",
+      "source_updated": "Sep 30, 2025",
+      "checked": "2026-09-19"
+    },
+    "Diablo": {
+      "synergies": [
+        "Medivh",
+        "Tassadar",
+        "Thrall",
+        "Tyrande"
+      ],
+      "countered_by": [
+        "Garrosh",
+        "Leoric",
+        "Malthael",
+        "Raynor",
+        "Tychus"
+      ],
+      "strong_maps": [
+        "Cursed Hollow",
+        "Garden of Terror",
+        "Infernal Shrines",
+        "Sky Temple",
+        "Tomb of the Spider Queen"
+      ],
+      "weak_maps": [
+        "Blackheart's Bay",
+        "Braxis Holdout",
+        "Hanamura Temple"
+      ],
+      "source": "https://www.icy-veins.com/heroes/diablo-build-guide",
+      "source_updated": "Jul 20, 2026",
+      "checked": "2026-09-19"
+    },
+    "E.T.C.": {
+      "synergies": [
+        "Alarak",
+        "Blaze",
+        "Greymane",
+        "Kael'thas",
+        "Uther"
+      ],
+      "countered_by": [
+        "Brightwing",
+        "Deathwing",
+        "Johanna",
+        "Kael'thas",
+        "Raynor"
+      ],
+      "strong_maps": [
+        "Battlefield of Eternity"
+      ],
+      "weak_maps": [
+        "Braxis Holdout",
+        "Dragon Shire",
+        "Tomb of the Spider Queen",
+        "Volskaya Foundry"
+      ],
+      "source": "https://www.icy-veins.com/heroes/e-t-c-build-guide",
+      "source_updated": "Aug 11, 2026",
+      "checked": "2026-09-19"
+    },
+    "Falstad": {
+      "synergies": [
+        "Arthas",
+        "E.T.C.",
+        "Tassadar",
+        "Uther"
+      ],
+      "countered_by": [
+        "Genji",
+        "Greymane",
+        "Illidan",
+        "Nova",
+        "Valeera",
+        "Zeratul"
+      ],
+      "strong_maps": [
+        "Braxis Holdout",
+        "Cursed Hollow",
+        "Dragon Shire",
+        "Hanamura Temple",
+        "Towers of Doom",
+        "Warhead Junction"
+      ],
+      "weak_maps": [
+        "Tomb of the Spider Queen"
+      ],
+      "source": "https://www.icy-veins.com/heroes/falstad-build-guide",
+      "source_updated": "Apr 22, 2026",
+      "checked": "2026-09-19"
+    },
+    "Fenix": {
+      "synergies": [
+        "Diablo",
+        "Johanna",
+        "Maiev",
+        "Thrall"
+      ],
+      "countered_by": [
+        "E.T.C.",
+        "Genji",
+        "Lúcio",
+        "Varian",
+        "Zeratul"
+      ],
+      "strong_maps": [
+        "Braxis Holdout",
+        "Infernal Shrines",
+        "Tomb of the Spider Queen"
+      ],
+      "weak_maps": [],
+      "source": "https://www.icy-veins.com/heroes/fenix-build-guide",
+      "source_updated": "May 31, 2025",
+      "checked": "2026-09-19"
+    },
+    "Gall": {
+      "synergies": [
+        "Alexstrasza",
+        "Ana",
+        "Auriel",
+        "Blaze",
+        "Brightwing",
+        "Yrel"
+      ],
+      "countered_by": [
+        "Anub'arak",
+        "Garrosh",
+        "Greymane",
+        "Imperius",
+        "Kharazim",
+        "Leoric",
+        "Maiev",
+        "Malthael",
+        "Raynor"
+      ],
+      "strong_maps": [
+        "Garden of Terror",
+        "Infernal Shrines",
+        "Tomb of the Spider Queen",
+        "Volskaya Foundry"
+      ],
+      "weak_maps": [
+        "Battlefield of Eternity",
+        "Warhead Junction"
+      ],
+      "source": "https://www.icy-veins.com/heroes/gall-build-guide",
+      "source_updated": "May 31, 2025",
+      "checked": "2026-09-19"
+    },
+    "Garrosh": {
+      "synergies": [
+        "Hanzo",
+        "Jaina",
+        "Malfurion",
+        "Zarya"
+      ],
+      "countered_by": [
+        "Anduin",
+        "Hanzo",
+        "Jaina",
+        "Johanna",
+        "Malthael"
+      ],
+      "strong_maps": [
+        "Battlefield of Eternity",
+        "Braxis Holdout",
+        "Tomb of the Spider Queen"
+      ],
+      "weak_maps": [
+        "Alterac Pass",
+        "Blackheart's Bay",
+        "Hanamura Temple",
+        "Warhead Junction"
+      ],
+      "source": "https://www.icy-veins.com/heroes/garrosh-build-guide",
+      "source_updated": "Apr 22, 2026",
+      "checked": "2026-09-19"
+    },
+    "Gazlowe": {
+      "synergies": [
+        "Diablo",
+        "E.T.C.",
+        "Jaina",
+        "Johanna",
+        "Kael'thas",
+        "Malfurion"
+      ],
+      "countered_by": [
+        "Chromie",
+        "Gul'dan",
+        "Hanzo",
+        "Li-Ming",
+        "Lunara",
+        "Raynor"
+      ],
+      "strong_maps": [
+        "Alterac Pass",
+        "Braxis Holdout",
+        "Infernal Shrines",
+        "Sky Temple",
+        "Volskaya Foundry",
+        "Warhead Junction"
+      ],
+      "weak_maps": [
+        "Hanamura Temple",
+        "Towers of Doom"
+      ],
+      "source": "https://www.icy-veins.com/heroes/gazlowe-build-guide",
+      "source_updated": "Sep 13, 2026",
+      "checked": "2026-09-19"
+    },
+    "Genji": {
+      "synergies": [
+        "E.T.C.",
+        "Jaina",
+        "Uther"
+      ],
+      "countered_by": [
+        "Lunara",
+        "Malfurion",
+        "Uther",
+        "Varian"
+      ],
+      "strong_maps": [
+        "Braxis Holdout",
+        "Cursed Hollow",
+        "Garden of Terror",
+        "Hanamura Temple",
+        "Infernal Shrines"
+      ],
+      "weak_maps": [
+        "Tomb of the Spider Queen"
+      ],
+      "source": "https://www.icy-veins.com/heroes/genji-build-guide",
+      "source_updated": "Jul 23, 2026",
+      "checked": "2026-09-19"
+    },
+    "Greymane": {
+      "synergies": [
+        "Abathur",
+        "E.T.C.",
+        "Garrosh",
+        "Malthael",
+        "Rehgar",
+        "Tyrael",
+        "Uther"
+      ],
+      "countered_by": [
+        "Arthas",
+        "Brightwing",
+        "Johanna",
+        "Muradin",
+        "The Butcher",
+        "Uther",
+        "Xul"
+      ],
+      "strong_maps": [
+        "Battlefield of Eternity",
+        "Dragon Shire",
+        "Garden of Terror",
+        "Sky Temple",
+        "Tomb of the Spider Queen"
+      ],
+      "weak_maps": [],
+      "source": "https://www.icy-veins.com/heroes/greymane-build-guide",
+      "source_updated": "May 31, 2025",
+      "checked": "2026-09-19"
+    },
+    "Gul'dan": {
+      "synergies": [
+        "Auriel",
+        "E.T.C.",
+        "Malfurion"
+      ],
+      "countered_by": [
+        "Greymane",
+        "Illidan",
+        "Kerrigan",
+        "Tracer"
+      ],
+      "strong_maps": [
+        "Alterac Pass",
+        "Braxis Holdout",
+        "Dragon Shire",
+        "Infernal Shrines",
+        "Sky Temple",
+        "Tomb of the Spider Queen",
+        "Volskaya Foundry"
+      ],
+      "weak_maps": [],
+      "source": "https://www.icy-veins.com/heroes/guldan-build-guide",
+      "source_updated": "Sep 23, 2023",
+      "checked": "2026-09-19"
+    },
+    "Hanzo": {
+      "synergies": [
+        "Blaze",
+        "Diablo",
+        "E.T.C.",
+        "Johanna",
+        "Mal'Ganis",
+        "Zeratul"
+      ],
+      "countered_by": [
+        "Genji",
+        "Illidan",
+        "Zeratul"
+      ],
+      "strong_maps": [
+        "Battlefield of Eternity",
+        "Cursed Hollow",
+        "Dragon Shire",
+        "Infernal Shrines",
+        "Towers of Doom",
+        "Volskaya Foundry"
+      ],
+      "weak_maps": [
+        "Warhead Junction"
+      ],
+      "source": "https://www.icy-veins.com/heroes/hanzo-build-guide",
+      "source_updated": "Sep 25, 2025",
+      "checked": "2026-09-19"
+    },
+    "Hogger": {
+      "synergies": [
+        "Diablo",
+        "Hanzo",
+        "Li-Ming",
+        "Sonya",
+        "Stukov"
+      ],
+      "countered_by": [
+        "Diablo",
+        "Lunara",
+        "Malthael",
+        "Tychus",
+        "Uther"
+      ],
+      "strong_maps": [
+        "Alterac Pass",
+        "Blackheart's Bay",
+        "Cursed Hollow",
+        "Dragon Shire",
+        "Garden of Terror",
+        "Infernal Shrines",
+        "Sky Temple"
+      ],
+      "weak_maps": [
+        "Hanamura Temple"
+      ],
+      "source": "https://www.icy-veins.com/heroes/hogger-build-guide",
+      "source_updated": "Sep 11, 2026",
+      "checked": "2026-09-19"
+    },
+    "Illidan": {
+      "synergies": [
+        "Abathur",
+        "Medivh",
+        "Rehgar",
+        "Tyrael",
+        "Uther",
+        "Zarya"
+      ],
+      "countered_by": [
+        "Arthas",
+        "Brightwing",
+        "E.T.C.",
+        "Johanna",
+        "Li Li",
+        "Muradin",
+        "Sonya",
+        "Uther",
+        "Varian"
+      ],
+      "strong_maps": [
+        "Blackheart's Bay",
+        "Cursed Hollow",
+        "Garden of Terror",
+        "Sky Temple",
+        "Warhead Junction"
+      ],
+      "weak_maps": [
+        "Battlefield of Eternity",
+        "Braxis Holdout",
+        "Towers of Doom",
+        "Volskaya Foundry"
+      ],
+      "source": "https://www.icy-veins.com/heroes/illidan-build-guide",
+      "source_updated": "Sep 01, 2025",
+      "checked": "2026-09-19"
+    },
+    "Imperius": {
+      "synergies": [
+        "Blaze",
+        "E.T.C.",
+        "Fenix",
+        "Jaina",
+        "Mal'Ganis",
+        "Rehgar",
+        "Yrel"
+      ],
+      "countered_by": [
+        "E.T.C.",
+        "Jaina",
+        "Lúcio",
+        "Raynor",
+        "Sgt. Hammer",
+        "Zul'jin"
+      ],
+      "strong_maps": [
+        "Battlefield of Eternity",
+        "Braxis Holdout",
+        "Hanamura Temple"
+      ],
+      "weak_maps": [
+        "Blackheart's Bay",
+        "Garden of Terror",
+        "Sky Temple",
+        "Towers of Doom"
+      ],
+      "source": "https://www.icy-veins.com/heroes/imperius-build-guide",
+      "source_updated": "Aug 31, 2025",
+      "checked": "2026-09-19"
+    },
+    "Jaina": {
+      "synergies": [
+        "E.T.C.",
+        "Johanna",
+        "Maiev",
+        "Malfurion",
+        "Muradin",
+        "Varian",
+        "Xul"
+      ],
+      "countered_by": [
+        "Alarak",
+        "Anub'arak",
+        "Chen",
+        "Genji",
+        "Tracer",
+        "Zeratul"
+      ],
+      "strong_maps": [
+        "Braxis Holdout",
+        "Dragon Shire",
+        "Garden of Terror",
+        "Infernal Shrines",
+        "Tomb of the Spider Queen"
+      ],
+      "weak_maps": [],
+      "source": "https://www.icy-veins.com/heroes/jaina-build-guide",
+      "source_updated": "Mar 16, 2026",
+      "checked": "2026-09-19"
+    },
+    "Johanna": {
+      "synergies": [
+        "Blaze",
+        "Deckard",
+        "Hanzo",
+        "Jaina",
+        "Maiev"
+      ],
+      "countered_by": [
+        "Hanzo",
+        "Leoric",
+        "Varian",
+        "Zeratul"
+      ],
+      "strong_maps": [
+        "Alterac Pass",
+        "Blackheart's Bay",
+        "Infernal Shrines",
+        "Tomb of the Spider Queen",
+        "Towers of Doom",
+        "Volskaya Foundry",
+        "Warhead Junction"
+      ],
+      "weak_maps": [
+        "Battlefield of Eternity",
+        "Braxis Holdout",
+        "Dragon Shire",
+        "Hanamura Temple"
+      ],
+      "source": "https://www.icy-veins.com/heroes/johanna-build-guide",
+      "source_updated": "Jul 20, 2026",
+      "checked": "2026-09-19"
+    },
+    "Junkrat": {
+      "synergies": [
+        "E.T.C.",
+        "Garrosh",
+        "Malfurion",
+        "Uther",
+        "Zeratul"
+      ],
+      "countered_by": [
+        "Genji",
+        "Illidan",
+        "Tracer",
+        "Tyrael",
+        "Zeratul"
+      ],
+      "strong_maps": [
+        "Alterac Pass",
+        "Braxis Holdout",
+        "Cursed Hollow",
+        "Dragon Shire",
+        "Garden of Terror",
+        "Infernal Shrines",
+        "Sky Temple",
+        "Tomb of the Spider Queen",
+        "Towers of Doom",
+        "Volskaya Foundry",
+        "Warhead Junction"
+      ],
+      "weak_maps": [],
+      "source": "https://www.icy-veins.com/heroes/junkrat-build-guide",
+      "source_updated": "Sep 26, 2023",
+      "checked": "2026-09-19"
+    },
+    "Kael'thas": {
+      "synergies": [
+        "Arthas",
+        "E.T.C.",
+        "Malfurion",
+        "Uther"
+      ],
+      "countered_by": [
+        "Illidan",
+        "Kerrigan",
+        "Tracer",
+        "Zeratul"
+      ],
+      "strong_maps": [
+        "Alterac Pass",
+        "Braxis Holdout",
+        "Dragon Shire",
+        "Infernal Shrines",
+        "Tomb of the Spider Queen",
+        "Towers of Doom",
+        "Volskaya Foundry"
+      ],
+      "weak_maps": [
+        "Blackheart's Bay",
+        "Warhead Junction"
+      ],
+      "source": "https://www.icy-veins.com/heroes/kaelthas-build-guide",
+      "source_updated": "Feb 23, 2026",
+      "checked": "2026-09-19"
+    },
+    "Kel'Thuzad": {
+      "synergies": [
+        "Anduin",
+        "Arthas",
+        "Johanna",
+        "Malfurion",
+        "The Butcher",
+        "Valeera",
+        "Varian",
+        "Xul"
+      ],
+      "countered_by": [
+        "Anub'arak",
+        "Chen",
+        "Genji",
+        "Nova",
+        "Samuro",
+        "Tracer",
+        "Valeera",
+        "Zeratul"
+      ],
+      "strong_maps": [
+        "Battlefield of Eternity",
+        "Braxis Holdout",
+        "Towers of Doom"
+      ],
+      "weak_maps": [
+        "Alterac Pass",
+        "Warhead Junction"
+      ],
+      "source": "https://www.icy-veins.com/heroes/kel-thuzad-build-guide",
+      "source_updated": "Apr 27, 2025",
+      "checked": "2026-09-19"
+    },
+    "Kerrigan": {
+      "synergies": [
+        "Medivh",
+        "Tyrael",
+        "Tyrande",
+        "Uther"
+      ],
+      "countered_by": [
+        "Auriel",
+        "E.T.C.",
+        "Garrosh",
+        "Lúcio",
+        "Medivh",
+        "Tyrael",
+        "Uther"
+      ],
+      "strong_maps": [
+        "Alterac Pass",
+        "Braxis Holdout",
+        "Dragon Shire",
+        "Infernal Shrines",
+        "Tomb of the Spider Queen",
+        "Volskaya Foundry"
+      ],
+      "weak_maps": [
+        "Blackheart's Bay",
+        "Warhead Junction"
+      ],
+      "source": "https://www.icy-veins.com/heroes/kerrigan-build-guide",
+      "source_updated": "Jan 29, 2026",
+      "checked": "2026-09-19"
+    },
+    "Kharazim": {
+      "synergies": [
+        "Anub'arak",
+        "E.T.C.",
+        "Garrosh",
+        "Genji"
+      ],
+      "countered_by": [
+        "Auriel",
+        "Johanna",
+        "Medivh",
+        "Uther"
+      ],
+      "strong_maps": [
+        "Battlefield of Eternity",
+        "Dragon Shire",
+        "Hanamura Temple",
+        "Sky Temple"
+      ],
+      "weak_maps": [
+        "Braxis Holdout",
+        "Tomb of the Spider Queen"
+      ],
+      "source": "https://www.icy-veins.com/heroes/kharazim-build-guide",
+      "source_updated": "May 03, 2025",
+      "checked": "2026-09-19"
+    },
+    "Leoric": {
+      "synergies": [
+        "Diablo",
+        "Orphea",
+        "Stukov"
+      ],
+      "countered_by": [
+        "Ana",
+        "Dehaka",
+        "Falstad",
+        "Samuro",
+        "Tracer"
+      ],
+      "strong_maps": [
+        "Cursed Hollow",
+        "Garden of Terror",
+        "Infernal Shrines",
+        "Towers of Doom",
+        "Volskaya Foundry"
+      ],
+      "weak_maps": [
+        "Braxis Holdout",
+        "Sky Temple",
+        "Warhead Junction"
+      ],
+      "source": "https://www.icy-veins.com/heroes/leoric-build-guide",
+      "source_updated": "Apr 18, 2025",
+      "checked": "2026-09-19"
+    },
+    "Li Li": {
+      "synergies": [
+        "Blaze",
+        "Hanzo",
+        "Johanna",
+        "Kael'thas",
+        "Uther"
+      ],
+      "countered_by": [
+        "E.T.C.",
+        "Jaina",
+        "Stukov",
+        "Sylvanas",
+        "Yrel"
+      ],
+      "strong_maps": [
+        "Battlefield of Eternity",
+        "Dragon Shire",
+        "Hanamura Temple",
+        "Volskaya Foundry"
+      ],
+      "weak_maps": [
+        "Blackheart's Bay",
+        "Sky Temple"
+      ],
+      "source": "https://www.icy-veins.com/heroes/li-li-build-guide",
+      "source_updated": "Jul 13, 2026",
+      "checked": "2026-09-19"
+    },
+    "Li-Ming": {
+      "synergies": [
+        "Arthas",
+        "E.T.C.",
+        "Johanna",
+        "Malfurion",
+        "Valeera",
+        "Varian",
+        "Xul"
+      ],
+      "countered_by": [
+        "Anub'arak",
+        "Chen",
+        "Genji",
+        "Samuro",
+        "Tracer",
+        "Valeera",
+        "Zeratul"
+      ],
+      "strong_maps": [
+        "Alterac Pass",
+        "Battlefield of Eternity",
+        "Cursed Hollow",
+        "Infernal Shrines"
+      ],
+      "weak_maps": [
+        "Blackheart's Bay"
+      ],
+      "source": "https://www.icy-veins.com/heroes/li-ming-build-guide",
+      "source_updated": "Oct 27, 2020",
+      "checked": "2026-09-19"
+    },
+    "Lt. Morales": {
+      "synergies": [
+        "Johanna",
+        "Raynor"
+      ],
+      "countered_by": [
+        "Auriel",
+        "Chen",
+        "Chromie",
+        "Garrosh",
+        "Lunara"
+      ],
+      "strong_maps": [
+        "Battlefield of Eternity",
+        "Braxis Holdout",
+        "Hanamura Temple"
+      ],
+      "weak_maps": [
+        "Alterac Pass",
+        "Garden of Terror",
+        "Tomb of the Spider Queen"
+      ],
+      "source": "https://www.icy-veins.com/heroes/lt-morales-build-guide",
+      "source_updated": "Apr 18, 2025",
+      "checked": "2026-09-19"
+    },
+    "Lunara": {
+      "synergies": [
+        "Arthas",
+        "Jaina",
+        "Muradin"
+      ],
+      "countered_by": [
+        "Genji",
+        "Illidan",
+        "Malfurion",
+        "Stukov"
+      ],
+      "strong_maps": [
+        "Battlefield of Eternity"
+      ],
+      "weak_maps": [
+        "Warhead Junction"
+      ],
+      "source": "https://www.icy-veins.com/heroes/lunara-build-guide",
+      "source_updated": "May 21, 2025",
+      "checked": "2026-09-19"
+    },
+    "Lúcio": {
+      "synergies": [
+        "Arthas",
+        "Diablo",
+        "Greymane",
+        "Valla"
+      ],
+      "countered_by": [
+        "Deckard",
+        "Malfurion",
+        "Raynor",
+        "Sgt. Hammer"
+      ],
+      "strong_maps": [
+        "Alterac Pass",
+        "Battlefield of Eternity",
+        "Cursed Hollow",
+        "Towers of Doom",
+        "Volskaya Foundry"
+      ],
+      "weak_maps": [],
+      "source": "https://www.icy-veins.com/heroes/lucio-build-guide",
+      "source_updated": "Aug 24, 2026",
+      "checked": "2026-09-19"
+    },
+    "Maiev": {
+      "synergies": [
+        "Blaze",
+        "Deckard",
+        "E.T.C.",
+        "Jaina",
+        "Malfurion",
+        "Tassadar"
+      ],
+      "countered_by": [
+        "Arthas",
+        "Brightwing",
+        "E.T.C.",
+        "Johanna",
+        "Lunara",
+        "Lúcio",
+        "Tracer",
+        "Tyrael"
+      ],
+      "strong_maps": [
+        "Braxis Holdout",
+        "Cursed Hollow",
+        "Dragon Shire",
+        "Garden of Terror",
+        "Infernal Shrines",
+        "Tomb of the Spider Queen"
+      ],
+      "weak_maps": [
+        "Battlefield of Eternity",
+        "Hanamura Temple",
+        "Warhead Junction"
+      ],
+      "source": "https://www.icy-veins.com/heroes/maiev-build-guide",
+      "source_updated": "Sep 28, 2021",
+      "checked": "2026-09-19"
+    },
+    "Mal'Ganis": {
+      "synergies": [
+        "Jaina",
+        "Malfurion",
+        "Zeratul"
+      ],
+      "countered_by": [
+        "Garrosh",
+        "Hanzo",
+        "Malfurion",
+        "Zeratul"
+      ],
+      "strong_maps": [
+        "Alterac Pass",
+        "Battlefield of Eternity",
+        "Braxis Holdout",
+        "Hanamura Temple",
+        "Infernal Shrines",
+        "Sky Temple",
+        "Towers of Doom"
+      ],
+      "weak_maps": [
+        "Blackheart's Bay",
+        "Tomb of the Spider Queen",
+        "Warhead Junction"
+      ],
+      "source": "https://www.icy-veins.com/heroes/malganis-build-guide",
+      "source_updated": "Jul 20, 2026",
+      "checked": "2026-09-19"
+    },
+    "Malfurion": {
+      "synergies": [
+        "Blaze",
+        "Chromie",
+        "Gul'dan",
+        "Jaina",
+        "Kael'thas",
+        "Kel'Thuzad",
+        "Li-Ming",
+        "Nazeebo",
+        "Ragnaros"
+      ],
+      "countered_by": [
+        "Alarak",
+        "Anub'arak",
+        "Artanis",
+        "Jaina",
+        "Kerrigan",
+        "Li-Ming",
+        "Tracer"
+      ],
+      "strong_maps": [
+        "Cursed Hollow",
+        "Dragon Shire",
+        "Tomb of the Spider Queen"
+      ],
+      "weak_maps": [
+        "Battlefield of Eternity",
+        "Braxis Holdout",
+        "Sky Temple"
+      ],
+      "source": "https://www.icy-veins.com/heroes/malfurion-build-guide",
+      "source_updated": "Sep 20, 2025",
+      "checked": "2026-09-19"
+    },
+    "Malthael": {
+      "synergies": [
+        "Ana",
+        "E.T.C.",
+        "Garrosh",
+        "Greymane",
+        "Malfurion",
+        "Medivh",
+        "Tychus"
+      ],
+      "countered_by": [
+        "Blaze",
+        "Falstad",
+        "Fenix",
+        "Lunara",
+        "Tracer",
+        "Valla"
+      ],
+      "strong_maps": [
+        "Blackheart's Bay",
+        "Dragon Shire",
+        "Garden of Terror",
+        "Infernal Shrines",
+        "Sky Temple",
+        "Tomb of the Spider Queen",
+        "Towers of Doom",
+        "Warhead Junction"
+      ],
+      "weak_maps": [
+        "Battlefield of Eternity",
+        "Hanamura Temple"
+      ],
+      "source": "https://www.icy-veins.com/heroes/malthael-build-guide",
+      "source_updated": "May 02, 2025",
+      "checked": "2026-09-19"
+    },
+    "Medivh": {
+      "synergies": [
+        "Diablo",
+        "Genji",
+        "Greymane",
+        "Illidan",
+        "Stitches",
+        "Tracer"
+      ],
+      "countered_by": [
+        "Garrosh",
+        "Gul'dan",
+        "Lunara",
+        "Malfurion"
+      ],
+      "strong_maps": [
+        "Cursed Hollow",
+        "Sky Temple"
+      ],
+      "weak_maps": [
+        "Battlefield of Eternity",
+        "Braxis Holdout"
+      ],
+      "source": "https://www.icy-veins.com/heroes/medivh-build-guide",
+      "source_updated": "Apr 27, 2026",
+      "checked": "2026-09-19"
+    },
+    "Mei": {
+      "synergies": [
+        "Deckard",
+        "Jaina",
+        "Lunara",
+        "Xul"
+      ],
+      "countered_by": [
+        "Ana",
+        "E.T.C.",
+        "Hanzo",
+        "Junkrat",
+        "Yrel",
+        "Zeratul"
+      ],
+      "strong_maps": [
+        "Braxis Holdout",
+        "Cursed Hollow",
+        "Hanamura Temple"
+      ],
+      "weak_maps": [
+        "Battlefield of Eternity",
+        "Blackheart's Bay",
+        "Dragon Shire",
+        "Garden of Terror",
+        "Towers of Doom",
+        "Volskaya Foundry"
+      ],
+      "source": "https://www.icy-veins.com/heroes/mei-build-guide",
+      "source_updated": "Apr 18, 2025",
+      "checked": "2026-09-19"
+    },
+    "Mephisto": {
+      "synergies": [
+        "Deckard",
+        "Diablo",
+        "E.T.C.",
+        "Zarya"
+      ],
+      "countered_by": [
+        "Anub'arak",
+        "Junkrat",
+        "Kael'thas",
+        "Kel'Thuzad",
+        "Stitches"
+      ],
+      "strong_maps": [
+        "Alterac Pass",
+        "Battlefield of Eternity",
+        "Braxis Holdout",
+        "Infernal Shrines",
+        "Volskaya Foundry"
+      ],
+      "weak_maps": [
+        "Warhead Junction"
+      ],
+      "source": "https://www.icy-veins.com/heroes/mephisto-build-guide",
+      "source_updated": "Mar 07, 2021",
+      "checked": "2026-09-19"
+    },
+    "Muradin": {
+      "synergies": [
+        "Blaze",
+        "Hanzo",
+        "Kael'thas",
+        "Kerrigan",
+        "Malfurion"
+      ],
+      "countered_by": [
+        "E.T.C.",
+        "Jaina",
+        "Malfurion",
+        "Raynor",
+        "Thrall"
+      ],
+      "strong_maps": [
+        "Battlefield of Eternity",
+        "Hanamura Temple"
+      ],
+      "weak_maps": [
+        "Braxis Holdout",
+        "Infernal Shrines",
+        "Tomb of the Spider Queen"
+      ],
+      "source": "https://www.icy-veins.com/heroes/muradin-build-guide",
+      "source_updated": "May 29, 2026",
+      "checked": "2026-09-19"
+    },
+    "Murky": {
+      "synergies": [
+        "Brightwing",
+        "Johanna",
+        "Zarya"
+      ],
+      "countered_by": [
+        "Falstad",
+        "Sonya"
+      ],
+      "strong_maps": [
+        "Dragon Shire",
+        "Garden of Terror",
+        "Infernal Shrines",
+        "Towers of Doom",
+        "Volskaya Foundry"
+      ],
+      "weak_maps": [
+        "Battlefield of Eternity",
+        "Blackheart's Bay",
+        "Braxis Holdout",
+        "Hanamura Temple",
+        "Tomb of the Spider Queen"
+      ],
+      "source": "https://www.icy-veins.com/heroes/murky-build-guide",
+      "source_updated": "May 12, 2026",
+      "checked": "2026-09-19"
+    },
+    "Nazeebo": {
+      "synergies": [
+        "Johanna",
+        "Raynor",
+        "Stukov"
+      ],
+      "countered_by": [
+        "E.T.C.",
+        "Sylvanas"
+      ],
+      "strong_maps": [
+        "Dragon Shire",
+        "Tomb of the Spider Queen",
+        "Volskaya Foundry"
+      ],
+      "weak_maps": [
+        "Battlefield of Eternity",
+        "Blackheart's Bay",
+        "Braxis Holdout",
+        "Sky Temple"
+      ],
+      "source": "https://www.icy-veins.com/heroes/nazeebo-build-guide",
+      "source_updated": "Aug 12, 2026",
+      "checked": "2026-09-19"
+    },
+    "Nova": {
+      "synergies": [
+        "Blaze",
+        "Johanna",
+        "Stukov",
+        "Sylvanas"
+      ],
+      "countered_by": [
+        "Anub'arak",
+        "Brightwing",
+        "Chen",
+        "Genji",
+        "Zarya"
+      ],
+      "strong_maps": [
+        "Dragon Shire",
+        "Hanamura Temple",
+        "Warhead Junction"
+      ],
+      "weak_maps": [
+        "Braxis Holdout",
+        "Garden of Terror",
+        "Infernal Shrines",
+        "Sky Temple",
+        "Towers of Doom"
+      ],
+      "source": "https://www.icy-veins.com/heroes/nova-build-guide",
+      "source_updated": "Apr 18, 2025",
+      "checked": "2026-09-19"
+    },
+    "Orphea": {
+      "synergies": [
+        "Blaze",
+        "Johanna",
+        "Maiev",
+        "Mal'Ganis",
+        "Varian",
+        "Xul"
+      ],
+      "countered_by": [
+        "Anub'arak",
+        "Chen",
+        "Genji",
+        "Johanna",
+        "Lunara",
+        "Muradin"
+      ],
+      "strong_maps": [
+        "Braxis Holdout",
+        "Garden of Terror",
+        "Infernal Shrines",
+        "Sky Temple",
+        "Tomb of the Spider Queen"
+      ],
+      "weak_maps": [
+        "Battlefield of Eternity",
+        "Blackheart's Bay",
+        "Hanamura Temple"
+      ],
+      "source": "https://www.icy-veins.com/heroes/orphea-build-guide",
+      "source_updated": "Mar 11, 2026",
+      "checked": "2026-09-19"
+    },
+    "Probius": {
+      "synergies": [
+        "Anub'arak",
+        "Arthas",
+        "Diablo",
+        "E.T.C.",
+        "Malfurion"
+      ],
+      "countered_by": [
+        "Alarak",
+        "Kerrigan",
+        "Tracer",
+        "Zeratul"
+      ],
+      "strong_maps": [
+        "Alterac Pass",
+        "Braxis Holdout",
+        "Infernal Shrines",
+        "Tomb of the Spider Queen",
+        "Towers of Doom",
+        "Volskaya Foundry"
+      ],
+      "weak_maps": [
+        "Battlefield of Eternity",
+        "Blackheart's Bay"
+      ],
+      "source": "https://www.icy-veins.com/heroes/probius-build-guide",
+      "source_updated": "May 31, 2025",
+      "checked": "2026-09-19"
+    },
+    "Qhira": {
+      "synergies": [
+        "Abathur",
+        "Anub'arak",
+        "Rehgar",
+        "Uther"
+      ],
+      "countered_by": [
+        "Diablo",
+        "E.T.C.",
+        "Garrosh",
+        "Lunara",
+        "Tracer"
+      ],
+      "strong_maps": [
+        "Dragon Shire",
+        "Hanamura Temple",
+        "Tomb of the Spider Queen"
+      ],
+      "weak_maps": [],
+      "source": "https://www.icy-veins.com/heroes/qhira-build-guide",
+      "source_updated": "Aug 24, 2026",
+      "checked": "2026-09-19"
+    },
+    "Ragnaros": {
+      "synergies": [
+        "Ana",
+        "E.T.C.",
+        "Hanzo",
+        "Kael'thas"
+      ],
+      "countered_by": [
+        "Chen",
+        "Garrosh",
+        "Jaina",
+        "Lunara",
+        "Stukov"
+      ],
+      "strong_maps": [
+        "Blackheart's Bay",
+        "Infernal Shrines",
+        "Sky Temple",
+        "Tomb of the Spider Queen",
+        "Volskaya Foundry"
+      ],
+      "weak_maps": [
+        "Battlefield of Eternity",
+        "Braxis Holdout",
+        "Towers of Doom"
+      ],
+      "source": "https://www.icy-veins.com/heroes/ragnaros-build-guide",
+      "source_updated": "Jul 28, 2026",
+      "checked": "2026-09-19"
+    },
+    "Raynor": {
+      "synergies": [
+        "E.T.C.",
+        "Garrosh",
+        "Lt. Morales",
+        "Thrall"
+      ],
+      "countered_by": [
+        "Artanis",
+        "Cassia",
+        "Johanna"
+      ],
+      "strong_maps": [
+        "Battlefield of Eternity",
+        "Dragon Shire",
+        "Infernal Shrines",
+        "Tomb of the Spider Queen",
+        "Towers of Doom"
+      ],
+      "weak_maps": [],
+      "source": "https://www.icy-veins.com/heroes/raynor-build-guide",
+      "source_updated": "May 31, 2025",
+      "checked": "2026-09-19"
+    },
+    "Rehgar": {
+      "synergies": [
+        "Greymane",
+        "Illidan",
+        "Sonya"
+      ],
+      "countered_by": [
+        "Ana",
+        "Muradin",
+        "Tracer",
+        "Varian"
+      ],
+      "strong_maps": [
+        "Blackheart's Bay",
+        "Cursed Hollow",
+        "Garden of Terror",
+        "Sky Temple",
+        "Warhead Junction"
+      ],
+      "weak_maps": [
+        "Braxis Holdout",
+        "Hanamura Temple",
+        "Tomb of the Spider Queen",
+        "Volskaya Foundry"
+      ],
+      "source": "https://www.icy-veins.com/heroes/rehgar-build-guide",
+      "source_updated": "Jan 27, 2026",
+      "checked": "2026-09-19"
+    },
+    "Rexxar": {
+      "synergies": [
+        "Jaina",
+        "Johanna",
+        "Malfurion"
+      ],
+      "countered_by": [
+        "Illidan",
+        "Kharazim",
+        "Qhira",
+        "Tyrael",
+        "Zeratul"
+      ],
+      "strong_maps": [
+        "Braxis Holdout",
+        "Dragon Shire"
+      ],
+      "weak_maps": [
+        "Alterac Pass",
+        "Battlefield of Eternity",
+        "Blackheart's Bay",
+        "Cursed Hollow",
+        "Garden of Terror",
+        "Hanamura Temple",
+        "Infernal Shrines",
+        "Sky Temple",
+        "Towers of Doom",
+        "Volskaya Foundry",
+        "Warhead Junction"
+      ],
+      "source": "https://www.icy-veins.com/heroes/rexxar-build-guide",
+      "source_updated": "Jun 27, 2025",
+      "checked": "2026-09-19"
+    },
+    "Samuro": {
+      "synergies": [
+        "Abathur",
+        "Deckard",
+        "Malfurion",
+        "Sylvanas"
+      ],
+      "countered_by": [
+        "Cassia",
+        "Diablo",
+        "E.T.C.",
+        "Lúcio",
+        "Medivh",
+        "Orphea",
+        "Stukov",
+        "Yrel"
+      ],
+      "strong_maps": [
+        "Alterac Pass",
+        "Battlefield of Eternity",
+        "Braxis Holdout",
+        "Dragon Shire",
+        "Sky Temple",
+        "Towers of Doom"
+      ],
+      "weak_maps": [
+        "Cursed Hollow",
+        "Hanamura Temple",
+        "Tomb of the Spider Queen"
+      ],
+      "source": "https://www.icy-veins.com/heroes/samuro-build-guide",
+      "source_updated": "Sep 14, 2024",
+      "checked": "2026-09-19"
+    },
+    "Sgt. Hammer": {
+      "synergies": [
+        "Ana",
+        "E.T.C.",
+        "Johanna",
+        "Lt. Morales"
+      ],
+      "countered_by": [
+        "Artanis",
+        "Chromie",
+        "Kel'Thuzad",
+        "Li-Ming",
+        "Stitches"
+      ],
+      "strong_maps": [
+        "Battlefield of Eternity",
+        "Braxis Holdout",
+        "Infernal Shrines"
+      ],
+      "weak_maps": [
+        "Blackheart's Bay",
+        "Garden of Terror",
+        "Hanamura Temple",
+        "Tomb of the Spider Queen",
+        "Warhead Junction"
+      ],
+      "source": "https://www.icy-veins.com/heroes/sgt-hammer-build-guide",
+      "source_updated": "Sep 13, 2026",
+      "checked": "2026-09-19"
+    },
+    "Sonya": {
+      "synergies": [
+        "Jaina",
+        "Medivh",
+        "Muradin",
+        "Rehgar",
+        "Tracer"
+      ],
+      "countered_by": [
+        "Brightwing",
+        "E.T.C.",
+        "Leoric",
+        "Sylvanas",
+        "Tychus"
+      ],
+      "strong_maps": [
+        "Blackheart's Bay",
+        "Garden of Terror",
+        "Infernal Shrines"
+      ],
+      "weak_maps": [
+        "Hanamura Temple",
+        "Towers of Doom"
+      ],
+      "source": "https://www.icy-veins.com/heroes/sonya-build-guide",
+      "source_updated": "Aug 22, 2025",
+      "checked": "2026-09-19"
+    },
+    "Stitches": {
+      "synergies": [
+        "Blaze",
+        "Falstad",
+        "Kael'thas",
+        "Malfurion"
+      ],
+      "countered_by": [
+        "Anduin",
+        "Greymane",
+        "Johanna",
+        "Malthael",
+        "Tychus"
+      ],
+      "strong_maps": [
+        "Alterac Pass",
+        "Cursed Hollow",
+        "Tomb of the Spider Queen",
+        "Towers of Doom",
+        "Volskaya Foundry"
+      ],
+      "weak_maps": [
+        "Battlefield of Eternity",
+        "Blackheart's Bay",
+        "Braxis Holdout",
+        "Sky Temple",
+        "Warhead Junction"
+      ],
+      "source": "https://www.icy-veins.com/heroes/stitches-build-guide",
+      "source_updated": "May 26, 2025",
+      "checked": "2026-09-19"
+    },
+    "Stukov": {
+      "synergies": [
+        "E.T.C.",
+        "Raynor",
+        "Sgt. Hammer"
+      ],
+      "countered_by": [
+        "Anub'arak",
+        "Genji",
+        "Uther"
+      ],
+      "strong_maps": [
+        "Braxis Holdout",
+        "Cursed Hollow"
+      ],
+      "weak_maps": [
+        "Battlefield of Eternity"
+      ],
+      "source": "https://www.icy-veins.com/heroes/stukov-build-guide",
+      "source_updated": "Aug 15, 2025",
+      "checked": "2026-09-19"
+    },
+    "Sylvanas": {
+      "synergies": [
+        "Blaze",
+        "Diablo",
+        "E.T.C.",
+        "Genji",
+        "Maiev",
+        "Malfurion",
+        "Malthael"
+      ],
+      "countered_by": [
+        "Chen",
+        "Genji",
+        "Nova",
+        "Valeera",
+        "Zeratul"
+      ],
+      "strong_maps": [
+        "Alterac Pass",
+        "Infernal Shrines",
+        "Tomb of the Spider Queen",
+        "Volskaya Foundry"
+      ],
+      "weak_maps": [
+        "Blackheart's Bay",
+        "Hanamura Temple",
+        "Sky Temple"
+      ],
+      "source": "https://www.icy-veins.com/heroes/sylvanas-build-guide",
+      "source_updated": "Mar 11, 2026",
+      "checked": "2026-09-19"
+    },
+    "Tassadar": {
+      "synergies": [
+        "E.T.C.",
+        "Genji",
+        "Johanna",
+        "Maiev",
+        "Zeratul"
+      ],
+      "countered_by": [
+        "Anub'arak",
+        "Greymane",
+        "Kerrigan",
+        "Tracer",
+        "Zeratul"
+      ],
+      "strong_maps": [
+        "Braxis Holdout",
+        "Garden of Terror",
+        "Infernal Shrines",
+        "Tomb of the Spider Queen",
+        "Volskaya Foundry"
+      ],
+      "weak_maps": [
+        "Battlefield of Eternity",
+        "Cursed Hollow",
+        "Hanamura Temple"
+      ],
+      "source": "https://www.icy-veins.com/heroes/tassadar-build-guide",
+      "source_updated": "Sep 01, 2025",
+      "checked": "2026-09-19"
+    },
+    "The Butcher": {
+      "synergies": [
+        "Abathur",
+        "Tyrael",
+        "Tyrande",
+        "Uther"
+      ],
+      "countered_by": [
+        "Brightwing",
+        "E.T.C.",
+        "Johanna",
+        "Uther"
+      ],
+      "strong_maps": [
+        "Dragon Shire",
+        "Garden of Terror",
+        "Sky Temple",
+        "Tomb of the Spider Queen",
+        "Towers of Doom",
+        "Volskaya Foundry",
+        "Warhead Junction"
+      ],
+      "weak_maps": [
+        "Battlefield of Eternity",
+        "Blackheart's Bay",
+        "Braxis Holdout"
+      ],
+      "source": "https://www.icy-veins.com/heroes/the-butcher-build-guide",
+      "source_updated": "Mar 12, 2025",
+      "checked": "2026-09-19"
+    },
+    "The Lost Vikings": {
+      "synergies": [
+        "Garrosh",
+        "Raynor",
+        "Sgt. Hammer",
+        "Sylvanas",
+        "Zarya"
+      ],
+      "countered_by": [
+        "Dehaka",
+        "Falstad",
+        "Li-Ming",
+        "Nova",
+        "Sonya",
+        "Zagara",
+        "Zeratul"
+      ],
+      "strong_maps": [
+        "Alterac Pass",
+        "Cursed Hollow",
+        "Garden of Terror",
+        "Sky Temple",
+        "Towers of Doom",
+        "Volskaya Foundry",
+        "Warhead Junction"
+      ],
+      "weak_maps": [
+        "Battlefield of Eternity",
+        "Braxis Holdout",
+        "Hanamura Temple",
+        "Tomb of the Spider Queen"
+      ],
+      "source": "https://www.icy-veins.com/heroes/the-lost-vikings-build-guide",
+      "source_updated": "Jun 04, 2021",
+      "checked": "2026-09-19"
+    },
+    "Thrall": {
+      "synergies": [
+        "Chromie",
+        "Diablo",
+        "Fenix",
+        "Rehgar"
+      ],
+      "countered_by": [
+        "Arthas",
+        "Johanna",
+        "Kael'thas",
+        "Lunara",
+        "Malfurion"
+      ],
+      "strong_maps": [
+        "Battlefield of Eternity",
+        "Braxis Holdout",
+        "Hanamura Temple",
+        "Towers of Doom",
+        "Volskaya Foundry"
+      ],
+      "weak_maps": [
+        "Blackheart's Bay",
+        "Garden of Terror",
+        "Tomb of the Spider Queen"
+      ],
+      "source": "https://www.icy-veins.com/heroes/thrall-build-guide",
+      "source_updated": "Jul 28, 2026",
+      "checked": "2026-09-19"
+    },
+    "Tracer": {
+      "synergies": [
+        "Abathur",
+        "Anduin",
+        "Gul'dan",
+        "Jaina",
+        "Kael'thas",
+        "Malfurion",
+        "Tassadar"
+      ],
+      "countered_by": [
+        "Diablo",
+        "Medivh",
+        "Raynor",
+        "Sgt. Hammer",
+        "Varian"
+      ],
+      "strong_maps": [
+        "Cursed Hollow",
+        "Dragon Shire",
+        "Sky Temple",
+        "Towers of Doom",
+        "Volskaya Foundry",
+        "Warhead Junction"
+      ],
+      "weak_maps": [
+        "Infernal Shrines",
+        "Tomb of the Spider Queen"
+      ],
+      "source": "https://www.icy-veins.com/heroes/tracer-build-guide",
+      "source_updated": "Mar 08, 2025",
+      "checked": "2026-09-19"
+    },
+    "Tychus": {
+      "synergies": [
+        "Dehaka",
+        "E.T.C.",
+        "Garrosh",
+        "Uther"
+      ],
+      "countered_by": [
+        "Anub'arak",
+        "Johanna",
+        "Lúcio"
+      ],
+      "strong_maps": [
+        "Cursed Hollow",
+        "Infernal Shrines",
+        "Towers of Doom",
+        "Volskaya Foundry"
+      ],
+      "weak_maps": [
+        "Blackheart's Bay",
+        "Sky Temple",
+        "Warhead Junction"
+      ],
+      "source": "https://www.icy-veins.com/heroes/tychus-build-guide",
+      "source_updated": "Sep 27, 2021",
+      "checked": "2026-09-19"
+    },
+    "Tyrael": {
+      "synergies": [
+        "Alarak",
+        "Blaze",
+        "Illidan",
+        "Lt. Morales",
+        "Sgt. Hammer"
+      ],
+      "countered_by": [
+        "Arthas",
+        "Blaze",
+        "Brightwing",
+        "Medivh",
+        "Zeratul"
+      ],
+      "strong_maps": [
+        "Alterac Pass",
+        "Cursed Hollow",
+        "Infernal Shrines",
+        "Sky Temple",
+        "Warhead Junction"
+      ],
+      "weak_maps": [
+        "Hanamura Temple",
+        "Volskaya Foundry"
+      ],
+      "source": "https://www.icy-veins.com/heroes/tyrael-build-guide",
+      "source_updated": "Jul 15, 2026",
+      "checked": "2026-09-19"
+    },
+    "Tyrande": {
+      "synergies": [
+        "Anub'arak",
+        "Diablo",
+        "E.T.C.",
+        "Greymane",
+        "Hanzo",
+        "Li-Ming",
+        "Raynor",
+        "Varian"
+      ],
+      "countered_by": [
+        "Anub'arak",
+        "Fenix",
+        "Lunara",
+        "Maiev",
+        "Muradin",
+        "Zeratul"
+      ],
+      "strong_maps": [
+        "Battlefield of Eternity",
+        "Dragon Shire",
+        "Infernal Shrines",
+        "Tomb of the Spider Queen"
+      ],
+      "weak_maps": [],
+      "source": "https://www.icy-veins.com/heroes/tyrande-build-guide",
+      "source_updated": "May 08, 2026",
+      "checked": "2026-09-19"
+    },
+    "Uther": {
+      "synergies": [
+        "E.T.C.",
+        "Illidan",
+        "Kerrigan",
+        "Malfurion",
+        "The Butcher",
+        "Zul'jin"
+      ],
+      "countered_by": [
+        "Gul'dan",
+        "Lunara",
+        "Malthael",
+        "Nazeebo",
+        "Sylvanas",
+        "Zagara"
+      ],
+      "strong_maps": [
+        "Infernal Shrines"
+      ],
+      "weak_maps": [
+        "Braxis Holdout",
+        "Warhead Junction"
+      ],
+      "source": "https://www.icy-veins.com/heroes/uther-build-guide",
+      "source_updated": "Mar 16, 2026",
+      "checked": "2026-09-19"
+    },
+    "Valeera": {
+      "synergies": [
+        "Abathur",
+        "E.T.C.",
+        "Garrosh",
+        "Jaina",
+        "Thrall"
+      ],
+      "countered_by": [
+        "Arthas",
+        "E.T.C.",
+        "Lúcio",
+        "Medivh"
+      ],
+      "strong_maps": [
+        "Blackheart's Bay",
+        "Cursed Hollow",
+        "Dragon Shire",
+        "Sky Temple",
+        "Warhead Junction"
+      ],
+      "weak_maps": [
+        "Tomb of the Spider Queen"
+      ],
+      "source": "https://www.icy-veins.com/heroes/valeera-build-guide",
+      "source_updated": "Jun 05, 2022",
+      "checked": "2026-09-19"
+    },
+    "Valla": {
+      "synergies": [
+        "Arthas",
+        "Auriel",
+        "Garrosh",
+        "Uther"
+      ],
+      "countered_by": [
+        "Greymane",
+        "Illidan",
+        "Nova",
+        "The Butcher",
+        "Valeera",
+        "Zeratul"
+      ],
+      "strong_maps": [
+        "Battlefield of Eternity",
+        "Infernal Shrines",
+        "Tomb of the Spider Queen",
+        "Volskaya Foundry"
+      ],
+      "weak_maps": [],
+      "source": "https://www.icy-veins.com/heroes/valla-build-guide",
+      "source_updated": "May 02, 2025",
+      "checked": "2026-09-19"
+    },
+    "Varian": {
+      "synergies": [
+        "Blaze",
+        "E.T.C.",
+        "Li-Ming",
+        "Tyrande"
+      ],
+      "countered_by": [
+        "Arthas",
+        "E.T.C.",
+        "Lunara",
+        "Medivh",
+        "Rehgar"
+      ],
+      "strong_maps": [
+        "Blackheart's Bay",
+        "Braxis Holdout",
+        "Dragon Shire",
+        "Garden of Terror",
+        "Hanamura Temple",
+        "Towers of Doom",
+        "Volskaya Foundry",
+        "Warhead Junction"
+      ],
+      "weak_maps": [
+        "Battlefield of Eternity",
+        "Infernal Shrines",
+        "Sky Temple"
+      ],
+      "source": "https://www.icy-veins.com/heroes/varian-build-guide",
+      "source_updated": "Sep 30, 2025",
+      "checked": "2026-09-19"
+    },
+    "Whitemane": {
+      "synergies": [
+        "Cassia",
+        "Chromie",
+        "Hanzo",
+        "Johanna",
+        "Sonya"
+      ],
+      "countered_by": [
+        "Alarak",
+        "Ana",
+        "Garrosh",
+        "Li-Ming",
+        "Malthael"
+      ],
+      "strong_maps": [
+        "Infernal Shrines",
+        "Towers of Doom"
+      ],
+      "weak_maps": [
+        "Blackheart's Bay",
+        "Braxis Holdout",
+        "Dragon Shire",
+        "Hanamura Temple",
+        "Sky Temple"
+      ],
+      "source": "https://www.icy-veins.com/heroes/whitemane-build-guide",
+      "source_updated": "May 20, 2026",
+      "checked": "2026-09-19"
+    },
+    "Xul": {
+      "synergies": [
+        "Falstad",
+        "Li-Ming",
+        "Medivh",
+        "Tyrande"
+      ],
+      "countered_by": [
+        "Auriel",
+        "E.T.C.",
+        "Jaina",
+        "Johanna",
+        "Sgt. Hammer"
+      ],
+      "strong_maps": [
+        "Blackheart's Bay",
+        "Cursed Hollow",
+        "Garden of Terror",
+        "Infernal Shrines",
+        "Sky Temple",
+        "Tomb of the Spider Queen"
+      ],
+      "weak_maps": [
+        "Battlefield of Eternity",
+        "Braxis Holdout",
+        "Hanamura Temple"
+      ],
+      "source": "https://www.icy-veins.com/heroes/xul-build-guide",
+      "source_updated": "Apr 16, 2021",
+      "checked": "2026-09-19"
+    },
+    "Yrel": {
+      "synergies": [
+        "Garrosh",
+        "Sgt. Hammer",
+        "Whitemane",
+        "Zarya"
+      ],
+      "countered_by": [
+        "Malthael",
+        "Muradin",
+        "Sgt. Hammer",
+        "Stukov",
+        "Tracer"
+      ],
+      "strong_maps": [
+        "Battlefield of Eternity",
+        "Dragon Shire",
+        "Infernal Shrines",
+        "Tomb of the Spider Queen"
+      ],
+      "weak_maps": [
+        "Hanamura Temple"
+      ],
+      "source": "https://www.icy-veins.com/heroes/yrel-build-guide",
+      "source_updated": "Sep 11, 2026",
+      "checked": "2026-09-19"
+    },
+    "Zagara": {
+      "synergies": [
+        "Deckard",
+        "E.T.C.",
+        "Jaina"
+      ],
+      "countered_by": [
+        "Chen",
+        "Falstad",
+        "Illidan",
+        "Zeratul"
+      ],
+      "strong_maps": [
+        "Alterac Pass",
+        "Braxis Holdout",
+        "Cursed Hollow",
+        "Garden of Terror",
+        "Sky Temple",
+        "Towers of Doom",
+        "Warhead Junction"
+      ],
+      "weak_maps": [
+        "Hanamura Temple"
+      ],
+      "source": "https://www.icy-veins.com/heroes/zagara-build-guide",
+      "source_updated": "May 12, 2026",
+      "checked": "2026-09-19"
+    },
+    "Zarya": {
+      "synergies": [
+        "Garrosh",
+        "Malfurion",
+        "Sonya",
+        "Valla"
+      ],
+      "countered_by": [
+        "Auriel",
+        "Garrosh",
+        "Lunara",
+        "Maiev",
+        "Yrel"
+      ],
+      "strong_maps": [
+        "Battlefield of Eternity",
+        "Braxis Holdout",
+        "Hanamura Temple"
+      ],
+      "weak_maps": [
+        "Cursed Hollow",
+        "Garden of Terror",
+        "Warhead Junction"
+      ],
+      "source": "https://www.icy-veins.com/heroes/zarya-build-guide",
+      "source_updated": "Apr 18, 2025",
+      "checked": "2026-09-19"
+    },
+    "Zeratul": {
+      "synergies": [
+        "Abathur",
+        "Diablo",
+        "Garrosh",
+        "Hanzo",
+        "Jaina",
+        "Junkrat",
+        "Kharazim",
+        "Li-Ming",
+        "Malfurion"
+      ],
+      "countered_by": [
+        "Brightwing",
+        "Diablo",
+        "E.T.C.",
+        "Medivh",
+        "Uther",
+        "Varian"
+      ],
+      "strong_maps": [
+        "Cursed Hollow",
+        "Infernal Shrines",
+        "Sky Temple",
+        "Towers of Doom"
+      ],
+      "weak_maps": [
+        "Braxis Holdout",
+        "Tomb of the Spider Queen"
+      ],
+      "source": "https://www.icy-veins.com/heroes/zeratul-build-guide",
+      "source_updated": "Mar 11, 2026",
+      "checked": "2026-09-19"
+    },
+    "Zul'jin": {
+      "synergies": [
+        "Arthas",
+        "E.T.C.",
+        "Medivh",
+        "Tassadar",
+        "Tyrael",
+        "Uther"
+      ],
+      "countered_by": [
+        "Dehaka",
+        "Diablo",
+        "E.T.C.",
+        "Garrosh",
+        "Uther"
+      ],
+      "strong_maps": [],
+      "weak_maps": [],
+      "source": "https://www.icy-veins.com/heroes/zuljin-build-guide",
+      "source_updated": "Feb 11, 2025",
+      "checked": "2026-09-19"
+    }
+  }
+}

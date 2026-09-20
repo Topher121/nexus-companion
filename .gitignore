@@ -1,0 +1,22 @@
+# Never commit personal state or captures.
+preferences.json
+settings.json
+collection.json
+rotation.json
+collection-source.txt
+*.sqlite3*
+*.nexus-backup
+last-error.log
+backups/
+downloads/
+content/
+.deps/
+.replay-deps/
+.packaging-deps/
+.guide-cache/
+__pycache__/
+*.pyc
+build/
+dist/
+releases/
+image-tree.json

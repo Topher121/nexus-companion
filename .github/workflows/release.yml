@@ -1,0 +1,51 @@
+name: Build a Windows draft release
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.14'
+      - name: Install runtime and packaging dependencies
+        shell: pwsh
+        run: |
+          python -m pip install --target .deps -r requirements-local.txt
+          python -m pip install --target .replay-deps -r requirements-replays.txt
+          python -m pip install --target .packaging-deps pyinstaller==6.22.3
+      - name: Test with isolated personal data
+        shell: pwsh
+        run: |
+          $env:NEXUS_DATA_DIR = Join-Path $env:RUNNER_TEMP 'nexus-tests'
+          python -m unittest discover -v
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+      - name: Build installer and manifest
+        shell: pwsh
+        run: |
+          $env:INNO_COMPILER = 'C:\Program Files (x86)\Inno Setup 6\ISCC.exe'
+          python build_release.py
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+      - name: Verify standalone runtime
+        shell: pwsh
+        run: |
+          $env:NEXUS_DATA_DIR = Join-Path $env:RUNNER_TEMP 'nexus-packaged-tests'
+          $report = Join-Path $env:RUNNER_TEMP 'nexus-report.json'
+          $process = Start-Process -FilePath '.\dist\NexusCompanion\NexusCompanion.exe' -ArgumentList @('--self-test',('"'+$report+'"')) -WindowStyle Hidden -Wait -PassThru
+          if ($process.ExitCode -ne 0) { exit $process.ExitCode }
+          $result = Get-Content $report -Raw | ConvertFrom-Json
+          if (-not $result.ok) { throw $result.error }
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Nexus-Companion-Windows
+          path: releases/*
+      - name: Prepare an unpublished release for review
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: pwsh
+        run: |
+          $version = python -c "from app_paths import APP_VERSION; print(APP_VERSION)"
+          gh release create "v$version" releases/* --draft --target $env:GITHUB_SHA --title "Nexus Companion $version" --notes-file RELEASE_NOTES.md

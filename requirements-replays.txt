@@ -1,0 +1,4 @@
+# Install separately: python -m pip install --target .replay-deps -r requirements-replays.txt
+heroprotocol==2.55.4.91756
+mpyq==0.2.5
+six==1.17.0

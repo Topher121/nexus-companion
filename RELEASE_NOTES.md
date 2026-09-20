@@ -1,0 +1,17 @@
+# Nexus Companion 0.8.0
+
+Free Windows companion for Heroes of the Storm, with local draft advice, saved talent builds and personal match history.
+
+- Draft warnings highlight unread committed picks, conflicts and missing expected bans. Suggestions remain based on recorded heroes; uncertain heroes are never guessed.
+- Match history has clickable sorting and a minimum-games filter for comparing hero records.
+- Export and restore preferences, hero ownership, settings and results in one backup. Restores validate the file and make a safety copy first.
+- Standalone Windows installer includes the runtime, original navigation icons, credited hero artwork and replay reader. No separate Python installation is needed.
+- Optional automatic checks find app and saved-build releases. Downloads are verified; installation waits for your action.
+
+Requires 64-bit Windows 10 1903 or later and Windows English OCR support for live draft reading. Keep HotS restored in windowed or borderless mode; it can stay behind other windows.
+
+For existing source-app users: export a backup in Settings & backups, install, and restore that backup in the installed app. Your existing source data is left intact. Installed personal data lives outside the program folder and survives upgrades and uninstall.
+
+The installer is unsigned, so Windows may show an unknown-publisher warning. Only download from this project's releases. Nexus Companion is unofficial and is not affiliated with Blizzard. Builds are saved guide selections, not a promise of live patch accuracy. Match win rates are personal history, not predictions.
+
+Release files: `NexusCompanion-Setup-0.8.0.exe` is the installer. `latest.json` and `builds-2026.9.19.1.json` support the update checker.
