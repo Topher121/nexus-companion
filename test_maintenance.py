@@ -67,7 +67,7 @@ class BackupTests(unittest.TestCase):
 
 class UpdateTests(unittest.TestCase):
     def manifest(self):
-        return {'format':1,'app':{'version':'0.9.0','url':'https://example.com/setup.exe','sha256':'a'*64},
+        return {'format':1,'app':{'version':'99.0.0','url':'https://example.com/setup.exe','sha256':'a'*64},
                 'builds':{'version':'2026.10.1.1','min_app':'0.8.0','url':'https://example.com/builds.json','sha256':'b'*64}}
 
     def test_version_order_and_feed_validation(self):

@@ -22,7 +22,7 @@ if __name__=='__main__':
     try:ctypes.windll.shcore.SetProcessDpiAwareness(1)
     except (OSError,AttributeError):pass
     root=tk.Tk();app=Preview(root)
-    root.title('Nexus Companion — design preview')
+    root.title('Nexus Forge — design preview')
     app.map.set('Infernal Shrines')
     for var,hero in zip(app.allies,['','Malfurion','Samuro','Gazlowe',"Gul'dan"]):var.set(hero)
     for var,hero in zip(app.enemies,['Abathur',"Zul'jin",'Zarya','Diablo','Rehgar']):var.set(hero)

@@ -5,6 +5,7 @@ import json
 import sys
 import traceback
 from pathlib import Path
+from app_paths import APP_NAME,APP_VERSION
 
 def self_test(destination):
     import asyncio
@@ -25,13 +26,14 @@ def self_test(destination):
     validate_catalogue(CATALOGUE)
     root=tk.Tk();root.withdraw();app=Preview(root);root.update_idletasks()
     assert len(app.tabs.tabs())==6
+    assert root.title()==APP_NAME
     assert OcrEngine.try_create_from_language(Language('en-US')) is not None
     asyncio.run(ocr(Image.new('RGB',(200,80),'white')))
     assert protocol_for().__name__.startswith('nexus_protocol')
     with tempfile.TemporaryDirectory() as folder:
         store=HistoryStore(Path(folder)/'test.sqlite3');assert store.records('test')==[]
     root.destroy()
-    Path(destination).write_text(json.dumps({'ok':True,'heroes':len(PROFILES),'builds':BUILD_COUNT,'checks':['UI and portraits','Windows OCR','capture imports','replay protocols','SQLite','build validation']}),encoding='utf-8')
+    Path(destination).write_text(json.dumps({'ok':True,'app':APP_NAME,'version':APP_VERSION,'heroes':len(PROFILES),'builds':BUILD_COUNT,'checks':['UI and portraits','Windows OCR','capture imports','replay protocols','SQLite','build validation']}),encoding='utf-8')
 
 def main():
     if '--self-test' in sys.argv:
@@ -46,7 +48,7 @@ def main():
     user.CreateMutexW.restype=ctypes.c_void_p
     mutex=user.CreateMutexW(None,False,'NexusCompanionApp')
     if user.GetLastError()==183:
-        ctypes.windll.user32.MessageBoxW(None,'Nexus Companion is already running. Open its existing window.','Nexus Companion',0x40);return
+        ctypes.windll.user32.MessageBoxW(None,APP_NAME+' is already running. Open its existing window.',APP_NAME,0x40);return
     try:ctypes.windll.shcore.SetProcessDpiAwareness(1)
     except (AttributeError,OSError):pass
     import tkinter as tk
@@ -57,7 +59,7 @@ def main():
         detail=''.join(traceback.format_exception(kind,value,tb))
         try:(DATA_DIR/'last-error.log').write_text(detail,encoding='utf-8')
         except OSError:pass
-        messagebox.showerror('Nexus Companion',str(value)+'\n\nDetails saved in your data folder.',parent=root)
+        messagebox.showerror(APP_NAME,str(value)+'\n\nDetails saved in your data folder.',parent=root)
     root.report_callback_exception=report_error
     Companion(root);root.mainloop()
 

@@ -15,7 +15,7 @@ from draft_engine import FLEX_CHOICES, GUIDANCE, draft_summary, recommendation_t
 from history import DRAFT_STAT_MODES
 from ui_theme import Art, ScrollPage, apply_theme, stripe, empty_table, BG, PANEL, TEXT, MUTED, BLUE, BORDER, PURPLE, RED
 
-from app_paths import DATA_DIR as ROOT, APP_VERSION, FROZEN
+from app_paths import DATA_DIR as ROOT, APP_NAME, APP_VERSION, FROZEN
 SAVE = ROOT / 'preferences.json'
 SUPPORT_URL = 'https://ko-fi.com/pocketforgestudios'
 
@@ -23,7 +23,7 @@ class Companion(MaintenanceFeatures, HistoryFeatures, Features):
  def __init__(self, root):
   self.root = root
   self.prepare_features()
-  root.title('Nexus Companion')
+  root.title(APP_NAME)
   root.geometry('1250x850'); root.minsize(980, 700); root.configure(bg=BG)
   self.prefs = {} if FROZEN else {'Jaina':'Never suggest','Valla':'Never suggest'}
   self.storage_error = ''
@@ -47,11 +47,11 @@ class Companion(MaintenanceFeatures, HistoryFeatures, Features):
   head=ttk.Frame(root,padding=(22,17,22,15));head.pack(fill='x')
   ttk.Label(head,image=self.art.icon('nexus',48)).pack(side='left',padx=(0,12))
   brand=ttk.Frame(head);brand.pack(side='left')
-  ttk.Label(brand,text='NEXUS COMPANION',font=('Segoe UI',20,'bold'),foreground=TEXT).pack(anchor='w')
-  ttk.Label(brand,text='Draft smarter. Know your heroes.',foreground=MUTED,font=('Segoe UI',10)).pack(anchor='w')
+  ttk.Label(brand,text=APP_NAME.upper(),font=('Segoe UI',20,'bold'),foreground=TEXT).pack(anchor='w')
+  ttk.Label(brand,text='Your Heroes of the Storm companion',foreground=MUTED,font=('Segoe UI',10)).pack(anchor='w')
   self.on_top=tk.BooleanVar()
   ttk.Checkbutton(head,text='Keep on top',variable=self.on_top,command=lambda:root.attributes('-topmost',self.on_top.get())).pack(side='right')
-  ttk.Label(head,text='PERSONAL COMPANION',foreground=PURPLE,font=('Segoe UI',9,'bold'),padding=(18,0)).pack(side='right')
+  ttk.Label(head,text='PUBLIC BETA',foreground=PURPLE,font=('Segoe UI',9,'bold'),padding=(18,0)).pack(side='right')
   self.tabs=ttk.Notebook(root);self.tabs.pack(fill='both',expand=True,padx=18,pady=(0,8))
   self.draft_page=ScrollPage(self.tabs);self.draft=self.draft_page.body
   self.pool=ttk.Frame(self.tabs,padding=16);self.build=ttk.Frame(self.tabs,padding=16)
@@ -75,7 +75,7 @@ class Companion(MaintenanceFeatures, HistoryFeatures, Features):
   try:opened=webbrowser.open(SUPPORT_URL,new=2)
   except (webbrowser.Error,OSError):opened=False
   if not opened:
-   messagebox.showinfo('Support development','Nexus Companion is free. Optional support is available at:\n\n'+SUPPORT_URL+'\n\nCopy this address into your browser.',parent=self.root)
+   messagebox.showinfo('Support development',APP_NAME+' is free. Optional support is available at:\n\n'+SUPPORT_URL+'\n\nCopy this address into your browser.',parent=self.root)
 
  def combo(self,parent,var,values,width=19):
   box=ttk.Combobox(parent,textvariable=var,values=values,state='readonly',width=width)

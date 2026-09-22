@@ -98,7 +98,7 @@ class MaintenanceFeatures:
                     else:parts.append('Saved builds are up to date.')
                     self.update_status.config(text=' '.join(parts)+f' Checked {datetime.now():%d %b %H:%M}.')
                 elif kind=='builds':
-                    self.update_status.config(text='Saved builds updated and verified. Close and reopen Nexus Companion when convenient to use them.')
+                    self.update_status.config(text='Saved builds updated and verified. Close and reopen Nexus Forge when convenient to use them.')
                 else:
                     self.downloaded_installer=value
                     self.update_status.config(text='Installer downloaded and verified. Open it when you are ready; your personal data will be kept.')
@@ -112,7 +112,7 @@ class MaintenanceFeatures:
         except OSError as exc:messagebox.showerror('Could not open installer',str(exc),parent=self.root)
 
     def export_backup(self):
-        destination=filedialog.asksaveasfilename(parent=self.root,title='Save Nexus Companion backup',defaultextension='.nexus-backup',initialfile=f'Nexus-Backup-{datetime.now():%Y-%m-%d}.nexus-backup',filetypes=[('Nexus Companion backup','*.nexus-backup')])
+        destination=filedialog.asksaveasfilename(parent=self.root,title='Save Nexus Forge backup',defaultextension='.nexus-backup',initialfile=f'Nexus-Backup-{datetime.now():%Y-%m-%d}.nexus-backup',filetypes=[('Nexus Forge backup','*.nexus-backup')])
         if not destination:return
         try:
             create_backup(destination,DATA_DIR)
@@ -120,7 +120,7 @@ class MaintenanceFeatures:
         except Exception as exc:messagebox.showerror('Backup not saved',str(exc),parent=self.root)
 
     def import_backup(self):
-        source=filedialog.askopenfilename(parent=self.root,title='Choose a Nexus Companion backup',filetypes=[('Nexus Companion backup','*.nexus-backup')])
+        source=filedialog.askopenfilename(parent=self.root,title='Choose a Nexus Forge backup',filetypes=[('Nexus Forge backup','*.nexus-backup')])
         if not source:return
         try:
             manifest,payload=read_backup(source)
@@ -130,12 +130,12 @@ class MaintenanceFeatures:
         if self.history_busy or self.busy or self.update_busy or getattr(self,'rotation_busy',False) or self.watch:
             messagebox.showinfo('Finish the current check first','Wait for the current scan or download, stop live draft reading, then restore again.',parent=self.root);return
         self.maintenance_restoring=True
-        if not messagebox.askyesno('Replace current personal data?',f"Backup created: {manifest['created']}\n\nThis replaces your preferences, collection, settings and match history. A safety backup of your current data will be saved first. Nexus Companion will close afterwards.\n\nRestore this backup?",parent=self.root):
+        if not messagebox.askyesno('Replace current personal data?',f"Backup created: {manifest['created']}\n\nThis replaces your preferences, collection, settings and match history. A safety backup of your current data will be saved first. Nexus Forge will close afterwards.\n\nRestore this backup?",parent=self.root):
             self.maintenance_restoring=False;return
         try:
             safety=restore_backup(source,DATA_DIR)
         except Exception as exc:
             self.maintenance_restoring=False
             messagebox.showerror('Restore failed',str(exc),parent=self.root);return
-        messagebox.showinfo('Backup restored','Reopen Nexus Companion to load your restored data.\n\nSafety backup: '+str(safety),parent=self.root)
+        messagebox.showinfo('Backup restored','Reopen Nexus Forge to load your restored data.\n\nSafety backup: '+str(safety),parent=self.root)
         self.close_app()

@@ -1,4 +1,12 @@
-# Nexus Companion follow-ups
+# Nexus Forge follow-ups
+
+## Public beta — 0.9.0
+
+- [x] Rename the app and installer while retaining existing update and data compatibility.
+- [x] Run all 101 tests and the standalone UI, OCR, replay, SQLite and build checks.
+- [x] Verify fresh installation, upgrade from 0.8.0, and data preservation during uninstall.
+- [x] Check the Windows installer and installed app outside the development environment.
+- [x] Document beta limitations, download instructions, support and reporting links.
 
 ## Reliability and distribution — 0.8
 

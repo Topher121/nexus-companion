@@ -3,10 +3,12 @@ import os
 import sys
 from pathlib import Path
 
-APP_VERSION = '0.8.2'
+APP_NAME = 'Nexus Forge'
+APP_VERSION = '0.9.0'
 CONTENT_VERSION = '2026.9.19.1'
 RESOURCE_DIR = Path(__file__).resolve().parent
 FROZEN = bool(getattr(sys, 'frozen', False))
+# Retain the original data folder so the public rename never hides saved records.
 DATA_DIR = Path(os.environ['NEXUS_DATA_DIR']) if os.environ.get('NEXUS_DATA_DIR') else (
     Path(os.environ.get('LOCALAPPDATA', Path.home() / 'AppData' / 'Local')) / 'Nexus Companion'
     if FROZEN else RESOURCE_DIR)

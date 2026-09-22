@@ -247,7 +247,7 @@ class Features:
                 '1. Copy the exporter\nUse Copy exporter to folder below and select your Heroes of the Storm / Interfaces folder.\n\n'
                 '2. Choose the replay interface\nIn HotS, open Options → Observer and Replay. Set Replay Interface to HeroesOwnedItems.\n\n'
                 '3. Open your replay and copy your heroes\nOpen Watch and start a recent replay you played in. On the RIGHT, click the player button with YOUR name (for example, Topher: …%). Your collection is copied to the clipboard.\n\n'
-                '4. Import into Nexus Companion\nReturn to Collection → Collection setup → Import replay export. Click Paste clipboard, then Review & import. Confirm your player name.\n\n'
+                '4. Import into Nexus Forge\nReturn to Collection → Collection setup → Import replay export. Click Paste clipboard, then Review & import. Confirm your player name.\n\n'
                 '5. Restore the default Replay Interface in HotS\nRepeat the export after buying heroes. This app does not change your game settings.')
         instructions=ttk.Label(dialog,text=text,wraplength=730,padding=(18,6),anchor='nw',justify='left')
         instructions.pack(fill='both',expand=True)

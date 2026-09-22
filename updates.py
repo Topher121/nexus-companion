@@ -67,7 +67,7 @@ def download_installer(item,data_dir=DATA_DIR):
     raw=download_verified(item,450*1024*1024)
     if raw[:2]!=b'MZ':raise ValueError('The release is not a Windows installer')
     folder=Path(data_dir)/'downloads';folder.mkdir(parents=True,exist_ok=True)
-    destination=folder/f"NexusCompanion-Setup-{item['version']}.exe"
+    destination=folder/f"NexusForge-Setup-{item['version']}.exe"
     atomic_write(destination,raw)
     return destination
 

@@ -43,7 +43,7 @@ def validate_file(name,raw):
             if db.execute('PRAGMA integrity_check').fetchone()[0]!='ok':raise ValueError('Damaged match history')
             schema=db.execute("SELECT type,name FROM sqlite_master WHERE name NOT LIKE 'sqlite_%'").fetchall()
             if any(kind not in ('table','index') for kind,_ in schema):raise ValueError('Unexpected database objects')
-            if {name for kind,name in schema if kind=='table'}!={'matches','replay_files'}:raise ValueError('Not a Nexus Companion history database')
+            if {name for kind,name in schema if kind=='table'}!={'matches','replay_files'}:raise ValueError('Not a Nexus Forge history database')
             required={'matches':{'id','profile','player','hero','result','played_at','map','mode','source','build','excluded'},
                       'replay_files':{'path','profile','signature','match_id'}}
             for table,columns in required.items():
@@ -100,7 +100,7 @@ def read_backup(path):
             validate_file(name,raw)
         return manifest,payload
     except (KeyError,TypeError,sqlite3.Error,zipfile.BadZipFile) as exc:
-        raise ValueError('This is not a valid Nexus Companion backup') from exc
+        raise ValueError('This is not a valid Nexus Forge backup') from exc
 
 def restore_backup(path,data_dir):
     """Caller pauses all writers. Validate everything before touching current data."""

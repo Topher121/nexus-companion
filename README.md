@@ -1,6 +1,27 @@
-# Nexus Companion 0.8.2
+# Nexus Forge 0.9.0 — public beta
 
-Install the Windows x64 setup, then launch **Nexus Companion** from your desktop or Start menu. The installer includes Python, OCR/capture dependencies, portraits and the replay reader. Windows 10 1903 or later and an English Windows OCR language pack are required. No account login or API key is needed. Free rotation and release checks need internet; guide links open in your browser. Developers can still run `Launch.cmd` with the local dependencies installed.
+**Your Heroes of the Storm companion, by Pocket Forge Studios.** Free Windows
+app for draft suggestions, talents and your personal match history. Previously
+called Nexus Companion; existing settings, collections and results still work.
+
+**[Download the Windows installer](https://github.com/Topher121/nexus-companion/releases/latest)**
+· [Report a problem](https://github.com/Topher121/nexus-companion/issues)
+· [Optional support](https://ko-fi.com/pocketforgestudios)
+
+Choose **NexusForge-Setup-0.9.0.exe** on the release page. The other two files
+support app updates; you do not need to open them. The public beta may miss some
+draft picks—check highlighted slots and correct them using the dropdowns. Saved
+builds are dated guide recommendations, and automatic matchup adjustments cover
+supported choices rather than every possible composition.
+
+Upgrading from 0.8.0: run the new installer over your existing installation.
+The application ID, executable filename and personal-data folder remain stable
+for compatibility. The repository and update address also retain their original
+`nexus-companion` name. No data migration is needed for installed users. If you
+run the source project, keep using it or export a backup before moving to the
+installed app.
+
+Install the Windows x64 setup, then launch **Nexus Forge** from your desktop or Start menu. The installer includes Python, OCR/capture dependencies, portraits and the replay reader. Windows 10 1903 or later and an English Windows OCR language pack are required. No account login or API key is needed. Free rotation and release checks need internet; guide links open in your browser. Developers can still run `Launch.cmd` with the local dependencies installed.
 
 Version 0.8 adds draft-reading warnings, a minimum-games filter, backup/restore and app/build update checks. **Settings & backups** contains the new maintenance controls. The installer is not code-signed; Windows may show an unknown-publisher warning. Obtain it only from the project's releases.
 

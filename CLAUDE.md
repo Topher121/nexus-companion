@@ -7,7 +7,17 @@ Companion, then talk about the project in the first person ("my draft
 reader", "my release script"). Light touch: a name and a voice, NOT
 roleplay — technical work, explanations and warnings stay plain and precise.
 
-# CLAUDE.md — Nexus Companion
+# CLAUDE.md — Nexus Forge (formerly Nexus Companion)
+
+## Public name and compatibility (2026-09-22)
+
+The product is now **Nexus Forge**, version **0.9.0**, by Pocket Forge Studios.
+`APP_NAME` and `APP_VERSION` are in `app_paths.py`. The canonical working folder
+stays `Desktop\Nexus Companion`. Keep the original repository URL, Inno AppId,
+`NexusCompanion.exe`, mutex, backup format and `%LOCALAPPDATA%\Nexus Companion`
+data path: installed users upgrade without losing settings or breaking updates.
+The installer asset is now `NexusForge-Setup-<version>.exe`; `PUBLIC_RELEASE.md`
+is the current public download-page copy. The repo is already public.
 
 ## What this is
 A Windows desktop companion for **Heroes of the Storm** (Python + tkinter,
@@ -24,8 +34,8 @@ work on it. Consequences:
   the owner's account has Full Control and Codex's sandbox users have Modify,
   so files are fine; git's "dubious ownership" check was the only blocker
   and `safe.directory` for this path is now in the owner's global git config.
-- **Expect uncommitted work you did not write.** Codex leaves work in
-  progress in the tree (on 2026-09-22: a 0.8.2 pass across ~11 files).
+- **Expect uncommitted work you did not write.** Codex may leave work in
+  progress in the tree. The 0.8.2 improvements are included in 0.9.0.
   Never sweep it into your commit: stage only your own hunks
   (`git add -p` is interactive; use `git diff -U0` + `git apply --cached
   --unidiff-zero` with a hand-built patch, as done for the support link).
@@ -33,20 +43,20 @@ work on it. Consequences:
 - Don't cut a release from a tree with someone else's half-done work in it.
 
 ## Studio hooks
-- Repo: `Topher121/nexus-companion` (private GitHub), branch `main`.
+- Repo: `Topher121/nexus-companion` (public GitHub), branch `main`.
   Ship = commit AND push.
 - Version lives in `app_paths.py` (`APP_VERSION`); `build_release.py` runs
   PyInstaller (`NexusCompanion.spec`) then Inno Setup (`installer.iss`,
   compiler at `.packaging-deps\inno\ISCC.exe` or `INNO_COMPILER`) and
-  writes `releases\` (`NexusCompanion-Setup-<ver>.exe`, `latest.json`,
+  writes `releases\` (`NexusForge-Setup-<ver>.exe`, `latest.json`,
   `builds-<date>.json`). Releases are on GitHub; the app's own update
   check reads them (`updates.py`, `maintenance_ui.py`).
 - Tests: `test_*.py` at the root plus `tests\fixtures` (see README
   "Verification"); `check_*.py` are manual screenshot/capture checks.
 - **Support link** = the studio Ko-fi `https://ko-fi.com/pocketforgestudios`
   (`SUPPORT_URL` in `app.py`, described in README). Swapped from a personal
-  PayPal.Me 2026-09-22; the shipped 0.8.0 installer still has the old link
-  until the next release. Never link a personal PayPal.
+  PayPal.Me 2026-09-22; the 0.9.0 installer includes the studio link.
+  Never link a personal PayPal.
 - Support email everywhere: PocketForgeStudios@proton.me.
 - Office room: tenant `design`, slug `nexus-companion` (not yet in
   `PhoneApps\projects.json`; add it when there is a reason to).

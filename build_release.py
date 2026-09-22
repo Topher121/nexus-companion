@@ -18,7 +18,7 @@ if __name__=='__main__':
         compiler=Path(os.environ.get('INNO_COMPILER',str(ROOT/'.packaging-deps'/'inno'/'ISCC.exe')))
         subprocess.run([str(compiler),'/DAppVersion='+APP_VERSION,str(ROOT/'installer.iss')],check=True,cwd=ROOT)
     out=ROOT/'releases';out.mkdir(exist_ok=True)
-    installer=out/f'NexusCompanion-Setup-{APP_VERSION}.exe'
+    installer=out/f'NexusForge-Setup-{APP_VERSION}.exe'
     builds=out/f'builds-{CONTENT_VERSION}.json'
     builds.write_bytes((ROOT/'build_catalogue.json').read_bytes())
     base=f'https://github.com/Topher121/nexus-companion/releases/download/v{APP_VERSION}/'

@@ -40,7 +40,7 @@ jobs:
           if (-not $result.ok) { throw $result.error }
       - uses: actions/upload-artifact@v4
         with:
-          name: Nexus-Companion-Windows
+          name: Nexus-Forge-Windows
           path: releases/*
       - name: Prepare an unpublished release for review
         env:
@@ -48,4 +48,5 @@ jobs:
         shell: pwsh
         run: |
           $version = python -c "from app_paths import APP_VERSION; print(APP_VERSION)"
-          gh release create "v$version" releases/* --draft --target $env:GITHUB_SHA --title "Nexus Companion $version" --notes-file RELEASE_NOTES.md
+          $content = python -c "from app_paths import CONTENT_VERSION; print(CONTENT_VERSION)"
+          gh release create "v$version" "releases/NexusForge-Setup-$version.exe" releases/latest.json "releases/builds-$content.json" --draft --target $env:GITHUB_SHA --title "Nexus Forge $version - public beta" --notes-file PUBLIC_RELEASE.md
