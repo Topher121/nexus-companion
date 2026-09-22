@@ -6,7 +6,7 @@ from pathlib import Path
 from app_paths import catalogue_path
 CATALOGUE = json.loads(catalogue_path('build_catalogue.json').read_text(encoding='utf-8'))
 PROFILES = CATALOGUE['heroes']
-AUTO_BUILD = 'Auto (starter)'
+AUTO_BUILD = 'Auto (matchup)'
 # Preserve the ranged teamfight starter previously chosen for this companion.
 DEFAULTS = {'Azmodan': 'Gluttony Build'}
 

@@ -127,13 +127,22 @@ async def read_image_async(image):
                 hero = match_name(alternate, HEROES)
                 if hero:
                     text = alternate
+            if not hero:
+                # Isolate the straightened name ribbon when effects or nearby
+                # player text confuse whole-card OCR. Still require an exact name.
+                ribbon = flat.crop((0, round(flat.height*.38), flat.width, round(flat.height*.72)))
+                alternate = await ocr(ImageOps.autocontrast(ribbon.convert('L')))
+                hero = match_name(alternate, HEROES)
+                if hero:
+                    text = alternate + '\n' + text
             # White name ribbons indicate committed picks; dark ribbons are hovers.
             pixels = list(crop.getdata())
             white = sum(min(p) > 210 and max(p) - min(p) < 40 for p in pixels) / len(pixels)
             lines = text.splitlines()
             player = lines[-1] if hero and len(lines) > 1 and normal(lines[-1]) != normal(hero) else ''
+            committed = phase == 'starting' or white > .14
             slots.append({'side': side, 'index': index, 'hero': hero, 'player': player,
-                          'locked': bool(hero and white > .14), 'locked_hint': white > .14, 'text': text, 'white': round(white, 3)})
+                          'locked': bool(hero and committed), 'locked_hint': committed, 'text': text, 'white': round(white, 3)})
     if phase == 'starting' and sum(s['locked'] for s in slots) < 6:
         return {'valid': False, 'message': 'Final teams are not readable yet.'}
     return {'valid': True, 'map': map_name, 'phase': phase, 'slots': slots, 'bans': read_bans(image) if phase == 'draft' else [],

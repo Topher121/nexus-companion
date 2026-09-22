@@ -1,3 +1,17 @@
+# Nexus Companion 0.8.2 — source update
+
+- Final-team screens distinguish unread locked heroes from open draft slots, and stop pick/ban suggestions even when some heroes could not be read.
+- Skipped bans no longer produce a false six-ban warning. Existing confirmed picks survive unread frames.
+- Hero recognition retries the isolated name ribbon and treats recognised final-screen heroes as locked even during brightness changes.
+- Status shows heroes recorded and actual changed entries. Source update; the published installer remains 0.8.0.
+
+# Nexus Companion 0.8.1 — included in 0.8.2
+
+- Teammate hovers contribute to pick and ban advice, with explicit tentative labels and automatic removal on changes. Your own hover stays out of the team plan.
+- Auto (matchup) adjusts supported talent choices for confirmed enemy picks and explains the named threats. Manual build choices remain exact.
+- Third ranged picks receive a warning and lower priority when the team still needs a solo laner.
+- These changes are included in the source project. The published installer remains 0.8.0 until a new release is built and published.
+
 # Nexus Companion 0.8.0
 
 Free Windows companion for Heroes of the Storm, with local draft advice, saved talent builds and personal match history.

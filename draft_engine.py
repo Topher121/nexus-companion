@@ -65,21 +65,27 @@ def team_needs(team, plans=None):
     return [role for role in ('Tank', 'Healer') if role not in roles]
 
 
-def draft_summary(allies, enemies, plans=None):
+def draft_summary(allies, enemies, plans=None, ally_hovers=(), final=False):
     allies = [h for h in allies if h in HEROES]
     enemies = [h for h in enemies if h in HEROES]
+    if final:
+        if len(allies) == len(enemies) == 5:
+            return 'Draft finished. All 10 heroes recorded. Review Talents & tips.'
+        return (f'Draft finished in HotS. Recorded {len(allies)}/5 allies and {len(enemies)}/5 enemies. '
+                'Highlighted blanks are unread locked picks, not open draft slots. Match advice uses the recorded heroes.')
     plans = plans or {}
-    missing = team_needs(allies, plans)
+    tentative = list(dict.fromkeys(h for h in ally_hovers if h in HEROES and h not in allies + enemies))[:max(0, 4-len(allies))]
+    missing = team_needs(allies + tentative, plans)
     messages = []
     if len(allies) == 5:
         messages.append('Draft complete. Review Talents & tips.')
     else:
-        messages.append(f'{5-len(allies)} allied slot(s) left.')
+        messages.append(f'{len(allies)}/5 allies locked. {len(tentative)} teammate hover(s) included.' if tentative else f'{5-len(allies)} allied slot(s) left.')
     if missing:
         messages.append('Still needed: ' + ', '.join(r.lower() for r in missing) + '.')
-    if 'Varian' in allies + enemies and plans.get('Varian', 'Unconfirmed') == 'Unconfirmed':
+    if 'Varian' in allies + tentative + enemies and plans.get('Varian', 'Unconfirmed') == 'Unconfirmed':
         messages.append('Confirm Varian’s plan below; tank cover requires Taunt.')
-    if 'Blaze' in allies + enemies and plans.get('Blaze', 'Unconfirmed') == 'Unconfirmed':
+    if 'Blaze' in allies + tentative + enemies and plans.get('Blaze', 'Unconfirmed') == 'Unconfirmed':
         messages.append('Blaze is counted as tank until Solo lane is selected.')
     if not enemies:
         messages.append('Enemy picks unknown: recommendations use team and map fit.')
@@ -90,14 +96,16 @@ def draft_summary(allies, enemies, plans=None):
     return ' '.join(messages)
 
 
-def rank(allies, enemies, bans, prefs, map_name, role='Any', for_ban=False, available=None, plans=None):
+def rank(allies, enemies, bans, prefs, map_name, role='Any', for_ban=False, available=None, plans=None, ally_hovers=()):
     allies = list(dict.fromkeys(h for h in allies if h in HEROES))
     enemies = list(dict.fromkeys(h for h in enemies if h in HEROES))
     bans = list(dict.fromkeys(h for h in bans if h in HEROES))
-    team, opposition = (enemies, allies) if for_ban else (allies, enemies)
+    tentative = list(dict.fromkeys(h for h in ally_hovers if h in HEROES and h not in allies + enemies + bans))[:max(0, 4-len(allies))]
+    projected = allies + tentative
+    team, opposition = (enemies, projected) if for_ban else (projected, enemies)
     if len(team) >= 5 or (for_ban and len(bans) >= 6):
         return []
-    used = set(allies + enemies + bans)
+    used = set(projected + enemies + bans)
     plans = plans or {}
     roles = [effective_role(h, plans) for h in team]
     missing = team_needs(team, plans)
@@ -116,6 +124,8 @@ def rank(allies, enemies, bans, prefs, map_name, role='Any', for_ban=False, avai
         effects = []
         warnings = []
         conditions = []
+        if tentative:
+            conditions.append('Assumes teammate hovers: ' + ', '.join(tentative) + '. These picks can change.')
         evidence = []
 
         def add(points, message, category):
@@ -129,6 +139,11 @@ def rank(allies, enemies, bans, prefs, map_name, role='Any', for_ban=False, avai
             add(-28, f'Adds a second {r.lower()}; check the team’s damage and lane coverage', 'team')
         if r == 'Ranged' and 'Ranged' not in roles:
             add(20, 'Adds ranged damage', 'team')
+        has_solo = any(h in SOLO_LANERS and effective_role(h, plans) != 'Tank' for h in team)
+        if r == 'Ranged' and roles.count('Ranged') >= 2 and not has_solo:
+            add(-24, 'Third ranged damage pick with no established solo laner; consider a bruiser with waveclear', 'team')
+        if len(team) == 4 and not has_solo and hero in SOLO_LANERS and r != 'Tank':
+            add(12, 'Last slot can cover the missing solo lane', 'team')
         if hero in SOLO_LANERS and r != 'Tank' and not any(h in SOLO_LANERS and effective_role(h, plans) != 'Tank' for h in team):
             add(14, 'Provides a solo-lane option', 'team')
         if 'clear' in tags and 'clear' not in team_tags:

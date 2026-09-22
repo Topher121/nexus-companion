@@ -105,7 +105,7 @@ class UpdateTests(unittest.TestCase):
             path=download_installer(item,directory);self.assertEqual(path.read_bytes(),raw);launch.assert_not_called()
 
 class DraftHealthTests(unittest.TestCase):
-    def test_empty_draft_is_normal_but_missed_committed_pick_and_bans_are_flagged(self):
+    def test_blank_bans_can_be_skipped_but_unread_committed_pick_is_flagged(self):
         teams={'allies':['']*5,'enemies':['']*5,'bans':['']*6}
         reading={'valid':True,'slots':[{'side':'allies','index':0,'hero':None,'locked_hint':False}]}
         self.assertEqual(draft_health(reading,teams),([],set()))
@@ -113,8 +113,12 @@ class DraftHealthTests(unittest.TestCase):
         problems,marked=draft_health(reading,teams);self.assertIn(('allies',0),marked)
         teams['allies'][0]='Li Li'
         problems,marked=draft_health(reading,teams)
-        self.assertTrue(any('0/4' in text for text in problems))
+        self.assertEqual(problems,[])
         self.assertNotIn(('allies',0),marked)
+        reading['bans']=[{'index':3,'hero':'Johanna'}]
+        problems,marked=draft_health(reading,teams)
+        self.assertIn(('bans',3),marked)
+        self.assertTrue(any('Johanna awaiting confirmation' in text for text in problems))
 
     def test_final_unreadable_slots_and_manual_conflicts_are_reported(self):
         teams={'allies':['Muradin']+['']*4,'enemies':['']*5,'bans':['']*6}
@@ -122,7 +126,8 @@ class DraftHealthTests(unittest.TestCase):
                                                            {'side':'enemies','index':1,'hero':None,'locked':False}]}
         problems,marked=draft_health(reading,teams,{('allies',0)})
         self.assertTrue(any('manual entry' in p for p in problems));self.assertIn(('enemies',1),marked)
-        self.assertTrue(any('0/6' in p for p in problems))
+        self.assertFalse(any('bans' in p.lower() for p in problems))
+        self.assertTrue(any('locked in HotS; hero not recorded' in p for p in problems))
 
 class NewUiTests(unittest.TestCase):
     def test_minimum_games_filters_only_hero_table_and_reset_restores(self):
@@ -152,10 +157,10 @@ class NewUiTests(unittest.TestCase):
         root=tk.Tk();root.withdraw()
         try:
             app=Preview(root)
-            value={'valid':True,'map':'Cursed Hollow','slots':[{'side':'allies','index':0,'hero':'Li Li','locked':True}], 'bans':[]}
+            value={'valid':True,'map':'Cursed Hollow','slots':[{'side':'allies','index':0,'hero':None,'locked':False,'locked_hint':True}], 'bans':[]}
             app.apply_read(value,screenshot=True)
-            self.assertIn('0/4',app.draft_warning.cget('text'))
-            for v,h in zip(app.bans,['Johanna','Brightwing','Garrosh','Kael\'thas']):v.set(h)
+            self.assertIn('looks locked',app.draft_warning.cget('text'))
+            app.allies[0].set('Li Li')
             app.refresh();self.assertEqual(app.draft_warning.cget('text'),'')
             app.apply_read({'valid':False,'message':'Game minimized'})
             self.assertIn('not confirming',app.draft_warning.cget('text'))

@@ -11,22 +11,15 @@ def validate(allies, enemies, bans):
 # Kept here for existing UI and integrations.
 from draft_engine import rank
 
-def build_details(hero, enemies, variant=AUTO_BUILD):
+def build_details(hero, enemies, variant=AUTO_BUILD, allies=(), plans=None):
  """Resolve a complete source build, then apply only supported automatic rules."""
  from matchups import matchup_notes
- detail = get_build(hero, variant)
+ from talent_advisor import recommend_talents
+ detail = recommend_talents(hero, enemies, allies, plans) if variant == AUTO_BUILD else get_build(hero, variant)
  if detail is None:return None
  enemies = list(dict.fromkeys(e for e in enemies if e in HEROES))
- adjustments = []
- def replace(level, name, reason):
-  tier = next(t for t in detail['tiers'] if t['level'] == level)
-  before = tier['talent'];tier['talent'] = name
-  adjustments.append(f'Level {level}: {name} replaces {before}. {reason}')
- if variant == AUTO_BUILD:
-  if hero == 'Li Li' and any('dive' in HEROES[n]['tags'] for n in enemies):
-   replace(4, 'Safety Sprint', 'Extra protection against their divers; activate it before you are overwhelmed.')
-  if hero == 'Johanna' and any(n in enemies for n in ('Anduin','Whitemane','Rehgar')):
-   replace(7, 'Sins Exposed', 'Reduce healing on the enemy your team is focusing with Punish.')
+ adjustments = detail.get('adjustments', [])
+ detail.setdefault('selection_reasons', [])
  talents = [t['talent'] for t in detail['tiers']]
  notes = matchup_notes(hero, enemies, talents) + list(HERO_TIPS.get(hero, []))
  if hero == 'Azmodan':

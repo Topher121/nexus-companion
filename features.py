@@ -31,6 +31,8 @@ class Features:
         self.reader_notice = ''
         self.detected_map = None
         self.previous_sample = {}
+        self.ally_hovers = {}
+        self.previous_hovers = {}
         self.previous_self_slot = None
         self.detected_self_slot = None
         self.game_capture = None
@@ -304,6 +306,16 @@ class Features:
             return int(self.self_slot.get()) - 1
         return self.detected_self_slot
 
+    def planned_hovers(self):
+        from draft_state import teammate_hovers
+        return teammate_hovers([v.get() for v in self.allies], [v.get() for v in self.enemies],
+                               [v.get() for v in self.bans], self.ally_hovers, self.own_slot(),
+                               {i for i,v in enumerate(self.allies) if str(v) in self.manual})
+
+    def clear_hovers(self):
+        self.ally_hovers.clear()
+        self.previous_hovers.clear()
+
     def update_own_hero(self):
         slot = self.own_slot()
         if self.follow_hero.get() and slot is not None and self.allies[slot].get():
@@ -328,6 +340,7 @@ class Features:
         self.watch = not self.watch
         self.generation += 1
         self.previous_sample.clear()
+        self.clear_hovers()
         self.previous_self_slot = None
         self.watch_button.config(text='Stop live draft' if self.watch else 'Start live draft',image=self.art.icon('pause' if self.watch else 'play'),compound='left')
         self.live_status.config(text='Watching for the HotS draft window…' if self.watch else 'Live reader stopped.')
@@ -335,6 +348,7 @@ class Features:
             self.schedule_read()
         elif self.game_capture:
             threading.Thread(target=self.game_capture.close, daemon=True).start()
+        self.refresh()
 
     def schedule_read(self):
         if self.watch and not self.busy:
@@ -374,14 +388,16 @@ class Features:
     def apply_read(self, value, screenshot=False):
         if not value['valid']:
             self.previous_sample.clear()
+            self.clear_hovers()
             self.previous_self_slot = None
             self.live_status.config(text=value['message'])
             self.reader_notice='Reader is not confirming the screen. Saved picks and bans remain; verify them before following suggestions.' if self.last_read else ''
-            self.update_draft_warning();return
+            self.refresh();return
         if value.get('map') and self.detected_map and self.detected_map != value['map']:
             self.live_status.config(text='A different battleground was detected. Press Clear draft to start the new match.')
             self.reader_notice='Different match detected. Press Clear draft before using these suggestions.'
-            self.update_draft_warning();return
+            self.clear_hovers()
+            self.refresh();return
         if value.get('map'):
             self.detected_map = value['map']
         if value.get('map') and str(self.map) not in self.manual:
@@ -407,8 +423,17 @@ class Features:
             other = [v.get() for v in self.allies + self.enemies + self.bans if v is not variable]
             if hero in other:
                 continue
-            variable.set(hero); changed += 1
+            if variable.get() != hero:
+                variable.set(hero); changed += 1
         self.previous_sample = candidate
+        # A changed or unread hover is removed immediately. A new live hover
+        # needs two agreeing frames, just like a locked pick; screenshots need one.
+        hover_sample = {s['index']: s['hero'] for s in value['slots']
+                        if s['side'] == 'allies' and s['hero'] and not s['locked']
+                        and value.get('phase') != 'starting'}
+        self.ally_hovers = {i:hero for i,hero in hover_sample.items()
+                            if screenshot or self.previous_hovers.get(i) == hero}
+        self.previous_hovers = hover_sample
         from identity import player_slot
         own = player_slot(value['slots'], self.player_name.get())
         if own is not None and (screenshot or self.previous_self_slot == own):
@@ -417,7 +442,8 @@ class Features:
         self.update_own_hero()
         own_text = f'Your slot: {self.own_slot()+1}' if self.own_slot() is not None else f'Looking for player {self.player_name.get()}'
         label = 'Final teams' if value.get('phase') == 'starting' else self.map.get()
-        self.live_status.config(text=f'{label} • {changed} confirmed readings applied. {own_text}. Hovers: {", ".join(hovers) or "none read"}. Manual edits preserved.')
+        recorded=sum(bool(v.get()) for v in self.allies+self.enemies)
+        self.live_status.config(text=f'{label} • {recorded}/10 heroes recorded · {changed} entries updated. {own_text}. Hovers: {", ".join(hovers) or "none read"}. Manual edits preserved.')
         self.refresh()
 
     def update_draft_warning(self):
@@ -440,9 +466,12 @@ class Features:
                     generation, result, screenshot = value
                     if generation == self.generation:
                         if error:
+                            self.clear_hovers()
+                            self.previous_sample.clear()
+                            self.previous_self_slot = None
                             self.live_status.config(text='Reader unavailable: ' + error)
                             self.reader_notice='Reader unavailable. Saved draft may be out of date; check picks and bans manually.'
-                            self.update_draft_warning()
+                            self.refresh()
                         else:
                             self.apply_read(result, screenshot)
                     if self.watch:

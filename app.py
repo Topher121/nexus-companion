@@ -100,7 +100,7 @@ class Companion(MaintenanceFeatures, HistoryFeatures, Features):
   ttk.Label(bar,text='Battleground').pack(side='left',padx=(0,8));self.combo(bar,self.map,MAPS,26).pack(side='left')
   ttk.Label(bar,text='Your role').pack(side='left',padx=12);self.combo(bar,self.role,['Any','Tank','Healer','Bruiser','Ranged','Melee','Support']).pack(side='left')
   ttk.Button(bar,text='Clear draft',command=self.clear).pack(side='right')
-  ttk.Label(self.draft,text='Start each match with Clear draft. Enter locked picks, or let the live reader fill them in.',foreground=MUTED).pack(anchor='w',pady=(0,10))
+  ttk.Label(self.draft,text='Start with Clear draft. Boxes are locked picks. Teammate hovers are shown separately and included in suggestions.',foreground=MUTED,wraplength=900).pack(anchor='w',pady=(0,10))
   board=ttk.Frame(self.draft);board.pack(fill='x')
   self.allies=[];self.enemies=[];self.bans=[];self.slot_portraits=[];self.slot_boxes={'allies':[],'enemies':[],'bans':[]}
   for col,(label,collection,count) in enumerate([('YOUR TEAM',self.allies,5),('ENEMY TEAM',self.enemies,5),('BANNED · BOTH TEAMS',self.bans,6)]):
@@ -115,6 +115,12 @@ class Companion(MaintenanceFeatures, HistoryFeatures, Features):
     box=self.combo(row,v,['']+sorted(HEROES),19);box.pack(side='left',fill='x',expand=True)
     self.slot_boxes[('allies','enemies','bans')[col]].append(box)
     self.slot_portraits.append((v,icon,col))
+  self.hover_status=ttk.Label(self.draft,text='',foreground=PURPLE,wraplength=900)
+  self.hover_status.pack(anchor='w',pady=(8,0))
+  self.draft.bind('<Configure>',lambda e:self.hover_status.configure(wraplength=max(200,e.width-30)),add='+')
+  self.ban_notice=ttk.Label(self.draft,text='Only confirmed bans are listed. Blank ban slots may be skipped or unread; check them in HotS.',foreground=MUTED,wraplength=900)
+  self.ban_notice.pack(anchor='w',pady=(6,0))
+  self.draft.bind('<Configure>',lambda e:self.ban_notice.configure(wraplength=max(200,e.width-30)),add='+')
   self.flex_bar=ttk.Frame(self.draft)
   self.flex_plans={hero:tk.StringVar(value='Unconfirmed') for hero in FLEX_CHOICES}
   self.flex_controls={}
@@ -124,7 +130,7 @@ class Companion(MaintenanceFeatures, HistoryFeatures, Features):
    box=ttk.Combobox(control,textvariable=self.flex_plans[hero],values=choices,state='readonly',width=17)
    box.pack(side='left',padx=(0,18));box.bind('<<ComboboxSelected>>',lambda e:self.refresh())
   self.status=ttk.Label(self.draft,text='',foreground='#ffc982',wraplength=1100);self.status.pack(anchor='w',pady=10)
-  self.draft.bind('<Configure>',lambda e:self.status.configure(wraplength=max(200,e.width-30)))
+  self.draft.bind('<Configure>',lambda e:self.status.configure(wraplength=max(200,e.width-30)),add='+')
   result=ttk.Frame(self.draft);result.pack(fill='both',expand=True)
   self.pick_text=self.text_panel(result,'YOUR PICKS',0);self.ban_text=self.text_panel(result,'BAN CANDIDATES',1)
   footer=ttk.Frame(self.draft);footer.pack(fill='x',pady=(8,0))
@@ -159,7 +165,7 @@ class Companion(MaintenanceFeatures, HistoryFeatures, Features):
    if match:
     widget.tag_add('heading',f'{line}.0',f'{line}.end')
     widget.image_create(f'{line}.0',image=self.art.portrait(match.group(1),30),padx=8,align='center')
-   elif value.endswith(' · TALENTS') or value in ('MATCH NOTES','MATCH ADJUSTMENTS') or value.startswith('Waiting for'):
+   elif value.endswith(' · TALENTS') or value in ('MATCH NOTES','MATCH ADJUSTMENTS','WHY THESE TALENTS') or value.startswith('Waiting for'):
     widget.tag_add('heading',f'{line}.0',f'{line}.end')
    elif value.startswith('Level '):
     widget.tag_add('level',f'{line}.0',f'{line}.{len(value.split(chr(9),1)[0].rstrip())}')
@@ -182,6 +188,8 @@ class Companion(MaintenanceFeatures, HistoryFeatures, Features):
    'A favourite only gets a small tie-break when already close to the best fit. Personal win rates do not change the order. '
    'There is no online win-rate feed or predicted win percentage.\n\n'
    f'Matchup source: {len(GUIDANCE)} saved Icy Veins hero guides, imported 19 September 2026. '
+   'Teammate hovers reserve their planned heroes and roles, but stay separate from locked picks. Your own hover is excluded. '
+   'Set your player name or slot so the reader can distinguish your hover from your teammates. Hovers can change; recheck suggestions when they do.\n\n'
    'Guide opinions are partial and can depend on talents or playstyle; they are not measured matchup win rates. '
    'Open talent guide on a hero’s Talents & tips page for its Synergies and Counters section. '
    'Future patches need a content update. Equal fits sort alphabetically.')
@@ -288,6 +296,7 @@ class Companion(MaintenanceFeatures, HistoryFeatures, Features):
 
  def clear(self):
   self.generation+=1;self.manual.clear();self.previous_sample.clear();self.detected_map=None
+  self.clear_hovers()
   self.previous_self_slot=None;self.detected_self_slot=None;self.last_read={}
   self.reader_notice=''
   self.follow_hero.set(True)
@@ -306,10 +315,17 @@ class Companion(MaintenanceFeatures, HistoryFeatures, Features):
   for variable,label,col in self.slot_portraits:
    label.configure(image=self.art.portrait(variable.get(),30) if variable.get() else self.art.icon('ban' if col==2 else 'heroes',24))
   allies=[v.get() for v in self.allies if v.get()];enemies=[v.get() for v in self.enemies if v.get()];bans=[v.get() for v in self.bans if v.get()]
+  tentative=self.planned_hovers()
+  hover_heroes=list(tentative.values())
+  hover_text='Teammate hovers · '+', '.join(f'Slot {i+1}: {h}' for i,h in tentative.items())+' · Included as tentative picks.' if tentative else ''
+  if self.ally_hovers and self.own_slot() is None: hover_text='Hovers detected. Set your player name or slot above to include teammates without counting your own hover.'
+  self.hover_status.configure(text=hover_text)
   error=validate(allies,enemies,bans)
-  self.update_flex_controls(allies,enemies)
+  self.update_flex_controls(allies+hover_heroes,enemies)
   plans={hero:var.get() for hero,var in self.flex_plans.items()}
-  self.status.config(text=error or draft_summary(allies,enemies,plans))
+  final=self.last_read.get('phase')=='starting'
+  self.ban_notice.configure(text='Draft finished. Bans are retained from earlier readings; they are not shown on the final-team screen.' if final else 'Only confirmed bans are listed. Blank ban slots may be skipped or unread; check them in HotS.')
+  self.status.config(text=error or draft_summary(allies,enemies,plans,hover_heroes,final=final))
   if error:
    self.put(self.pick_text,'Fix the draft above to see suggestions.');self.put(self.ban_text,'Fix the draft above to see suggestions.');self.put(self.build_text,'Fix duplicate or invalid draft entries first.');return
   for is_ban,widget in [(False,self.pick_text),(True,self.ban_text)]:
@@ -317,8 +333,10 @@ class Companion(MaintenanceFeatures, HistoryFeatures, Features):
    if not is_ban and own is not None and self.allies[own].get():
     next_step='Talents & tips follows your hero and the enemy picks.' if self.follow_hero.get() else 'Automatic build following is paused. Enable Follow my locked hero in Talents & tips to resume.'
     self.put(widget,f'Your locked hero: {self.allies[own].get()}\n'+self.pick_record(self.allies[own].get())+'\n\n'+next_step);continue
+   if final:
+    self.put(widget,'Draft finished; no further bans.' if is_ban else 'Draft finished. Your locked hero has not been identified yet. Correct your slot and the highlighted hero entries above.');continue
    complete=len(enemies if is_ban else allies)==5 or (is_ban and len(bans)==6)
-   results=rank(allies,enemies,bans,self.prefs,self.map.get(),self.role.get(),is_ban,available=self.available_heroes(),plans=plans)
+   results=rank(allies,enemies,bans,self.prefs,self.map.get(),self.role.get(),is_ban,available=self.available_heroes(),plans=plans,ally_hovers=hover_heroes)
    lines=[]
    for i,x in enumerate(results[:3]):
     record='' if is_ban else self.pick_record(x['hero'])
@@ -334,22 +352,25 @@ class Companion(MaintenanceFeatures, HistoryFeatures, Features):
   if self.follow_hero.get() and (own is None or not self.allies[own].get()):
    self.build_picker.configure(state='disabled')
    self.guide_button.configure(state='disabled')
-   self.build_name.config(text='Waiting for your pick');self.build_role.config(text='Lock a hero to see your build and matchup tips.')
+   self.build_name.config(text='Your hero is unread' if final else 'Waiting for your pick');self.build_role.config(text='Correct your slot or hero in Draft advisor.' if final else 'Lock a hero to see your build and matchup tips.')
    self.build_portrait.config(image=self.art.icon('build',24))
-   self.put(self.build_text,'Waiting for your locked hero.\n\nStart the live reader. Your player name is '+self.player_name.get()+'. The build will switch automatically when your pick is confirmed.\n\nTo browse builds now, choose a hero above.');return
+   self.put(self.build_text,('Draft finished, but your locked hero has not been read.\n\nCorrect your slot and hero in Draft advisor, or choose a hero above to browse its build.' if final else 'Waiting for your locked hero.\n\nStart the live reader. Your player name is '+self.player_name.get()+'. The build will switch automatically when your pick is confirmed.\n\nTo browse builds now, choose a hero above.'));return
   self.build_picker.configure(state='readonly')
   self.guide_button.configure(state='normal')
-  detail=build_details(hero,enemies,self.build_variant.get())
+  detail=build_details(hero,enemies,self.build_variant.get(),allies=allies,plans=plans)
   self.build_name.config(text=hero);self.build_role.config(text=HEROES[hero]['role']+'  /  MATCH GUIDE')
   self.build_portrait.config(image=self.art.portrait(hero,60))
   if detail:
    content=detail['name'].upper()+' · TALENTS\n\n'+'\n'.join(f"Level {tier['level']} \t{tier['talent']}" for tier in detail['tiers'])
-   if detail['adjustments']:content+='\n\nMATCH ADJUSTMENTS\n\n'+'\n\n'.join('• '+n for n in detail['adjustments'])
+   if detail['automatic']:
+    content+='\n\nWHY THESE TALENTS\n\n'
+    content+='\n\n'.join('• '+n for n in detail['selection_reasons']) or ('Enemy picks are not known yet; using the saved starter build.' if not enemies else 'No specific matchup rule applies here; keeping the saved guide choices.')
+    content+='\n\nBased on '+str(len(enemies))+'/5 enemy picks: '+(', '.join(enemies) or 'none yet')+'. Recommendations update as picks are confirmed.'
    notes=list(detail['notes'])
    if HEROES[hero]['role']=='Healer' and 'Deathwing' in allies:notes.append('Deathwing cannot receive your healing.')
    content+='\n\nMATCH NOTES\n\n'+'\n\n'.join('• '+n for n in notes)
    content+='\n\nGuide category: '+detail['category']
-   if detail['automatic']:content+='\nAuto uses a starter build with supported matchup adjustments; it does not optimise every hero for this draft.'
+   if detail['automatic']:content+='\nAuto selects recommended talents here in the companion; it does not click talents in HotS. Matchup rules cover supported choices; other tiers keep their saved guide defaults.'
    else:content+='\nManual choice: this build stays selected as enemy picks change. Its talents are not automatically replaced.'
    content+='\nSource: Icy Veins · '+detail['source']+'\nGuide updated: '+detail['source_updated']+' · Imported: '+detail['checked']
    content+='\nSaved for offline use. Future patch changes require a catalogue update.'

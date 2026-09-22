@@ -3,7 +3,7 @@ import os
 import sys
 from pathlib import Path
 
-APP_VERSION = '0.8.0'
+APP_VERSION = '0.8.2'
 CONTENT_VERSION = '2026.9.19.1'
 RESOURCE_DIR = Path(__file__).resolve().parent
 FROZEN = bool(getattr(sys, 'frozen', False))
