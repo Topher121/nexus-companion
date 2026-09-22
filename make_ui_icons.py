@@ -7,6 +7,12 @@ DEST = Path(__file__).resolve().parent / 'assets' / 'ui'
 DEST.mkdir(exist_ok=True)
 
 def render(name, size, color):
+    if name == 'nexus':
+        # Keep the app, window and installer on the same editable brand artwork.
+        with Image.open(DEST / 'nexus-master.png') as source:
+            image = source.convert('RGBA').resize((size,size),Image.Resampling.LANCZOS)
+        image.save(DEST / f'{name}-{size}.png')
+        return image
     scale = 4
     image = Image.new('RGBA', (size*scale, size*scale))
     draw = ImageDraw.Draw(image)
@@ -17,11 +23,7 @@ def render(name, size, color):
         draw.rounded_rectangle(tuple(round(v*k) for v in coords),radius=round(radius*k),fill=fill,outline=color,width=round(1.6*k))
     def circle(coords):
         draw.ellipse(tuple(round(v*k) for v in coords),outline=color,width=round(1.7*k))
-    if name == 'nexus':
-        draw.polygon([(12*k,2*k),(21*k,7*k),(21*k,17*k),(12*k,22*k),(3*k,17*k),(3*k,7*k)],fill='#202a46',outline=color,width=round(k))
-        draw.polygon([(12*k,5*k),(17*k,12*k),(12*k,19*k),(7*k,12*k)],fill='#9685ff')
-        line([(12,5),(12,19)],'#d5caff',1);line([(7,12),(17,12)],'#72deef',1)
-    elif name in ('draft','shield'):
+    if name in ('draft','shield'):
         line([(12,3),(20,6),(19,14),(16,18),(12,21),(8,18),(5,14),(4,6),(12,3)])
         line([(8,12),(11,15),(16,9)])
     elif name == 'heroes':
@@ -74,5 +76,6 @@ if __name__ == '__main__':
         color = '#76dded' if name not in ('loss','trophy','star') else {'loss':'#f49ca7','trophy':'#69d9a6','star':'#edc674'}[name]
         for size in (18,24):render(name,size,color)
     for size in (24,48,64):render('nexus',size,'#76dded')
-    render('nexus',128,'#76dded').save(DEST/'nexus.ico',sizes=[(16,16),(32,32),(48,48),(64,64),(128,128)])
+    with Image.open(DEST/'nexus-master.png') as source:
+        source.save(DEST/'nexus.ico',sizes=[(s,s) for s in (16,20,24,32,40,48,64,128,256)])
     print('Original UI icons rendered.')

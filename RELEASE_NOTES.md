@@ -1,5 +1,6 @@
 # Nexus Companion 0.8.2 — source update
 
+- Refreshed crystal app icon, with matching window, desktop, executable and installer artwork at multiple display sizes.
 - Final-team screens distinguish unread locked heroes from open draft slots, and stop pick/ban suggestions even when some heroes could not be read.
 - Skipped bans no longer produce a false six-ban warning. Existing confirmed picks survive unread frames.
 - Hero recognition retries the isolated name ribbon and treats recognised final-screen heroes as locked even during brightness changes.

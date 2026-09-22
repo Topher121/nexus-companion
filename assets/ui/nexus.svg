@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <title>Nexus — prism and portal</title>
+  <defs>
+    <linearGradient id="tile" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#293447"/><stop offset="1" stop-color="#0c111d"/>
+    </linearGradient>
+    <linearGradient id="rim" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#86b4d2"/><stop offset=".46" stop-color="#566284"/><stop offset="1" stop-color="#27323f"/>
+    </linearGradient>
+    <radialGradient id="aura" cx=".5" cy=".46" r=".55">
+      <stop stop-color="#6556d2" stop-opacity=".42"/><stop offset="1" stop-color="#131b28" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="portal" x1="0" y1="0" x2=".8" y2="1">
+      <stop stop-color="#b6f9ff"/><stop offset=".5" stop-color="#62d5ed"/><stop offset="1" stop-color="#536cd5"/>
+    </linearGradient>
+    <linearGradient id="left" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#e1dbff"/><stop offset="1" stop-color="#a88eff"/>
+    </linearGradient>
+    <linearGradient id="right" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#a193ff"/><stop offset="1" stop-color="#7161df"/>
+    </linearGradient>
+  </defs>
+  <rect x="22" y="30" width="468" height="466" rx="106" fill="#070b12" fill-opacity=".6"/>
+  <rect x="22" y="18" width="468" height="468" rx="106" fill="url(#tile)" stroke="url(#rim)" stroke-width="7"/>
+  <rect x="30" y="26" width="452" height="452" rx="98" fill="url(#aura)" stroke="#ffffff" stroke-opacity=".06" stroke-width="2"/>
+  <!-- The open hexagon frames the crystal without competing at small sizes. -->
+  <path d="m256 87 140 81v164l-140 81-140-81V168Z" fill="#152237" fill-opacity=".5" stroke="url(#portal)" stroke-width="18" stroke-linejoin="round"/>
+  <path d="m256 131 92 122-92 130-92-130Z" fill="#090f25" transform="translate(0 10)"/>
+  <path d="m256 123-92 130h92Z" fill="url(#left)"/>
+  <path d="m256 123 92 130h-92Z" fill="url(#right)"/>
+  <path d="m164 253 92 130V253Z" fill="#7055d6"/>
+  <path d="m348 253-92 130V253Z" fill="#429bcf"/>
+  <path d="m256 123 0 130-92 0" fill="none" stroke="#f0eaff" stroke-width="5" stroke-linejoin="round"/>
+  <path d="m256 253 92 0" stroke="#b7edff" stroke-width="5"/>
+  <path d="m256 253 0 130" stroke="#9dbeff" stroke-width="4"/>
+</svg>
