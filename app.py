@@ -17,7 +17,7 @@ from ui_theme import Art, ScrollPage, apply_theme, stripe, empty_table, BG, PANE
 
 from app_paths import DATA_DIR as ROOT, APP_VERSION, FROZEN
 SAVE = ROOT / 'preferences.json'
-SUPPORT_URL = 'https://paypal.me/PocketForgeStudios'
+SUPPORT_URL = 'https://ko-fi.com/pocketforgestudios'
 
 class Companion(MaintenanceFeatures, HistoryFeatures, Features):
  def __init__(self, root):
