@@ -14,6 +14,7 @@ content/
 .replay-deps/
 .packaging-deps/
 .guide-cache/
+.content-review/
 __pycache__/
 *.pyc
 build/

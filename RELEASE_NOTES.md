@@ -1,3 +1,12 @@
+# Nexus Forge 0.10.0 — local development, not published
+
+- Adds 130 conditional talent rules covering all 90 heroes. Auto can choose a complete build, then compatible alternatives, using recorded enemies, confirmed allies, explicit role plans and battleground where supported.
+- Explains retained choices as well as changed talents. Shows the enemy lineup, incomplete-draft notice and reader warnings on the Talents page. Manual builds remain unchanged.
+- Corrects Varian's tank-plan selection: defensive Taunt responds to burst rather than being forced for every tank matchup.
+- Builds, matchup rules and draft relationships now update as one validated content package. Guide dates and stale-content reminders are visible in Settings.
+- Adds a staged guide-refresh tool and weekly GitHub review workflow; neither activates or publishes advice automatically. Current full refresh was blocked by HTTP 403, so the guide check date remains 2026-09-19.
+- Preserves the recently redesigned interface, role selector and familiarity-based pick weighting.
+
 # Nexus Forge 0.9.0 — public beta
 
 - Nexus Companion is now Nexus Forge, by Pocket Forge Studios, with matching crystal artwork throughout the app and Windows installer.

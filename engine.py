@@ -11,11 +11,11 @@ def validate(allies, enemies, bans):
 # Kept here for existing UI and integrations.
 from draft_engine import rank
 
-def build_details(hero, enemies, variant=AUTO_BUILD, allies=(), plans=None):
+def build_details(hero, enemies, variant=AUTO_BUILD, allies=(), plans=None, battleground=None):
  """Resolve a complete source build, then apply only supported automatic rules."""
  from matchups import matchup_notes
  from talent_advisor import recommend_talents
- detail = recommend_talents(hero, enemies, allies, plans) if variant == AUTO_BUILD else get_build(hero, variant)
+ detail = recommend_talents(hero, enemies, allies, plans, battleground) if variant == AUTO_BUILD else get_build(hero, variant)
  if detail is None:return None
  enemies = list(dict.fromkeys(e for e in enemies if e in HEROES))
  adjustments = detail.get('adjustments', [])

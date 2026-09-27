@@ -111,6 +111,16 @@ No exporter, game setting changes, account login, uploads or internet are needed
 
 ## Releases and updates
 
+From 0.10.0, advice updates include talent builds, conditional rules for all 90
+heroes, and draft counter/synergy/map relationships together. **Auto (matchup)**
+can select a complete build or compatible alternatives, explains changes and
+retained choices, and shows the recorded enemy lineup. Manual builds stay fixed.
+Guide/rule dates are visible; advice older than 30 days is flagged. These are
+guide-based recommendations, not live meta statistics. See
+[ADVICE_MAINTENANCE.md](ADVICE_MAINTENANCE.md) for the staged refresh, review and
+weekly source-check workflow. A full fresh download was blocked by the guide
+site on 2026-09-27; the bundled guide check date remains 2026-09-19.
+
 The update feed is `https://github.com/Topher121/nexus-companion/releases/latest/download/latest.json`. Checks use HTTPS, send only a versioned User-Agent, and never upload personal data. **Check for updates** also works manually. The automatic checkbox controls launch/daily checks. No installer is run automatically and no game is interrupted.
 
 App downloads verify SHA-256 against the release manifest before offering **Open downloaded installer**. This detects damaged downloads; it does not substitute for publisher signing or trust in the release account. Saved-build downloads additionally validate the full roster, all talent tiers (including Chromie), source URLs and minimum app version before atomically activating a new catalogue for the next launch. Invalid downloads leave the current app/catalogue untouched. Network errors or an unpublished/private release are shown clearly and do not prevent offline use.

@@ -12,6 +12,8 @@ from app_paths import APP_VERSION
 from updates import CONTENT_VERSION
 
 if __name__=='__main__':
+    from content_validation import validate_catalogue
+    validate_catalogue(json.loads((ROOT/'build_catalogue.json').read_text('utf-8')))
     if '--manifest-only' not in sys.argv:
         import PyInstaller.__main__
         PyInstaller.__main__.run([str(ROOT/'NexusCompanion.spec'),'--noconfirm','--clean'])
@@ -24,6 +26,6 @@ if __name__=='__main__':
     base=f'https://github.com/Topher121/nexus-companion/releases/download/v{APP_VERSION}/'
     manifest={'format':1,
               'app':{'version':APP_VERSION,'url':base+installer.name,'sha256':hashlib.sha256(installer.read_bytes()).hexdigest()},
-              'builds':{'version':CONTENT_VERSION,'min_app':'0.8.0','url':base+builds.name,'sha256':hashlib.sha256(builds.read_bytes()).hexdigest()}}
+              'builds':{'version':CONTENT_VERSION,'min_app':'0.10.0','url':base+builds.name,'sha256':hashlib.sha256(builds.read_bytes()).hexdigest()}}
     (out/'latest.json').write_text(json.dumps(manifest,indent=2),encoding='utf-8')
     print('Release files ready in',out)

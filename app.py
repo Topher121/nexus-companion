@@ -185,13 +185,13 @@ class Companion(MaintenanceFeatures, HistoryFeatures, Features):
     widget.tag_add('level',f'{line}.0',f'{line}.{len(value.split(chr(9),1)[0].rstrip())}')
    elif value.startswith(('Your record:','Familiarity:')):
     widget.tag_add('record',f'{line}.0',f'{line}.end')
-   elif value.startswith(('Watch out:','Lower priority:')):
+   elif value.startswith(('Watch out:','Lower priority:','Reader warning:')):
     widget.tag_add('warning',f'{line}.0',f'{line}.end')
    elif value.startswith(('Plan:','Preference:')):
     widget.tag_add('plan',f'{line}.0',f'{line}.end')
    elif value.startswith('• ') and advice:
     widget.tag_add('point',f'{line}.0',f'{line}.end')
-   elif value.startswith(('Source:','Guide updated:','Guide category:','Auto uses','Manual choice:','Auto selects','Saved for offline')):
+   elif value.startswith(('Source:','Guide updated:','Guide category:','Auto uses','Manual choice:','Auto selects','Auto checks','Guides checked','Saved for offline')):
     widget.tag_add('note',f'{line}.0',f'{line}.end')
   widget.config(state='disabled')
 
@@ -395,20 +395,25 @@ class Companion(MaintenanceFeatures, HistoryFeatures, Features):
    self.put(self.build_text,('Draft finished, but your locked hero has not been read.\n\nCorrect your slot and hero on the Draft page, or choose a hero above to browse its build.' if final else 'Waiting for your locked hero.\n\nStart the live reader. Your player name is '+self.player_name.get()+'. The build will switch automatically when your pick is confirmed.\n\nTo browse builds now, choose a hero above.'));return
   self.build_picker.configure(state='readonly')
   self.guide_button.configure(state='normal')
-  detail=build_details(hero,enemies,self.build_variant.get(),allies=allies,plans=plans)
+  detail=build_details(hero,enemies,self.build_variant.get(),allies=allies,plans=plans,battleground=self.map.get())
   self.build_name.config(text=hero);self.build_role.config(text=HEROES[hero]['role'])
   self.build_portrait.config(image=self.art.portrait(hero,60))
   if detail:
-   content=detail['name']+' · Talents\n\n'+'\n'.join(f"Level {tier['level']} \t{tier['talent']}" for tier in detail['tiers'])
+   context='Based on '+str(len(enemies))+'/5 enemy picks: '+(', '.join(enemies) or 'none yet')+'.'
+   if len(enemies)<5:context+=' Incomplete draft — advice may change.'
+   notice=getattr(self,'reader_notice','')
+   if notice:context+='\nReader warning: '+notice+' Check the recorded heroes on the Draft page.'
+   mode='Auto matchup' if detail['automatic'] else 'Manual build — select Auto (matchup) to adapt talents'
+   content=mode+'\n'+context+'\n\n'+detail['name']+' · Talents\n\n'+'\n'.join(f"Level {tier['level']} \t{tier['talent']}" for tier in detail['tiers'])
    if detail['automatic']:
     content+='\n\nWhy these talents\n\n'
     content+='\n\n'.join('• '+n for n in detail['selection_reasons']) or ('Enemy picks are not known yet; using the saved starter build.' if not enemies else 'No specific matchup rule applies here; keeping the saved guide choices.')
-    content+='\n\nBased on '+str(len(enemies))+'/5 enemy picks: '+(', '.join(enemies) or 'none yet')+'. Recommendations update as picks are confirmed.'
+    content+='\n\n'+('\n'.join(detail['adjustments']) if detail['adjustments'] else 'Keeping the saved build; matching advice above explains the choices that still fit.')
    notes=list(detail['notes'])
    if HEROES[hero]['role']=='Healer' and 'Deathwing' in allies:notes.append('Deathwing cannot receive your healing.')
    content+='\n\nMatch notes\n\n'+'\n\n'.join('• '+n for n in notes)
    content+='\n\nGuide category: '+detail['category']
-   if detail['automatic']:content+='\nAuto selects recommended talents here in the companion; it does not click talents in HotS. Matchup rules cover supported choices; other tiers keep their saved guide defaults.'
+   if detail['automatic']:content+='\nAuto checks rules for all 90 heroes. It recommends choices here; it does not click talents in HotS or know enemy talent choices. Other tiers keep their guide defaults.\n'+detail['content_status']
    else:content+='\nManual choice: this build stays selected as enemy picks change. Its talents are not automatically replaced.'
    content+='\nSource: Icy Veins · '+detail['source']+'\nGuide updated: '+detail['source_updated']+' · Imported: '+detail['checked']
    content+='\nSaved for offline use. Future patch changes require a catalogue update.'

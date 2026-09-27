@@ -1,0 +1,26 @@
+name: Check guide changes for review
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '23 8 * * 1'
+permissions:
+  contents: read
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.14'
+      - name: Fetch current guide facts without activating them
+        run: python refresh_advice.py --fail-on-change
+      - name: Save candidate for maintainer review
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: advice-review
+          path: .content-review/
+          if-no-files-found: ignore
+          retention-days: 14

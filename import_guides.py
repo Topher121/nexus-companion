@@ -3,16 +3,13 @@
 This is not run by the app. Cached pages are research material, not distributed
 guide content. Original guide prose is not bundled in the build catalogue.
 """
-from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import date
 from html.parser import HTMLParser
 from pathlib import Path
-import json
 import re
 import time
 import unicodedata
 import urllib.request
-from data import HEROES
 
 ROOT=Path(__file__).resolve().parent
 CACHE=ROOT/'.guide-cache'
@@ -76,30 +73,20 @@ def extract(html,hero,url):
     return {'source':url,'source_updated':dates[0].text() if dates else 'Not stated',
             'checked':date.today().isoformat(),'builds':variants}
 
-def fetch(hero):
+def fetch(hero, refresh=True):
     url='https://www.icy-veins.com/heroes/'+slug(hero)+'-build-guide'
     path=CACHE/(slug(hero)+'.html')
-    if not path.exists():
+    if refresh or not path.exists():
         request=urllib.request.Request(url,headers={'User-Agent':'Mozilla/5.0'})
         with urllib.request.urlopen(request,timeout=30) as response:html=response.read().decode('utf-8')
+        CACHE.mkdir(exist_ok=True)
         path.write_text(html,encoding='utf-8');time.sleep(.3)
     else:html=path.read_text(encoding='utf-8')
-    return hero,extract(html,hero,url)
+    result=extract(html,hero,url)
+    if not refresh:
+        from datetime import datetime
+        result['checked']=datetime.fromtimestamp(path.stat().st_mtime).date().isoformat()
+    return hero,result
 
 if __name__=='__main__':
-    CACHE.mkdir(exist_ok=True)
-    results={};errors={}
-    with ThreadPoolExecutor(max_workers=3) as executor:
-        jobs={executor.submit(fetch,h):h for h in sorted(HEROES)}
-        for job in as_completed(jobs):
-            hero=jobs[job]
-            try:
-                _,entry=job.result();results[hero]=entry
-                print(f'{len(results):2}/90 {hero}: {len(entry["builds"])} builds',flush=True)
-            except Exception as exc:errors[hero]=str(exc);print(f'ERROR {hero}: {exc}',flush=True)
-    if errors:raise SystemExit(json.dumps(errors))
-    if set(results)!=set(HEROES):raise SystemExit('Incomplete roster; keeping the existing catalogue.')
-    output={'checked':date.today().isoformat(),'heroes':dict(sorted(results.items())),'errors':errors}
-    staging=ROOT/'build_catalogue.tmp'
-    staging.write_text(json.dumps(output,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
-    staging.replace(ROOT/'build_catalogue.json')
+    raise SystemExit('Use python refresh_advice.py to stage a complete content review. This importer no longer overwrites live advice.')

@@ -212,6 +212,8 @@ class HistoryPageTests(unittest.TestCase):
                 with patch('history_ui.HistoryStore',return_value=store):
                     app=Companion(root)
                 app.clear();app.owned={'Li Li':True};app.only_confirmed.set(True)
+                # This verifies healer records, independently of Auto's tank priority.
+                app.role.set('Healer')
                 app.pick_stats_mode.set('Storm League')
                 profile=app.history_profile()
                 ids=[]

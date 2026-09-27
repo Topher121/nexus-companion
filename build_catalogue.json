@@ -14604,5 +14604,4819 @@
       ]
     }
   },
-  "errors": {}
+  "errors": {},
+  "advice": {
+    "schema": 1,
+    "reviewed": "2026-09-27",
+    "guide_checked": "2026-09-19",
+    "kind": "Reviewed guide-based heuristics; not live win-rate statistics",
+    "signals": {
+      "attackers": [
+        "Artanis",
+        "Cassia",
+        "Fenix",
+        "Greymane",
+        "Lunara",
+        "Raynor",
+        "Sgt. Hammer",
+        "Tracer",
+        "Tychus",
+        "Valla",
+        "Zul'jin",
+        "Illidan",
+        "Samuro",
+        "The Butcher"
+      ],
+      "casters": [
+        "Azmodan",
+        "Chromie",
+        "Deathwing",
+        "Gall",
+        "Gul'dan",
+        "Jaina",
+        "Kael'thas",
+        "Kel'Thuzad",
+        "Li-Ming",
+        "Lunara",
+        "Mephisto",
+        "Nazeebo",
+        "Orphea",
+        "Tassadar",
+        "Zagara"
+      ],
+      "divers": [
+        "Anub'arak",
+        "Artanis",
+        "Chen",
+        "D.Va",
+        "Diablo",
+        "Genji",
+        "Hogger",
+        "Illidan",
+        "Imperius",
+        "Kerrigan",
+        "Mal'Ganis",
+        "Qhira",
+        "Sonya",
+        "The Butcher",
+        "Tracer",
+        "Tyrael",
+        "Yrel",
+        "Zeratul"
+      ],
+      "healers": [
+        "Alexstrasza",
+        "Ana",
+        "Anduin",
+        "Auriel",
+        "Brightwing",
+        "Deckard",
+        "Kharazim",
+        "Li Li",
+        "Lt. Morales",
+        "Lúcio",
+        "Malfurion",
+        "Rehgar",
+        "Stukov",
+        "Tyrande",
+        "Uther",
+        "Whitemane"
+      ],
+      "control": [
+        "Alarak",
+        "Ana",
+        "Anduin",
+        "Anub'arak",
+        "Arthas",
+        "Auriel",
+        "Blaze",
+        "Brightwing",
+        "D.Va",
+        "Deckard",
+        "Dehaka",
+        "Diablo",
+        "E.T.C.",
+        "Garrosh",
+        "Gazlowe",
+        "Hogger",
+        "Imperius",
+        "Junkrat",
+        "Kael'thas",
+        "Kel'Thuzad",
+        "Kerrigan",
+        "Maiev",
+        "Mal'Ganis",
+        "Malfurion",
+        "Mei",
+        "Muradin",
+        "Qhira",
+        "Rexxar",
+        "Sonya",
+        "Stitches",
+        "Stukov",
+        "The Butcher",
+        "Thrall",
+        "Tyrande",
+        "Uther",
+        "Valeera",
+        "Xul"
+      ],
+      "shields": [
+        "Artanis",
+        "Chen",
+        "Fenix",
+        "Johanna",
+        "Kerrigan",
+        "Tyrael",
+        "Zarya"
+      ],
+      "frontliners": [
+        "Anub'arak",
+        "Arthas",
+        "Blaze",
+        "Cho",
+        "Diablo",
+        "E.T.C.",
+        "Garrosh",
+        "Johanna",
+        "Mal'Ganis",
+        "Mei",
+        "Muradin",
+        "Stitches",
+        "Tyrael",
+        "Artanis",
+        "Chen",
+        "D.Va",
+        "Deathwing",
+        "Dehaka",
+        "Gazlowe",
+        "Hogger",
+        "Imperius",
+        "Leoric",
+        "Malthael",
+        "Ragnaros",
+        "Rexxar",
+        "Sonya",
+        "Thrall",
+        "Varian",
+        "Xul",
+        "Yrel"
+      ],
+      "stuns": [
+        "Anub'arak",
+        "Auriel",
+        "Blaze",
+        "Diablo",
+        "E.T.C.",
+        "Garrosh",
+        "Gazlowe",
+        "Hogger",
+        "Imperius",
+        "Kael'thas",
+        "Kerrigan",
+        "Mal'Ganis",
+        "Mei",
+        "Muradin",
+        "Qhira",
+        "Rexxar",
+        "Sonya",
+        "The Butcher",
+        "Tyrande",
+        "Uther",
+        "Valeera"
+      ],
+      "blinds": [
+        "Cassia",
+        "Johanna",
+        "Li Li",
+        "Mei"
+      ],
+      "burst": [
+        "Alarak",
+        "Chromie",
+        "Jaina",
+        "Kael'thas",
+        "Kel'Thuzad",
+        "Kerrigan",
+        "Li-Ming",
+        "Nova",
+        "Orphea",
+        "Zeratul"
+      ],
+      "poke": [
+        "Azmodan",
+        "Chromie",
+        "Gul'dan",
+        "Hanzo",
+        "Junkrat",
+        "Li-Ming",
+        "Lunara",
+        "Nazeebo",
+        "Tassadar"
+      ],
+      "fast_attacks": [
+        "D.Va",
+        "Tracer",
+        "Tychus",
+        "Zarya"
+      ],
+      "armor": [
+        "Cassia",
+        "Deathwing",
+        "Garrosh",
+        "Uther"
+      ],
+      "sustained_spells": [
+        "Gall",
+        "Gul'dan",
+        "Lunara",
+        "Malthael",
+        "Nazeebo",
+        "Tassadar"
+      ],
+      "melee": [
+        "Alarak",
+        "Anub'arak",
+        "Artanis",
+        "Arthas",
+        "Blaze",
+        "Chen",
+        "Cho",
+        "D.Va",
+        "Deathwing",
+        "Dehaka",
+        "Diablo",
+        "E.T.C.",
+        "Garrosh",
+        "Gazlowe",
+        "Hogger",
+        "Illidan",
+        "Imperius",
+        "Johanna",
+        "Kerrigan",
+        "Kharazim",
+        "Leoric",
+        "Maiev",
+        "Mal'Ganis",
+        "Malthael",
+        "Mei",
+        "Muradin",
+        "Murky",
+        "Qhira",
+        "Ragnaros",
+        "Rehgar",
+        "Rexxar",
+        "Samuro",
+        "Sonya",
+        "Stitches",
+        "The Butcher",
+        "Thrall",
+        "Tyrael",
+        "Uther",
+        "Valeera",
+        "Varian",
+        "Xul",
+        "Yrel",
+        "Zeratul"
+      ],
+      "ranged": [
+        "Azmodan",
+        "Cassia",
+        "Chromie",
+        "Falstad",
+        "Fenix",
+        "Gall",
+        "Genji",
+        "Greymane",
+        "Gul'dan",
+        "Hanzo",
+        "Jaina",
+        "Junkrat",
+        "Kael'thas",
+        "Kel'Thuzad",
+        "Li-Ming",
+        "Lunara",
+        "Mephisto",
+        "Nazeebo",
+        "Nova",
+        "Orphea",
+        "Probius",
+        "Raynor",
+        "Sgt. Hammer",
+        "Sylvanas",
+        "Tassadar",
+        "Tracer",
+        "Tychus",
+        "Valla",
+        "Zagara",
+        "Zul'jin"
+      ],
+      "roots_slows": [
+        "Arthas",
+        "Malfurion",
+        "Xul",
+        "Anduin",
+        "Thrall",
+        "Deckard",
+        "Jaina",
+        "Mei",
+        "Stukov",
+        "Lunara",
+        "Kel'Thuzad"
+      ],
+      "removable_control": [
+        "Anduin",
+        "Anub'arak",
+        "Arthas",
+        "Auriel",
+        "Blaze",
+        "Deckard",
+        "Diablo",
+        "E.T.C.",
+        "Garrosh",
+        "Gazlowe",
+        "Hogger",
+        "Imperius",
+        "Jaina",
+        "Kael'thas",
+        "Kel'Thuzad",
+        "Kerrigan",
+        "Lunara",
+        "Mal'Ganis",
+        "Malfurion",
+        "Mei",
+        "Muradin",
+        "Qhira",
+        "Rexxar",
+        "Sonya",
+        "Stukov",
+        "The Butcher",
+        "Thrall",
+        "Tyrande",
+        "Uther",
+        "Valeera",
+        "Xul"
+      ]
+    },
+    "extra_alternatives": {
+      "Li Li": {
+        "4": [
+          "Safety Sprint"
+        ]
+      },
+      "Ragnaros": {
+        "13": [
+          "Resilient Flame"
+        ]
+      }
+    },
+    "rules": [
+      {
+        "hero": "Alarak",
+        "when": {
+          "enemy": {
+            "poke": 2
+          }
+        },
+        "reason": "Use the longer-range combo package against {names}; avoid relying on repeated close-range attacks.",
+        "build": "Combo Build",
+        "id": "Alarak:1",
+        "source": "https://www.icy-veins.com/heroes/alarak-build-guide"
+      },
+      {
+        "hero": "Anduin",
+        "when": {
+          "enemy": {
+            "divers": 2
+          }
+        },
+        "reason": "The self-survival package helps when {names} can reach you. Keep Leap of Faith available for teammates.",
+        "build": "Inner Focus Build",
+        "id": "Anduin:2",
+        "source": "https://www.icy-veins.com/heroes/anduin-build-guide"
+      },
+      {
+        "hero": "Anduin",
+        "when": {
+          "enemy": {
+            "burst": 2
+          }
+        },
+        "reason": "Extra rescue tools and burst healing suit the damage from {names}.",
+        "build": "Leap of Faith Build",
+        "id": "Anduin:3",
+        "source": "https://www.icy-veins.com/heroes/anduin-build-guide"
+      },
+      {
+        "hero": "Anduin",
+        "when": {
+          "enemy": {
+            "control": 3
+          }
+        },
+        "reason": "The extra Leap of Faith charge gives another rescue against the catches from {names}.",
+        "build": "Leap of Faith Build",
+        "id": "Anduin:4",
+        "source": "https://www.icy-veins.com/heroes/anduin-build-guide"
+      },
+      {
+        "hero": "Anub'arak",
+        "when": {
+          "enemy": {
+            "sustained_spells": 1
+          }
+        },
+        "reason": "Repeated spell hits from {names} can fuel the Harden Carapace package.",
+        "build": "Harden Carapace Build",
+        "id": "Anub'arak:5",
+        "source": "https://www.icy-veins.com/heroes/anubarak-build-guide"
+      },
+      {
+        "hero": "Arthas",
+        "when": {
+          "enemy": {
+            "melee": 3
+          }
+        },
+        "reason": "Repeated close-range fights with {names} suit Frozen Tempest's control package.",
+        "build": "Frozen Tempest Build",
+        "id": "Arthas:6",
+        "source": "https://www.icy-veins.com/heroes/arthas-build-guide"
+      },
+      {
+        "hero": "Dehaka",
+        "when": {
+          "enemy": {
+            "casters": 2
+          }
+        },
+        "reason": "Spell protection and the Dark Swarm package suit the damage from {names}; you still need to reach targets.",
+        "build": "Dark Swarm Build",
+        "id": "Dehaka:7",
+        "source": "https://www.icy-veins.com/heroes/dehaka-build-guide"
+      },
+      {
+        "hero": "Falstad",
+        "when": {
+          "enemy": {
+            "blinds": 1
+          }
+        },
+        "reason": "Shift damage towards Hammerang against {names}'s blinds. Stack the quest safely; this is a trade-off, not immunity to their team.",
+        "build": "Hammerang Build",
+        "id": "Falstad:8",
+        "source": "https://www.icy-veins.com/heroes/falstad-build-guide"
+      },
+      {
+        "hero": "Falstad",
+        "when": {
+          "enemy": {
+            "divers": 2
+          }
+        },
+        "reason": "Lightning Rod improves duels against {names}. It needs quest progress; do not try to fight several divers alone.",
+        "build": "Lightning Rod Build",
+        "id": "Falstad:9",
+        "source": "https://www.icy-veins.com/heroes/falstad-build-guide"
+      },
+      {
+        "hero": "Garrosh",
+        "when": {
+          "enemy": {
+            "divers": 2
+          }
+        },
+        "reason": "Extra control helps peel {names} off your damage dealers.",
+        "build": "Groundbreaker Build",
+        "id": "Garrosh:10",
+        "source": "https://www.icy-veins.com/heroes/garrosh-build-guide"
+      },
+      {
+        "hero": "Gul'dan",
+        "when": {
+          "enemy": {
+            "control": 3
+          }
+        },
+        "reason": "More ranged damage avoids relying so heavily on an uninterrupted Drain Life against {names}. Stack Corruption safely.",
+        "build": "Corruption Build",
+        "id": "Gul'dan:11",
+        "source": "https://www.icy-veins.com/heroes/guldan-build-guide"
+      },
+      {
+        "hero": "Gul'dan",
+        "when": {
+          "enemy": {
+            "melee": 3
+          }
+        },
+        "reason": "Several short-range enemies ({names}) give the Fel Flame package more opportunities to hit.",
+        "build": "Anti-melee Fel Flame Build",
+        "id": "Gul'dan:12",
+        "source": "https://www.icy-veins.com/heroes/guldan-build-guide"
+      },
+      {
+        "hero": "Illidan",
+        "when": {
+          "enemy": {
+            "blinds": 1
+          }
+        },
+        "reason": "Dive's ability damage is less dependent on landing attacks against {names}'s blinds. This build needs its late-game talents.",
+        "build": "Dive Build",
+        "id": "Illidan:13",
+        "source": "https://www.icy-veins.com/heroes/illidan-build-guide"
+      },
+      {
+        "hero": "Leoric",
+        "when": {
+          "enemy": {
+            "blinds": 1
+          }
+        },
+        "reason": "Shift towards damage reduction rather than an attack-heavy package against {names}. Keep its level 13 and 16 talents together.",
+        "build": "Wraith Walk Build",
+        "id": "Leoric:14",
+        "source": "https://www.icy-veins.com/heroes/leoric-build-guide"
+      },
+      {
+        "hero": "Lt. Morales",
+        "when": {
+          "enemy": {
+            "melee": 3
+          }
+        },
+        "reason": "Grouped short-range enemies ({names}) offer more multi-hit opportunities for Grenade utility.",
+        "build": "Displacement Grenade Build",
+        "id": "Lt. Morales:15",
+        "source": "https://www.icy-veins.com/heroes/lt-morales-build-guide"
+      },
+      {
+        "hero": "Mei",
+        "when": {
+          "enemy": {
+            "attackers": 2
+          }
+        },
+        "reason": "The additional blind casts help against {names}'s basic attacks; ability damage still gets through.",
+        "build": "Snow Blind Build",
+        "id": "Mei:16",
+        "source": "https://www.icy-veins.com/heroes/mei-build-guide"
+      },
+      {
+        "hero": "Nazeebo",
+        "when": {
+          "enemy": {
+            "divers": 2
+          }
+        },
+        "reason": "Focused Spider damage helps punish {names} when they commit into your team.",
+        "build": "Corpse Spiders Build",
+        "id": "Nazeebo:17",
+        "source": "https://www.icy-veins.com/heroes/nazeebo-build-guide"
+      },
+      {
+        "hero": "Ragnaros",
+        "when": {
+          "enemy": {
+            "poke": 2
+          }
+        },
+        "reason": "Use ranged Meteor damage when {names} make stepping into melee costly.",
+        "build": "Living Meteor Build",
+        "id": "Ragnaros:18",
+        "source": "https://www.icy-veins.com/heroes/ragnaros-build-guide"
+      },
+      {
+        "hero": "Rehgar",
+        "when": {
+          "enemy": {
+            "burst": 2
+          }
+        },
+        "reason": "The defensive hybrid package helps protect allies against burst from {names}.",
+        "build": "Hybrid Build",
+        "id": "Rehgar:19",
+        "source": "https://www.icy-veins.com/heroes/rehgar-build-guide"
+      },
+      {
+        "hero": "Rexxar",
+        "when": {
+          "enemy": {
+            "poke": 2
+          }
+        },
+        "reason": "Invest more in Misha when {names} make sustained attacks as Rexxar unsafe.",
+        "build": "Charge Build",
+        "id": "Rexxar:20",
+        "source": "https://www.icy-veins.com/heroes/rexxar-build-guide"
+      },
+      {
+        "hero": "Sgt. Hammer",
+        "when": {
+          "enemy": {
+            "control": 2
+          }
+        },
+        "reason": "The defensive Siege Tactics package helps against {names}'s hard engages and displacement.",
+        "build": "Siege Tactics Build",
+        "id": "Sgt. Hammer:21",
+        "source": "https://www.icy-veins.com/heroes/sgt-hammer-build-guide"
+      },
+      {
+        "hero": "Stitches",
+        "when": {
+          "enemy": {
+            "burst": 2
+          }
+        },
+        "reason": "More defensive tools help survive {names}'s burst while preserving Hook and Gorge picks.",
+        "build": "Defensive Hook Build",
+        "id": "Stitches:22",
+        "source": "https://www.icy-veins.com/heroes/stitches-build-guide"
+      },
+      {
+        "hero": "Stukov",
+        "when": {
+          "enemy": {
+            "divers": 2
+          }
+        },
+        "reason": "The defensive Bio-kill package helps respond when {names} dive into your team.",
+        "build": "Standard Bio-kill Build",
+        "id": "Stukov:23",
+        "source": "https://www.icy-veins.com/heroes/stukov-build-guide"
+      },
+      {
+        "hero": "Tracer",
+        "when": {
+          "enemy": {
+            "control": 3
+          }
+        },
+        "reason": "Safer frontline damage reduces the need to dive through {names}'s control.",
+        "build": "Basic Attacks Build",
+        "id": "Tracer:24",
+        "source": "https://www.icy-veins.com/heroes/tracer-build-guide"
+      },
+      {
+        "hero": "Whitemane",
+        "when": {
+          "enemy": {
+            "control": 3
+          }
+        },
+        "reason": "Reduce reliance on Inquisition channels that {names} can interrupt.",
+        "build": "Searing Lash Build",
+        "id": "Whitemane:25",
+        "source": "https://www.icy-veins.com/heroes/whitemane-build-guide"
+      },
+      {
+        "hero": "Xul",
+        "when": {
+          "enemy": {
+            "ranged": 3
+          }
+        },
+        "reason": "The catch-and-burst package is easier to use than prolonged melee attacks into {names}.",
+        "build": "Bone Prison Build",
+        "id": "Xul:26",
+        "source": "https://www.icy-veins.com/heroes/xul-build-guide"
+      },
+      {
+        "hero": "Zeratul",
+        "when": {
+          "enemy": {
+            "control": 2
+          }
+        },
+        "reason": "Void Prison offers setup and disengage against {names}'s control. Coordinate its release with allies.",
+        "build": "Void Prison Build",
+        "id": "Zeratul:27",
+        "source": "https://www.icy-veins.com/heroes/zeratul-build-guide"
+      },
+      {
+        "hero": "Zul'jin",
+        "when": {
+          "enemy": {
+            "armor": 1
+          }
+        },
+        "reason": "The late-game armor interaction in this package helps against {names}. It still needs safe attack uptime.",
+        "build": "Grievous Build",
+        "id": "Zul'jin:28",
+        "source": "https://www.icy-veins.com/heroes/zuljin-build-guide"
+      },
+      {
+        "hero": "Auriel",
+        "when": {
+          "enemy": {
+            "melee": 3
+          },
+          "absent": [
+            "control"
+          ]
+        },
+        "reason": "Several melee targets ({names}) and no recorded baseline interrupts favour the Sweep package.",
+        "build": "Sacred Sweep Build",
+        "id": "Auriel:29",
+        "source": "https://www.icy-veins.com/heroes/auriel-build-guide"
+      },
+      {
+        "hero": "Sonya",
+        "when": {
+          "enemy": {
+            "melee": 3
+          },
+          "absent": [
+            "control"
+          ]
+        },
+        "reason": "Several melee targets ({names}) and no recorded baseline interrupts favour Whirlwind sustain. Enemy heroic choices can change this.",
+        "build": "Whirlwind Build",
+        "id": "Sonya:30",
+        "source": "https://www.icy-veins.com/heroes/sonya-build-guide"
+      },
+      {
+        "hero": "Xul",
+        "when": {
+          "enemy": {
+            "melee": 3
+          },
+          "absent": [
+            "control"
+          ]
+        },
+        "reason": "The melee-heavy lineup ({names}) offers Cursed Strikes uptime, with no recorded baseline interrupts.",
+        "build": "Cursed Strikes Build",
+        "id": "Xul:31",
+        "source": "https://www.icy-veins.com/heroes/xul-build-guide"
+      },
+      {
+        "hero": "Hanzo",
+        "when": {
+          "enemy_names": [
+            "Abathur"
+          ]
+        },
+        "reason": "Abathur makes the all-hero Storm Bow quest unreliable; use the complete Scatter Arrow package instead. Its ricochets take practice.",
+        "build": "Scatter Arrow Build",
+        "id": "Hanzo:32",
+        "source": "https://www.icy-veins.com/heroes/hanzo-build-guide"
+      },
+      {
+        "hero": "Varian",
+        "when": {
+          "enemy": {
+            "burst": 2
+          },
+          "plan_not": [
+            "Damage build"
+          ]
+        },
+        "reason": "Shield Wall suits the burst from {names}; the complete defensive build avoids pairing it with Overpower.",
+        "build": "Defensive Taunt Build",
+        "id": "Varian:33",
+        "source": "https://www.icy-veins.com/heroes/varian-build-guide"
+      },
+      {
+        "hero": "Varian",
+        "when": {
+          "plan": [
+            "Damage build"
+          ]
+        },
+        "reason": "Your confirmed damage plan selects Colossus Smash; it does not fill the tank role.",
+        "build": "Colossus Smash Build",
+        "id": "Varian:34",
+        "source": "https://www.icy-veins.com/heroes/varian-build-guide"
+      },
+      {
+        "hero": "Blaze",
+        "when": {
+          "enemy": {
+            "melee": 3
+          },
+          "plan": [
+            "Tank"
+          ]
+        },
+        "reason": "Your tank plan and multiple melee enemies ({names}) favour the Pyromania package.",
+        "build": "Pyromania Build",
+        "id": "Blaze:35",
+        "source": "https://www.icy-veins.com/heroes/blaze-build-guide"
+      },
+      {
+        "hero": "Blaze",
+        "when": {
+          "plan": [
+            "Tank"
+          ]
+        },
+        "reason": "Your tank plan uses Oil Spill to set up engages.",
+        "build": "Oil Spill Build",
+        "id": "Blaze:36",
+        "source": "https://www.icy-veins.com/heroes/blaze-build-guide"
+      },
+      {
+        "hero": "Johanna",
+        "when": {
+          "enemy": {
+            "healers": 1
+          },
+          "ally_absent_names": [
+            "Ana"
+          ]
+        },
+        "choices": {
+          "7": "Sins Exposed"
+        },
+        "reason": "Healing reduction against {names}; apply Punish to the target your team is focusing.",
+        "id": "Johanna:37",
+        "source": "https://www.icy-veins.com/heroes/johanna-build-guide"
+      },
+      {
+        "hero": "Johanna",
+        "when": {
+          "enemy": {
+            "attackers": 2
+          }
+        },
+        "choices": {
+          "1": "Zealous Glare"
+        },
+        "reason": "Extra blind coverage against {names}; space out the charges.",
+        "id": "Johanna:38",
+        "source": "https://www.icy-veins.com/heroes/johanna-build-guide"
+      },
+      {
+        "hero": "Li Li",
+        "when": {
+          "enemy": {
+            "divers": 1
+          }
+        },
+        "choices": {
+          "4": "Safety Sprint"
+        },
+        "reason": "Extra protection against {names}; activate it before their dive overwhelms you.",
+        "id": "Li Li:39",
+        "source": "https://www.icy-veins.com/heroes/li-li-build-guide"
+      },
+      {
+        "hero": "Li Li",
+        "when": {
+          "enemy": {
+            "control": 1
+          }
+        },
+        "choices": {
+          "7": "Let's Go!"
+        },
+        "reason": "An ally cleanse for the control from {names}; it cannot target yourself.",
+        "id": "Li Li:40",
+        "source": "https://www.icy-veins.com/heroes/li-li-build-guide"
+      },
+      {
+        "hero": "Brightwing",
+        "when": {
+          "enemy": {
+            "casters": 2
+          }
+        },
+        "choices": {
+          "13": "Pixie Power"
+        },
+        "reason": "More Spell Armor against {names}; use Pixie Dust before their damage lands.",
+        "id": "Brightwing:41",
+        "source": "https://www.icy-veins.com/heroes/brightwing-build-guide"
+      },
+      {
+        "hero": "Brightwing",
+        "when": {
+          "enemy": {
+            "control": 2
+          }
+        },
+        "choices": {
+          "7": "Critical Mist"
+        },
+        "reason": "Adds healing to your active cleanse against the control from {names}.",
+        "id": "Brightwing:42",
+        "source": "https://www.icy-veins.com/heroes/brightwing-build-guide"
+      },
+      {
+        "hero": "Arthas",
+        "when": {
+          "enemy": {
+            "casters": 2
+          }
+        },
+        "choices": {
+          "16": "Anti-Magic Shell"
+        },
+        "reason": "Spell protection against {names}; activate it before the burst lands.",
+        "id": "Arthas:43",
+        "source": "https://www.icy-veins.com/heroes/arthas-build-guide"
+      },
+      {
+        "hero": "Valla",
+        "when": {
+          "enemy": {
+            "casters": 2
+          }
+        },
+        "choices": {
+          "13": "Gloom"
+        },
+        "reason": "Spell protection against {names}; keep its active available for burst.",
+        "id": "Valla:44",
+        "source": "https://www.icy-veins.com/heroes/valla-build-guide"
+      },
+      {
+        "hero": "Artanis",
+        "when": {
+          "enemy": {
+            "casters": 2
+          }
+        },
+        "choices": {
+          "13": "Phase Bulwark"
+        },
+        "reason": "Spell Armor helps your shield absorb the ability damage from {names}.",
+        "id": "Artanis:45",
+        "source": "https://www.icy-veins.com/heroes/artanis-build-guide"
+      },
+      {
+        "hero": "Illidan",
+        "when": {
+          "enemy": {
+            "casters": 2
+          }
+        },
+        "choices": {
+          "13": "Sixth Sense"
+        },
+        "reason": "Adds spell protection against {names}; Evasion alone covers basic attacks.",
+        "id": "Illidan:46",
+        "source": "https://www.icy-veins.com/heroes/illidan-build-guide"
+      },
+      {
+        "hero": "Lunara",
+        "when": {
+          "enemy": {
+            "casters": 2
+          }
+        },
+        "choices": {
+          "13": "Greater Spell Shield"
+        },
+        "reason": "Spell protection against {names}; keep your distance while it is unavailable.",
+        "id": "Lunara:47",
+        "source": "https://www.icy-veins.com/heroes/lunara-build-guide"
+      },
+      {
+        "hero": "Malthael",
+        "when": {
+          "enemy": {
+            "casters": 2
+          }
+        },
+        "choices": {
+          "13": "Shroud of Wisdom"
+        },
+        "reason": "Prepare the spell protection before {names} use their burst.",
+        "id": "Malthael:48",
+        "source": "https://www.icy-veins.com/heroes/malthael-build-guide"
+      },
+      {
+        "hero": "Thrall",
+        "when": {
+          "enemy": {
+            "casters": 2
+          }
+        },
+        "choices": {
+          "13": "Spirit Shield"
+        },
+        "reason": "Spell protection against the ability damage from {names}.",
+        "id": "Thrall:49",
+        "source": "https://www.icy-veins.com/heroes/thrall-build-guide"
+      },
+      {
+        "hero": "Tychus",
+        "when": {
+          "enemy": {
+            "casters": 2
+          }
+        },
+        "choices": {
+          "13": "Neosteel Coating",
+          "16": "Titan Grenade"
+        },
+        "reason": "An active defensive option against spell damage from {names}.",
+        "id": "Tychus:50",
+        "source": "https://www.icy-veins.com/heroes/tychus-build-guide"
+      },
+      {
+        "hero": "Zagara",
+        "when": {
+          "enemy": {
+            "casters": 2
+          }
+        },
+        "choices": {
+          "13": "Spell Shield"
+        },
+        "reason": "Spell protection against {names}; avoid giving them a free opening while it is unavailable.",
+        "id": "Zagara:51",
+        "source": "https://www.icy-veins.com/heroes/zagara-build-guide"
+      },
+      {
+        "hero": "Blaze",
+        "when": {
+          "enemy": {
+            "attackers": 2
+          }
+        },
+        "choices": {
+          "7": "Nanomachine Coating"
+        },
+        "reason": "Oil reduces attack speed, helping control {names}.",
+        "id": "Blaze:52",
+        "source": "https://www.icy-veins.com/heroes/blaze-build-guide"
+      },
+      {
+        "hero": "E.T.C.",
+        "when": {
+          "enemy": {
+            "attackers": 2
+          }
+        },
+        "choices": {
+          "16": "Imposing Presence"
+        },
+        "reason": "Attack-speed reduction helps against {names}; use the active when they commit.",
+        "id": "E.T.C.:53",
+        "source": "https://www.icy-veins.com/heroes/e-t-c-build-guide"
+      },
+      {
+        "hero": "Muradin",
+        "when": {
+          "enemy": {
+            "attackers": 2
+          }
+        },
+        "choices": {
+          "16": "Imposing Presence"
+        },
+        "reason": "Attack-speed reduction helps protect you and nearby teammates from {names}.",
+        "id": "Muradin:54",
+        "source": "https://www.icy-veins.com/heroes/muradin-build-guide"
+      },
+      {
+        "hero": "Malfurion",
+        "when": {
+          "enemy": {
+            "removable_control": 2
+          }
+        },
+        "choices": {
+          "7": "Nature's Cure"
+        },
+        "reason": "Remove stuns, roots and slows from {names} on allies with Regrowth; apply Regrowth before the engage.",
+        "id": "Malfurion:55",
+        "source": "https://www.icy-veins.com/heroes/malfurion-build-guide"
+      },
+      {
+        "hero": "Kharazim",
+        "when": {
+          "enemy": {
+            "control": 2
+          }
+        },
+        "choices": {
+          "16": "Cleansing Touch"
+        },
+        "reason": "Use Radiant Dash to protect allies from the control of {names}.",
+        "id": "Kharazim:56",
+        "source": "https://www.icy-veins.com/heroes/kharazim-build-guide"
+      },
+      {
+        "hero": "Uther",
+        "when": {
+          "enemy": {
+            "control": 2
+          }
+        },
+        "choices": {
+          "7": "Hand of Protection"
+        },
+        "reason": "An ally cleanse against control from {names}; save it for a dangerous catch.",
+        "id": "Uther:57",
+        "source": "https://www.icy-veins.com/heroes/uther-build-guide"
+      },
+      {
+        "hero": "Sylvanas",
+        "when": {
+          "enemy": {
+            "control": 2
+          }
+        },
+        "choices": {
+          "16": "Will of the Forsaken"
+        },
+        "reason": "A personal escape from the control of {names}; keep it for their engage.",
+        "id": "Sylvanas:58",
+        "source": "https://www.icy-veins.com/heroes/sylvanas-build-guide"
+      },
+      {
+        "hero": "Zarya",
+        "when": {
+          "enemy": {
+            "control": 2
+          }
+        },
+        "choices": {
+          "16": "Cleansing Shield"
+        },
+        "reason": "Shield Ally can protect a teammate from control by {names}.",
+        "id": "Zarya:59",
+        "source": "https://www.icy-veins.com/heroes/zarya-build-guide"
+      },
+      {
+        "hero": "Jaina",
+        "when": {
+          "enemy": {
+            "divers": 2
+          }
+        },
+        "choices": {
+          "16": "Numbing Blast"
+        },
+        "reason": "A root to help stop {names} when they reach your backline; the target must be Chilled.",
+        "id": "Jaina:60",
+        "source": "https://www.icy-veins.com/heroes/jaina-build-guide"
+      },
+      {
+        "hero": "Li-Ming",
+        "when": {
+          "enemy": {
+            "divers": 2
+          }
+        },
+        "choices": {
+          "16": "Diamond Skin"
+        },
+        "reason": "A defensive Teleport shield when {names} reach you; keep an escape route.",
+        "id": "Li-Ming:61",
+        "source": "https://www.icy-veins.com/heroes/li-ming-build-guide"
+      },
+      {
+        "hero": "Imperius",
+        "when": {
+          "enemy": {
+            "frontliners": 2
+          }
+        },
+        "choices": {
+          "1": "Burn the Impure"
+        },
+        "reason": "Percentage damage for the front line of {names}; consume your marks with attacks.",
+        "id": "Imperius:62",
+        "source": "https://www.icy-veins.com/heroes/imperius-build-guide"
+      },
+      {
+        "hero": "Sgt. Hammer",
+        "when": {
+          "enemy": {
+            "frontliners": 2
+          }
+        },
+        "choices": {
+          "16": "Giant Killer"
+        },
+        "reason": "Percentage damage against the front line of {names}; maintain safe attack uptime.",
+        "id": "Sgt. Hammer:63",
+        "source": "https://www.icy-veins.com/heroes/sgt-hammer-build-guide"
+      },
+      {
+        "hero": "Tracer",
+        "when": {
+          "enemy": {
+            "frontliners": 2
+          }
+        },
+        "choices": {
+          "10": "Quantum Spike"
+        },
+        "reason": "Percentage damage gives Pulse Bomb more value against {names}.",
+        "id": "Tracer:64",
+        "source": "https://www.icy-veins.com/heroes/tracer-build-guide"
+      },
+      {
+        "hero": "Varian",
+        "when": {
+          "enemy": {
+            "shields": 2
+          }
+        },
+        "choices": {
+          "13": "Shattering Throw"
+        },
+        "reason": "Shield removal against {names}; coordinate the follow-up when their shield is broken.",
+        "id": "Varian:65",
+        "source": "https://www.icy-veins.com/heroes/varian-build-guide"
+      },
+      {
+        "hero": "Abathur",
+        "when": {
+          "enemy": {
+            "divers": 2
+          }
+        },
+        "reason": "Movement for your Symbiote host helps reposition against {names}; retain the mobile support option.",
+        "choices": {
+          "16": "Adrenaline Boost"
+        },
+        "id": "Abathur:66",
+        "source": "https://www.icy-veins.com/heroes/abathur-build-guide"
+      },
+      {
+        "hero": "Alarak",
+        "when": {
+          "enemy": {
+            "burst": 2
+          }
+        },
+        "reason": "Counter-Strike gives a defensive response to {names}'s burst; time it rather than charging blindly.",
+        "choices": {
+          "10": "Counter-Strike"
+        },
+        "id": "Alarak:67",
+        "source": "https://www.icy-veins.com/heroes/alarak-build-guide"
+      },
+      {
+        "hero": "Alexstrasza",
+        "when": {
+          "enemy": {
+            "stuns": 2
+          }
+        },
+        "reason": "Keep the defensive option against the stuns from {names}; avoid exposing yourself beside your healing circle.",
+        "choices": {
+          "13": "Dragon Scales"
+        },
+        "id": "Alexstrasza:68",
+        "source": "https://www.icy-veins.com/heroes/alexstrasza-build-guide"
+      },
+      {
+        "hero": "Ana",
+        "when": {
+          "enemy": {
+            "stuns": 1
+          }
+        },
+        "reason": "Healing Dart can answer stuns from {names}; keep a clear shot to the affected ally.",
+        "choices": {
+          "13": "Smelling Salts"
+        },
+        "id": "Ana:69",
+        "source": "https://www.icy-veins.com/heroes/ana-build-guide"
+      },
+      {
+        "hero": "Anduin",
+        "when": {
+          "enemy": {
+            "burst": 1
+          }
+        },
+        "reason": "The recovery talent helps your own survival against big hits from {names}; it is not an ally cleanse.",
+        "choices": {
+          "7": "Blessed Recovery"
+        },
+        "id": "Anduin:70",
+        "source": "https://www.icy-veins.com/heroes/anduin-build-guide"
+      },
+      {
+        "hero": "Auriel",
+        "when": {
+          "enemy": {
+            "attackers": 2
+          }
+        },
+        "reason": "Blind nearby attackers such as {names} when they commit; do not move into danger just to blind them.",
+        "choices": {
+          "13": "Blinding Flash"
+        },
+        "id": "Auriel:71",
+        "source": "https://www.icy-veins.com/heroes/auriel-build-guide"
+      },
+      {
+        "hero": "Azmodan",
+        "when": {
+          "enemy": {
+            "divers": 2
+          }
+        },
+        "reason": "Trample provides another repositioning tool against {names}, trading away some Globe damage.",
+        "choices": {
+          "16": "Trample"
+        },
+        "id": "Azmodan:72",
+        "source": "https://www.icy-veins.com/heroes/azmodan-build-guide"
+      },
+      {
+        "hero": "Cassia",
+        "when": {
+          "enemy": {
+            "control": 2
+          }
+        },
+        "reason": "The defensive active helps preserve your attack uptime against {names}'s control. Read its activation requirements before committing.",
+        "choices": {
+          "20": "Rockstopper"
+        },
+        "id": "Cassia:73",
+        "source": "https://www.icy-veins.com/heroes/cassia-build-guide"
+      },
+      {
+        "hero": "Chen",
+        "when": {
+          "enemy": {
+            "attackers": 2
+          }
+        },
+        "reason": "The active evasion helps against {names}'s attacks; save it for their damage window.",
+        "choices": {
+          "7": "Elusive Brawler"
+        },
+        "id": "Chen:74",
+        "source": "https://www.icy-veins.com/heroes/chen-build-guide"
+      },
+      {
+        "hero": "Cho",
+        "when": {
+          "enemy": {
+            "burst": 2
+          }
+        },
+        "reason": "A defensive stasis can avoid burst from {names}; coordinate the pause with Gall.",
+        "choices": {
+          "13": "Molten Block"
+        },
+        "id": "Cho:75",
+        "source": "https://www.icy-veins.com/heroes/cho-build-guide"
+      },
+      {
+        "hero": "Chromie",
+        "when": {
+          "enemy": {
+            "divers": 1
+          }
+        },
+        "reason": "Retain stasis as an emergency answer when {names} reach you; allies need to cover your exit.",
+        "choices": {
+          "11": "Time Out"
+        },
+        "id": "Chromie:76",
+        "source": "https://www.icy-veins.com/heroes/chromie-build-guide"
+      },
+      {
+        "hero": "D.Va",
+        "when": {
+          "enemy": {
+            "attackers": 2
+          }
+        },
+        "reason": "Keep the armor option against sustained attacks from {names}; position Matrix to cover your allies too.",
+        "choices": {
+          "20": "Ablative Armor"
+        },
+        "id": "D.Va:77",
+        "source": "https://www.icy-veins.com/heroes/dva-build-guide"
+      },
+      {
+        "hero": "Deathwing",
+        "when": {
+          "enemy": {
+            "divers": 2
+          }
+        },
+        "reason": "Fear provides space when {names} close in; it does not make you safe from percentage damage.",
+        "choices": {
+          "10": "Bellowing Roar"
+        },
+        "id": "Deathwing:78",
+        "source": "https://www.icy-veins.com/heroes/deathwing-build-guide"
+      },
+      {
+        "hero": "Deckard",
+        "when": {
+          "enemy": {
+            "divers": 2
+          }
+        },
+        "reason": "Keep the short-range stun to peel {names}; place potions before they engage.",
+        "choices": {
+          "16": "Horadric Staff"
+        },
+        "id": "Deckard:79",
+        "source": "https://www.icy-veins.com/heroes/deckard-build-guide"
+      },
+      {
+        "hero": "Diablo",
+        "when": {
+          "enemy": {
+            "casters": 2
+          }
+        },
+        "reason": "Keep spell protection against {names}; its value depends on your Souls.",
+        "choices": {
+          "1": "Soul Shield"
+        },
+        "id": "Diablo:80",
+        "source": "https://www.icy-veins.com/heroes/diablo-build-guide"
+      },
+      {
+        "hero": "Fenix",
+        "when": {
+          "enemy": {
+            "casters": 2
+          }
+        },
+        "reason": "Spell protection helps against {names}; preserve shield uptime and respect its conditions.",
+        "choices": {
+          "13": "Dampening Field"
+        },
+        "id": "Fenix:81",
+        "source": "https://www.icy-veins.com/heroes/fenix-build-guide"
+      },
+      {
+        "hero": "Gall",
+        "when": {
+          "enemy": {
+            "melee": 3
+          }
+        },
+        "reason": "Keep the Orb stun to disrupt the close-range lineup of {names}. Coordinate positioning with Cho.",
+        "choices": {
+          "16": "Leaden Orb"
+        },
+        "id": "Gall:82",
+        "source": "https://www.icy-veins.com/heroes/gall-build-guide"
+      },
+      {
+        "hero": "Gazlowe",
+        "when": {
+          "enemy": {
+            "melee": 3
+          }
+        },
+        "reason": "Keep the grouping heroic against {names}; follow allied control so enemies cannot simply walk out.",
+        "choices": {
+          "10": "Grav-O-Bomb 3000"
+        },
+        "id": "Gazlowe:83",
+        "source": "https://www.icy-veins.com/heroes/gazlowe-build-guide"
+      },
+      {
+        "hero": "Genji",
+        "when": {
+          "enemy": {
+            "control": 2
+          }
+        },
+        "reason": "Keep X-Strike for burst and an escape window against {names}; avoid a prolonged exposed Dragonblade.",
+        "choices": {
+          "10": "X-Strike"
+        },
+        "id": "Genji:84",
+        "source": "https://www.icy-veins.com/heroes/genji-build-guide"
+      },
+      {
+        "hero": "Greymane",
+        "when": {
+          "enemy": {
+            "frontliners": 2
+          }
+        },
+        "reason": "Keep percentage-health pressure against {names}; coordinate the follow-up rather than diving alone.",
+        "choices": {
+          "10": "Cursed Bullet"
+        },
+        "id": "Greymane:85",
+        "source": "https://www.icy-veins.com/heroes/greymane-build-guide"
+      },
+      {
+        "hero": "Gul'dan",
+        "when": {
+          "enemy": {
+            "divers": 2
+          }
+        },
+        "reason": "Prepare a safe Circle before {names} commit; it offers escape instead of the Horrify upgrade.",
+        "choices": {
+          "20": "Demonic Circle"
+        },
+        "id": "Gul'dan:86",
+        "source": "https://www.icy-veins.com/heroes/guldan-build-guide"
+      },
+      {
+        "hero": "Hanzo",
+        "when": {
+          "enemy": {
+            "divers": 2
+          }
+        },
+        "reason": "More access to Natural Agility can help escape {names}, provided you land Storm Bow and have terrain nearby.",
+        "choices": {
+          "13": "Ninja Assassin"
+        },
+        "id": "Hanzo:87",
+        "source": "https://www.icy-veins.com/heroes/hanzo-build-guide"
+      },
+      {
+        "hero": "Hogger",
+        "when": {
+          "enemy": {
+            "casters": 2
+          }
+        },
+        "reason": "Keep the spell-power reduction against {names}; apply it with Hogg Wild when safe.",
+        "choices": {
+          "13": "Pummel"
+        },
+        "id": "Hogger:88",
+        "source": "https://www.icy-veins.com/heroes/hogger-build-guide"
+      },
+      {
+        "hero": "Junkrat",
+        "when": {
+          "enemy": {
+            "divers": 1
+          }
+        },
+        "reason": "Extra traps protect approaches from {names}; prepare them before the dive.",
+        "choices": {
+          "13": "Gotta Trap 'Em All!"
+        },
+        "id": "Junkrat:89",
+        "source": "https://www.icy-veins.com/heroes/junkrat-build-guide"
+      },
+      {
+        "hero": "Kael'thas",
+        "when": {
+          "enemy": {
+            "burst": 1
+          }
+        },
+        "reason": "Keep Mana Addict for its shield reward against {names}; collect globes safely and use the shield before burst lands.",
+        "choices": {
+          "1": "Mana Addict"
+        },
+        "id": "Kael'thas:90",
+        "source": "https://www.icy-veins.com/heroes/kaelthas-build-guide"
+      },
+      {
+        "hero": "Kel'Thuzad",
+        "when": {
+          "enemy": {
+            "divers": 1
+          }
+        },
+        "reason": "Keep the targeted root to punish {names}'s commitment and set up your combo; it has a delay.",
+        "choices": {
+          "10": "Frost Blast"
+        },
+        "id": "Kel'Thuzad:91",
+        "source": "https://www.icy-veins.com/heroes/kel-thuzad-build-guide"
+      },
+      {
+        "hero": "Kerrigan",
+        "when": {
+          "enemy": {
+            "casters": 2
+          }
+        },
+        "reason": "Keep the spell-defense talent against {names}; land Primal Grasp to gain its protection.",
+        "choices": {
+          "13": "Psionic Barrier"
+        },
+        "id": "Kerrigan:92",
+        "source": "https://www.icy-veins.com/heroes/kerrigan-build-guide"
+      },
+      {
+        "hero": "Kharazim",
+        "when": {
+          "enemy": {
+            "casters": 2
+          }
+        },
+        "reason": "Spell protection helps against {names}; it replaces movement utility, so preserve a Dash exit.",
+        "choices": {
+          "13": "Spell Shield"
+        },
+        "id": "Kharazim:93",
+        "source": "https://www.icy-veins.com/heroes/kharazim-build-guide"
+      },
+      {
+        "hero": "Leoric",
+        "when": {
+          "enemy": {
+            "frontliners": 2
+          }
+        },
+        "reason": "Keep the percentage-health attack option against {names} if you can stay in range.",
+        "choices": {
+          "13": "Spectral Leech"
+        },
+        "id": "Leoric:94",
+        "source": "https://www.icy-veins.com/heroes/leoric-build-guide"
+      },
+      {
+        "hero": "Lt. Morales",
+        "when": {
+          "enemy": {
+            "shields": 2
+          }
+        },
+        "reason": "Shield removal adds value against {names}; coordinate Grenade with allied damage.",
+        "choices": {
+          "13": "EMP Grenade"
+        },
+        "id": "Lt. Morales:95",
+        "source": "https://www.icy-veins.com/heroes/lt-morales-build-guide"
+      },
+      {
+        "hero": "Lúcio",
+        "when": {
+          "enemy": {
+            "control": 2
+          }
+        },
+        "reason": "Keep the ally Unstoppable tool against {names}; choose safe targets so the dash does not put you in danger.",
+        "choices": {
+          "10": "High Five"
+        },
+        "id": "Lúcio:96",
+        "source": "https://www.icy-veins.com/heroes/lucio-build-guide"
+      },
+      {
+        "hero": "Maiev",
+        "when": {
+          "enemy": {
+            "melee": 3
+          }
+        },
+        "reason": "The cage suits fights with several close-range enemies ({names}); keep teammates in follow-up range.",
+        "choices": {
+          "10": "Warden's Cage"
+        },
+        "id": "Maiev:97",
+        "source": "https://www.icy-veins.com/heroes/maiev-build-guide"
+      },
+      {
+        "hero": "Mal'Ganis",
+        "when": {
+          "enemy": {
+            "attackers": 2
+          }
+        },
+        "reason": "Physical protection helps against {names}'s attacks; repeated rapid hits can consume it quickly.",
+        "choices": {
+          "1": "Winged Guard"
+        },
+        "id": "Mal'Ganis:98",
+        "source": "https://www.icy-veins.com/heroes/malganis-build-guide"
+      },
+      {
+        "hero": "Malthael",
+        "when": {
+          "enemy": {
+            "control": 2
+          }
+        },
+        "reason": "The Unstoppable active helps against {names}'s control; remember that it removes your marks.",
+        "choices": {
+          "13": "Inevitable End"
+        },
+        "id": "Malthael:99",
+        "source": "https://www.icy-veins.com/heroes/malthael-build-guide"
+      },
+      {
+        "hero": "Medivh",
+        "when": {
+          "enemy": {
+            "divers": 2
+          }
+        },
+        "reason": "Polymorph can interrupt the dive from {names}; keep the matching heroic upgrade.",
+        "choices": {
+          "10": "Poly Bomb",
+          "20": "Glyph Of Poly Bomb"
+        },
+        "id": "Medivh:100",
+        "source": "https://www.icy-veins.com/heroes/medivh-build-guide"
+      },
+      {
+        "hero": "Mephisto",
+        "when": {
+          "enemy": {
+            "burst": 2
+          }
+        },
+        "reason": "Armor during your Shade window helps against {names}; your return location must still be safe.",
+        "choices": {
+          "7": "Ghastly Armor"
+        },
+        "id": "Mephisto:101",
+        "source": "https://www.icy-veins.com/heroes/mephisto-build-guide"
+      },
+      {
+        "hero": "Murky",
+        "when": {
+          "enemy": {
+            "melee": 3
+          }
+        },
+        "reason": "Keep extra Slime reach against {names}; play at the edge of fights rather than dying for stacks.",
+        "choices": {
+          "7": "Black Lagoon"
+        },
+        "id": "Murky:102",
+        "source": "https://www.icy-veins.com/heroes/murky-build-guide"
+      },
+      {
+        "hero": "Nazeebo",
+        "when": {
+          "enemy": {
+            "burst": 1
+          }
+        },
+        "reason": "Keep stasis for the burst from {names}; arrange protection when it ends.",
+        "choices": {
+          "13": "Ice Block"
+        },
+        "id": "Nazeebo:103",
+        "source": "https://www.icy-veins.com/heroes/nazeebo-build-guide"
+      },
+      {
+        "hero": "Nova",
+        "when": {
+          "enemy": {
+            "divers": 2
+          }
+        },
+        "reason": "Keep the armor option against {names}; use decoys and positioning to avoid being caught.",
+        "choices": {
+          "13": "Ionic Force Field"
+        },
+        "id": "Nova:104",
+        "source": "https://www.icy-veins.com/heroes/nova-build-guide"
+      },
+      {
+        "hero": "Orphea",
+        "when": {
+          "enemy": {
+            "melee": 3
+          }
+        },
+        "reason": "Repeated hits are more plausible against the close-range lineup of {names}; follow allied control.",
+        "choices": {
+          "10": "Eternal Feast"
+        },
+        "id": "Orphea:105",
+        "source": "https://www.icy-veins.com/heroes/orphea-build-guide"
+      },
+      {
+        "hero": "Probius",
+        "when": {
+          "enemy": {
+            "casters": 2
+          }
+        },
+        "reason": "Keep the spell-defense choice against {names}; fight around your setup rather than chasing.",
+        "choices": {
+          "4": "Photon Barrier"
+        },
+        "id": "Probius:106",
+        "source": "https://www.icy-veins.com/heroes/probius-build-guide"
+      },
+      {
+        "hero": "Qhira",
+        "when": {
+          "enemy": {
+            "fast_attacks": 1
+          }
+        },
+        "reason": "Rapid hits from {names} spend evasion charges quickly; choose the alternative defensive talent.",
+        "choices": {
+          "4": "Your Pain, My Gain"
+        },
+        "id": "Qhira:107",
+        "source": "https://www.icy-veins.com/heroes/qhira-build-guide"
+      },
+      {
+        "hero": "Ragnaros",
+        "when": {
+          "enemy": {
+            "stuns": 2
+          }
+        },
+        "reason": "The armor triggered by stuns helps against {names}; roots alone do not activate it.",
+        "choices": {
+          "13": "Resilient Flame"
+        },
+        "id": "Ragnaros:108",
+        "source": "https://www.icy-veins.com/heroes/ragnaros-build-guide"
+      },
+      {
+        "hero": "Raynor",
+        "when": {
+          "enemy": {
+            "divers": 2
+          }
+        },
+        "reason": "Keep the defensive Adrenaline Rush option against {names}; combine it with knockback and retreat.",
+        "choices": {
+          "4": "Fight or Flight"
+        },
+        "id": "Raynor:109",
+        "source": "https://www.icy-veins.com/heroes/raynor-build-guide"
+      },
+      {
+        "hero": "Rexxar",
+        "when": {
+          "enemy": {
+            "divers": 2
+          }
+        },
+        "reason": "Stasis protects Rexxar when {names} reach him; keep controlling Misha while waiting for help.",
+        "choices": {
+          "16": "Feign Death"
+        },
+        "id": "Rexxar:110",
+        "source": "https://www.icy-veins.com/heroes/rexxar-build-guide"
+      },
+      {
+        "hero": "Samuro",
+        "when": {
+          "enemy": {
+            "attackers": 2
+          }
+        },
+        "reason": "Physical protection helps against {names}; do not confuse it with protection from their abilities.",
+        "choices": {
+          "4": "Deflection"
+        },
+        "id": "Samuro:111",
+        "source": "https://www.icy-veins.com/heroes/samuro-build-guide"
+      },
+      {
+        "hero": "Sonya",
+        "when": {
+          "enemy": {
+            "burst": 2
+          }
+        },
+        "reason": "Keep the armor active for burst from {names}; activate it before the damage arrives.",
+        "choices": {
+          "20": "Ignore Pain"
+        },
+        "id": "Sonya:112",
+        "source": "https://www.icy-veins.com/heroes/sonya-build-guide"
+      },
+      {
+        "hero": "Stukov",
+        "when": {
+          "enemy": {
+            "attackers": 2
+          }
+        },
+        "reason": "Keep physical protection for allies threatened by {names}; spread the heal before their attack window.",
+        "choices": {
+          "4": "Biotic Armor"
+        },
+        "id": "Stukov:113",
+        "source": "https://www.icy-veins.com/heroes/stukov-build-guide"
+      },
+      {
+        "hero": "Tassadar",
+        "when": {
+          "enemy": {
+            "divers": 2
+          }
+        },
+        "reason": "An escape tool helps against {names}; preserve a safe route and watch for reveals.",
+        "choices": {
+          "13": "Shadow Walk"
+        },
+        "id": "Tassadar:114",
+        "source": "https://www.icy-veins.com/heroes/tassadar-build-guide"
+      },
+      {
+        "hero": "The Butcher",
+        "when": {
+          "enemy": {
+            "casters": 2
+          }
+        },
+        "reason": "Keep the spell protection for engaging into {names}; avoid charging beyond allied support.",
+        "choices": {
+          "7": "Meat Shield"
+        },
+        "id": "The Butcher:115",
+        "source": "https://www.icy-veins.com/heroes/the-butcher-build-guide"
+      },
+      {
+        "hero": "The Lost Vikings",
+        "when": {
+          "enemy": {
+            "burst": 1
+          }
+        },
+        "reason": "Keep the defensive active to dodge burst from {names}; protect Vikings carrying important soak.",
+        "choices": {
+          "13": "Jump!"
+        },
+        "id": "The Lost Vikings:116",
+        "source": "https://www.icy-veins.com/heroes/the-lost-vikings-build-guide"
+      },
+      {
+        "hero": "Tyrael",
+        "when": {
+          "enemy": {
+            "divers": 2
+          }
+        },
+        "reason": "Terrain control can split {names} from their support and protect allies. Placement matters.",
+        "choices": {
+          "13": "Holy Ground"
+        },
+        "id": "Tyrael:117",
+        "source": "https://www.icy-veins.com/heroes/tyrael-build-guide"
+      },
+      {
+        "hero": "Tyrande",
+        "when": {
+          "enemy": {
+            "stuns": 1
+          }
+        },
+        "reason": "Keep the heal's cleanse against {names}'s stuns; save a charge for the caught ally.",
+        "choices": {
+          "16": "Celestial Attunement"
+        },
+        "id": "Tyrande:118",
+        "source": "https://www.icy-veins.com/heroes/tyrande-build-guide"
+      },
+      {
+        "hero": "Valeera",
+        "when": {
+          "enemy": {
+            "casters": 2
+          }
+        },
+        "reason": "The defensive active helps against {names}'s spell damage and control; use it before their combo.",
+        "choices": {
+          "10": "Cloak of Shadows"
+        },
+        "id": "Valeera:119",
+        "source": "https://www.icy-veins.com/heroes/valeera-build-guide"
+      },
+      {
+        "hero": "Whitemane",
+        "when": {
+          "enemy": {
+            "divers": 2
+          }
+        },
+        "reason": "Keep damage reduction against {names} while channeling; stay out of interrupt range.",
+        "choices": {
+          "13": "Subjugation"
+        },
+        "id": "Whitemane:120",
+        "source": "https://www.icy-veins.com/heroes/whitemane-build-guide"
+      },
+      {
+        "hero": "Xul",
+        "when": {
+          "enemy": {
+            "attackers": 2
+          }
+        },
+        "reason": "Evasion helps against {names}'s attacks, trading away the damage from Backlash.",
+        "choices": {
+          "1": "Shade"
+        },
+        "id": "Xul:121",
+        "source": "https://www.icy-veins.com/heroes/xul-build-guide"
+      },
+      {
+        "hero": "Yrel",
+        "when": {
+          "enemy": {
+            "control": 2
+          }
+        },
+        "reason": "Keep the Unstoppable active against {names}; use it to protect an important charged ability.",
+        "choices": {
+          "20": "Seraphim"
+        },
+        "id": "Yrel:122",
+        "source": "https://www.icy-veins.com/heroes/yrel-build-guide"
+      },
+      {
+        "hero": "Zarya",
+        "when": {
+          "enemy": {
+            "casters": 2
+          }
+        },
+        "reason": "Spell protection helps against {names} while your shield is active.",
+        "choices": {
+          "13": "Spell Barrier"
+        },
+        "id": "Zarya:123",
+        "source": "https://www.icy-veins.com/heroes/zarya-build-guide"
+      },
+      {
+        "hero": "Zul'jin",
+        "when": {
+          "enemy": {
+            "roots_slows": 1
+          }
+        },
+        "reason": "Remove roots and slows from {names}; this active does not remove stuns or grant Unstoppable.",
+        "choices": {
+          "4": "Voodoo Shuffle"
+        },
+        "id": "Zul'jin:124",
+        "source": "https://www.icy-veins.com/heroes/zuljin-build-guide"
+      },
+      {
+        "hero": "Abathur",
+        "when": {
+          "ally": {
+            "attackers": 1
+          }
+        },
+        "reason": "Keep attack-speed support for {allies}; put Symbiote on an ally who can safely attack.",
+        "choices": {
+          "4": "Adrenal Overload"
+        },
+        "id": "Abathur:125",
+        "source": "https://www.icy-veins.com/heroes/abathur-build-guide"
+      },
+      {
+        "hero": "Ana",
+        "when": {
+          "ally": {
+            "casters": 1
+          }
+        },
+        "reason": "Nano Boost supports the ability damage of {allies}; coordinate its timing.",
+        "choices": {
+          "10": "Nano Boost"
+        },
+        "id": "Ana:126",
+        "source": "https://www.icy-veins.com/heroes/ana-build-guide"
+      },
+      {
+        "hero": "Gazlowe",
+        "when": {
+          "ally_names": [
+            "E.T.C.",
+            "Anub'arak"
+          ]
+        },
+        "reason": "The Xplodium package follows the reliable engages of {allies}.",
+        "build": "Xplodium Build",
+        "id": "Gazlowe:127",
+        "source": "https://www.icy-veins.com/heroes/gazlowe-build-guide"
+      },
+      {
+        "hero": "Hanzo",
+        "when": {
+          "maps": [
+            "Battlefield of Eternity",
+            "Hanamura Temple"
+          ]
+        },
+        "reason": "The battleground rewards sustained damage to the objective; use Scatter Arrow angles carefully.",
+        "choices": {
+          "4": "Serrated Arrows"
+        },
+        "id": "Hanzo:128",
+        "source": "https://www.icy-veins.com/heroes/hanzo-build-guide"
+      },
+      {
+        "hero": "Varian",
+        "when": {
+          "maps": [
+            "Infernal Shrines",
+            "Braxis Holdout",
+            "Dragon Shire"
+          ]
+        },
+        "reason": "Nearby objective minions give Victory Rush opportunities on this battleground.",
+        "choices": {
+          "7": "Victory Rush"
+        },
+        "id": "Varian:129",
+        "source": "https://www.icy-veins.com/heroes/varian-build-guide"
+      },
+      {
+        "hero": "Tyrael",
+        "when": {
+          "enemy_names": [
+            "Garrosh"
+          ]
+        },
+        "reason": "The return teleport is valuable against Garrosh throws; preserve its return window.",
+        "choices": {
+          "13": "Sword of Justice"
+        },
+        "id": "Tyrael:130",
+        "source": "https://www.icy-veins.com/heroes/tyrael-build-guide"
+      }
+    ],
+    "basis": "e8fc312f92bc5f6a9e4cf36846d6024c79ef6036030fc220b0685784c5353bb9"
+  },
+  "draft": {
+    "version": 1,
+    "kind": "guide relationships, not win-rate statistics",
+    "heroes": {
+      "Abathur": {
+        "synergies": [
+          "Genji",
+          "Greymane",
+          "Illidan",
+          "Malthael",
+          "Sonya",
+          "Tracer",
+          "Yrel",
+          "Zeratul"
+        ],
+        "countered_by": [
+          "Dehaka",
+          "Falstad",
+          "Ragnaros",
+          "Sgt. Hammer",
+          "Sylvanas",
+          "Zarya"
+        ],
+        "strong_maps": [
+          "Alterac Pass",
+          "Cursed Hollow",
+          "Garden of Terror",
+          "Sky Temple",
+          "Towers of Doom"
+        ],
+        "weak_maps": [
+          "Battlefield of Eternity",
+          "Braxis Holdout",
+          "Hanamura Temple",
+          "Tomb of the Spider Queen",
+          "Volskaya Foundry"
+        ],
+        "source": "https://www.icy-veins.com/heroes/abathur-build-guide",
+        "source_updated": "Aug 24, 2026",
+        "checked": "2026-09-19"
+      },
+      "Alarak": {
+        "synergies": [
+          "E.T.C.",
+          "Garrosh",
+          "Jaina",
+          "Raynor"
+        ],
+        "countered_by": [
+          "Deathwing",
+          "E.T.C.",
+          "Johanna",
+          "Medivh"
+        ],
+        "strong_maps": [
+          "Battlefield of Eternity",
+          "Towers of Doom"
+        ],
+        "weak_maps": [
+          "Blackheart's Bay",
+          "Infernal Shrines",
+          "Sky Temple"
+        ],
+        "source": "https://www.icy-veins.com/heroes/alarak-build-guide",
+        "source_updated": "Sep 25, 2025",
+        "checked": "2026-09-19"
+      },
+      "Alexstrasza": {
+        "synergies": [
+          "Azmodan",
+          "Blaze",
+          "Johanna",
+          "Kael'thas"
+        ],
+        "countered_by": [
+          "Ana",
+          "Anub'arak",
+          "Junkrat",
+          "Sylvanas",
+          "Yrel"
+        ],
+        "strong_maps": [
+          "Infernal Shrines"
+        ],
+        "weak_maps": [
+          "Battlefield of Eternity",
+          "Blackheart's Bay",
+          "Braxis Holdout",
+          "Hanamura Temple"
+        ],
+        "source": "https://www.icy-veins.com/heroes/alexstrasza-build-guide",
+        "source_updated": "Jul 20, 2026",
+        "checked": "2026-09-19"
+      },
+      "Ana": {
+        "synergies": [
+          "E.T.C.",
+          "Li-Ming"
+        ],
+        "countered_by": [
+          "Anub'arak",
+          "Hanzo",
+          "Lúcio",
+          "Zeratul"
+        ],
+        "strong_maps": [
+          "Hanamura Temple",
+          "Tomb of the Spider Queen",
+          "Towers of Doom"
+        ],
+        "weak_maps": [
+          "Blackheart's Bay",
+          "Cursed Hollow",
+          "Garden of Terror",
+          "Sky Temple",
+          "Warhead Junction"
+        ],
+        "source": "https://www.icy-veins.com/heroes/ana-build-guide",
+        "source_updated": "Jan 27, 2026",
+        "checked": "2026-09-19"
+      },
+      "Anduin": {
+        "synergies": [
+          "Alarak",
+          "Blaze",
+          "Genji",
+          "Johanna",
+          "Sylvanas",
+          "The Butcher"
+        ],
+        "countered_by": [
+          "Kael'thas",
+          "Lunara",
+          "Sonya",
+          "Stukov",
+          "Varian"
+        ],
+        "strong_maps": [
+          "Battlefield of Eternity",
+          "Cursed Hollow",
+          "Infernal Shrines",
+          "Tomb of the Spider Queen"
+        ],
+        "weak_maps": [
+          "Braxis Holdout"
+        ],
+        "source": "https://www.icy-veins.com/heroes/anduin-build-guide",
+        "source_updated": "Jul 12, 2026",
+        "checked": "2026-09-19"
+      },
+      "Anub'arak": {
+        "synergies": [
+          "Greymane",
+          "Jaina",
+          "Kael'thas",
+          "Kerrigan",
+          "Rehgar",
+          "The Butcher"
+        ],
+        "countered_by": [
+          "Leoric",
+          "Malthael",
+          "Tracer",
+          "Valla",
+          "Varian",
+          "Zul'jin"
+        ],
+        "strong_maps": [
+          "Alterac Pass",
+          "Cursed Hollow",
+          "Dragon Shire",
+          "Garden of Terror"
+        ],
+        "weak_maps": [
+          "Battlefield of Eternity",
+          "Braxis Holdout",
+          "Tomb of the Spider Queen"
+        ],
+        "source": "https://www.icy-veins.com/heroes/anubarak-build-guide",
+        "source_updated": "Jul 11, 2026",
+        "checked": "2026-09-19"
+      },
+      "Artanis": {
+        "synergies": [
+          "Arthas",
+          "Garrosh",
+          "Kael'thas",
+          "Lunara",
+          "Malfurion",
+          "Medivh"
+        ],
+        "countered_by": [
+          "Arthas",
+          "E.T.C.",
+          "Jaina",
+          "Li Li",
+          "Lunara",
+          "Varian"
+        ],
+        "strong_maps": [
+          "Battlefield of Eternity",
+          "Braxis Holdout",
+          "Hanamura Temple"
+        ],
+        "weak_maps": [
+          "Infernal Shrines",
+          "Tomb of the Spider Queen",
+          "Towers of Doom"
+        ],
+        "source": "https://www.icy-veins.com/heroes/artanis-build-guide",
+        "source_updated": "Apr 18, 2025",
+        "checked": "2026-09-19"
+      },
+      "Arthas": {
+        "synergies": [
+          "Chromie",
+          "Diablo",
+          "Greymane",
+          "Maiev",
+          "Raynor",
+          "Rehgar",
+          "Stukov",
+          "Tyrael",
+          "Zarya"
+        ],
+        "countered_by": [
+          "Ana",
+          "Garrosh",
+          "Jaina",
+          "Raynor",
+          "Sonya",
+          "Tracer"
+        ],
+        "strong_maps": [
+          "Battlefield of Eternity"
+        ],
+        "weak_maps": [
+          "Braxis Holdout",
+          "Dragon Shire",
+          "Garden of Terror"
+        ],
+        "source": "https://www.icy-veins.com/heroes/arthas-build-guide",
+        "source_updated": "May 26, 2026",
+        "checked": "2026-09-19"
+      },
+      "Auriel": {
+        "synergies": [
+          "Diablo",
+          "Leoric",
+          "Tassadar",
+          "Valla"
+        ],
+        "countered_by": [
+          "Anub'arak",
+          "Chen",
+          "Chromie",
+          "Deckard",
+          "Junkrat"
+        ],
+        "strong_maps": [
+          "Battlefield of Eternity",
+          "Braxis Holdout",
+          "Hanamura Temple"
+        ],
+        "weak_maps": [
+          "Cursed Hollow",
+          "Garden of Terror",
+          "Warhead Junction"
+        ],
+        "source": "https://www.icy-veins.com/heroes/auriel-build-guide",
+        "source_updated": "Jun 01, 2026",
+        "checked": "2026-09-19"
+      },
+      "Azmodan": {
+        "synergies": [
+          "Jaina",
+          "Johanna",
+          "Maiev",
+          "Malfurion"
+        ],
+        "countered_by": [
+          "Anub'arak",
+          "Artanis",
+          "Diablo",
+          "Leoric",
+          "Malthael",
+          "Muradin",
+          "Sonya",
+          "The Butcher"
+        ],
+        "strong_maps": [
+          "Infernal Shrines",
+          "Tomb of the Spider Queen",
+          "Warhead Junction"
+        ],
+        "weak_maps": [
+          "Braxis Holdout"
+        ],
+        "source": "https://www.icy-veins.com/heroes/azmodan-build-guide",
+        "source_updated": "Feb 23, 2026",
+        "checked": "2026-09-19"
+      },
+      "Blaze": {
+        "synergies": [
+          "Arthas",
+          "Kerrigan",
+          "Maiev",
+          "Malfurion"
+        ],
+        "countered_by": [
+          "Leoric",
+          "Lunara",
+          "Malthael",
+          "Nova",
+          "Tracer",
+          "Valla"
+        ],
+        "strong_maps": [
+          "Infernal Shrines",
+          "Sky Temple",
+          "Towers of Doom",
+          "Volskaya Foundry"
+        ],
+        "weak_maps": [
+          "Braxis Holdout",
+          "Dragon Shire"
+        ],
+        "source": "https://www.icy-veins.com/heroes/blaze-build-guide",
+        "source_updated": "Jul 20, 2026",
+        "checked": "2026-09-19"
+      },
+      "Brightwing": {
+        "synergies": [
+          "Cho",
+          "Diablo",
+          "Genji",
+          "Stitches",
+          "Tracer"
+        ],
+        "countered_by": [
+          "Anub'arak",
+          "E.T.C.",
+          "Johanna"
+        ],
+        "strong_maps": [
+          "Alterac Pass",
+          "Cursed Hollow",
+          "Sky Temple",
+          "Towers of Doom",
+          "Warhead Junction"
+        ],
+        "weak_maps": [
+          "Tomb of the Spider Queen"
+        ],
+        "source": "https://www.icy-veins.com/heroes/brightwing-build-guide",
+        "source_updated": "May 31, 2025",
+        "checked": "2026-09-19"
+      },
+      "Cassia": {
+        "synergies": [
+          "Artanis",
+          "Jaina",
+          "Johanna",
+          "Li Li",
+          "Thrall"
+        ],
+        "countered_by": [
+          "E.T.C.",
+          "Imperius",
+          "Johanna",
+          "Kael'thas",
+          "Mal'Ganis",
+          "Xul"
+        ],
+        "strong_maps": [],
+        "weak_maps": [],
+        "source": "https://www.icy-veins.com/heroes/cassia-build-guide",
+        "source_updated": "May 31, 2025",
+        "checked": "2026-09-19"
+      },
+      "Chen": {
+        "synergies": [
+          "Abathur",
+          "Greymane",
+          "Li-Ming",
+          "Rehgar",
+          "Tyrael"
+        ],
+        "countered_by": [
+          "E.T.C.",
+          "Li-Ming",
+          "Lúcio",
+          "Raynor",
+          "The Lost Vikings",
+          "Yrel"
+        ],
+        "strong_maps": [
+          "Battlefield of Eternity",
+          "Braxis Holdout",
+          "Hanamura Temple",
+          "Sky Temple"
+        ],
+        "weak_maps": [
+          "Blackheart's Bay",
+          "Cursed Hollow",
+          "Garden of Terror",
+          "Towers of Doom",
+          "Warhead Junction"
+        ],
+        "source": "https://www.icy-veins.com/heroes/chen-build-guide",
+        "source_updated": "Jun 14, 2026",
+        "checked": "2026-09-19"
+      },
+      "Cho": {
+        "synergies": [
+          "Alexstrasza",
+          "Ana",
+          "Auriel",
+          "Blaze",
+          "Brightwing",
+          "Yrel"
+        ],
+        "countered_by": [
+          "Anub'arak",
+          "Garrosh",
+          "Greymane",
+          "Imperius",
+          "Kharazim",
+          "Leoric",
+          "Maiev",
+          "Malthael",
+          "Raynor"
+        ],
+        "strong_maps": [
+          "Garden of Terror",
+          "Infernal Shrines",
+          "Tomb of the Spider Queen",
+          "Volskaya Foundry"
+        ],
+        "weak_maps": [
+          "Battlefield of Eternity",
+          "Warhead Junction"
+        ],
+        "source": "https://www.icy-veins.com/heroes/cho-build-guide",
+        "source_updated": "May 31, 2025",
+        "checked": "2026-09-19"
+      },
+      "Chromie": {
+        "synergies": [
+          "Ana",
+          "Johanna",
+          "Malfurion"
+        ],
+        "countered_by": [
+          "Diablo",
+          "Illidan",
+          "Tracer",
+          "Zeratul"
+        ],
+        "strong_maps": [
+          "Braxis Holdout",
+          "Volskaya Foundry"
+        ],
+        "weak_maps": [],
+        "source": "https://www.icy-veins.com/heroes/chromie-build-guide",
+        "source_updated": "Aug 18, 2026",
+        "checked": "2026-09-19"
+      },
+      "D.Va": {
+        "synergies": [
+          "Deckard",
+          "Falstad",
+          "Garrosh",
+          "Maiev"
+        ],
+        "countered_by": [
+          "E.T.C.",
+          "Kael'thas",
+          "Malthael",
+          "Raynor",
+          "Stukov"
+        ],
+        "strong_maps": [
+          "Infernal Shrines",
+          "Tomb of the Spider Queen",
+          "Towers of Doom",
+          "Volskaya Foundry"
+        ],
+        "weak_maps": [
+          "Battlefield of Eternity",
+          "Braxis Holdout",
+          "Cursed Hollow",
+          "Hanamura Temple"
+        ],
+        "source": "https://www.icy-veins.com/heroes/dva-build-guide",
+        "source_updated": "Apr 18, 2025",
+        "checked": "2026-09-19"
+      },
+      "Deathwing": {
+        "synergies": [
+          "Arthas",
+          "E.T.C.",
+          "Johanna",
+          "Muradin"
+        ],
+        "countered_by": [
+          "Greymane",
+          "Tracer",
+          "Tychus",
+          "Valla",
+          "Zeratul"
+        ],
+        "strong_maps": [
+          "Cursed Hollow",
+          "Garden of Terror",
+          "Warhead Junction"
+        ],
+        "weak_maps": [
+          "Blackheart's Bay",
+          "Dragon Shire",
+          "Sky Temple"
+        ],
+        "source": "https://www.icy-veins.com/heroes/deathwing-build-guide",
+        "source_updated": "May 12, 2026",
+        "checked": "2026-09-19"
+      },
+      "Deckard": {
+        "synergies": [
+          "Blaze",
+          "Jaina",
+          "Johanna",
+          "Sgt. Hammer"
+        ],
+        "countered_by": [
+          "Deathwing",
+          "Johanna",
+          "Li-Ming",
+          "Malfurion",
+          "Tracer"
+        ],
+        "strong_maps": [
+          "Alterac Pass",
+          "Battlefield of Eternity",
+          "Cursed Hollow",
+          "Garden of Terror",
+          "Infernal Shrines",
+          "Tomb of the Spider Queen"
+        ],
+        "weak_maps": [
+          "Blackheart's Bay",
+          "Hanamura Temple",
+          "Sky Temple",
+          "Warhead Junction"
+        ],
+        "source": "https://www.icy-veins.com/heroes/deckard-build-guide",
+        "source_updated": "Jan 27, 2026",
+        "checked": "2026-09-19"
+      },
+      "Dehaka": {
+        "synergies": [
+          "Anub'arak",
+          "Hanzo",
+          "Jaina",
+          "Maiev"
+        ],
+        "countered_by": [
+          "E.T.C.",
+          "Lúcio",
+          "Raynor",
+          "Sgt. Hammer",
+          "Valla"
+        ],
+        "strong_maps": [
+          "Blackheart's Bay",
+          "Braxis Holdout",
+          "Cursed Hollow",
+          "Dragon Shire",
+          "Garden of Terror",
+          "Sky Temple",
+          "Towers of Doom",
+          "Warhead Junction"
+        ],
+        "weak_maps": [
+          "Hanamura Temple",
+          "Volskaya Foundry"
+        ],
+        "source": "https://www.icy-veins.com/heroes/dehaka-build-guide",
+        "source_updated": "Sep 30, 2025",
+        "checked": "2026-09-19"
+      },
+      "Diablo": {
+        "synergies": [
+          "Medivh",
+          "Tassadar",
+          "Thrall",
+          "Tyrande"
+        ],
+        "countered_by": [
+          "Garrosh",
+          "Leoric",
+          "Malthael",
+          "Raynor",
+          "Tychus"
+        ],
+        "strong_maps": [
+          "Cursed Hollow",
+          "Garden of Terror",
+          "Infernal Shrines",
+          "Sky Temple",
+          "Tomb of the Spider Queen"
+        ],
+        "weak_maps": [
+          "Blackheart's Bay",
+          "Braxis Holdout",
+          "Hanamura Temple"
+        ],
+        "source": "https://www.icy-veins.com/heroes/diablo-build-guide",
+        "source_updated": "Jul 20, 2026",
+        "checked": "2026-09-19"
+      },
+      "E.T.C.": {
+        "synergies": [
+          "Alarak",
+          "Blaze",
+          "Greymane",
+          "Kael'thas",
+          "Uther"
+        ],
+        "countered_by": [
+          "Brightwing",
+          "Deathwing",
+          "Johanna",
+          "Kael'thas",
+          "Raynor"
+        ],
+        "strong_maps": [
+          "Battlefield of Eternity"
+        ],
+        "weak_maps": [
+          "Braxis Holdout",
+          "Dragon Shire",
+          "Tomb of the Spider Queen",
+          "Volskaya Foundry"
+        ],
+        "source": "https://www.icy-veins.com/heroes/e-t-c-build-guide",
+        "source_updated": "Aug 11, 2026",
+        "checked": "2026-09-19"
+      },
+      "Falstad": {
+        "synergies": [
+          "Arthas",
+          "E.T.C.",
+          "Tassadar",
+          "Uther"
+        ],
+        "countered_by": [
+          "Genji",
+          "Greymane",
+          "Illidan",
+          "Nova",
+          "Valeera",
+          "Zeratul"
+        ],
+        "strong_maps": [
+          "Braxis Holdout",
+          "Cursed Hollow",
+          "Dragon Shire",
+          "Hanamura Temple",
+          "Towers of Doom",
+          "Warhead Junction"
+        ],
+        "weak_maps": [
+          "Tomb of the Spider Queen"
+        ],
+        "source": "https://www.icy-veins.com/heroes/falstad-build-guide",
+        "source_updated": "Apr 22, 2026",
+        "checked": "2026-09-19"
+      },
+      "Fenix": {
+        "synergies": [
+          "Diablo",
+          "Johanna",
+          "Maiev",
+          "Thrall"
+        ],
+        "countered_by": [
+          "E.T.C.",
+          "Genji",
+          "Lúcio",
+          "Varian",
+          "Zeratul"
+        ],
+        "strong_maps": [
+          "Braxis Holdout",
+          "Infernal Shrines",
+          "Tomb of the Spider Queen"
+        ],
+        "weak_maps": [],
+        "source": "https://www.icy-veins.com/heroes/fenix-build-guide",
+        "source_updated": "May 31, 2025",
+        "checked": "2026-09-19"
+      },
+      "Gall": {
+        "synergies": [
+          "Alexstrasza",
+          "Ana",
+          "Auriel",
+          "Blaze",
+          "Brightwing",
+          "Yrel"
+        ],
+        "countered_by": [
+          "Anub'arak",
+          "Garrosh",
+          "Greymane",
+          "Imperius",
+          "Kharazim",
+          "Leoric",
+          "Maiev",
+          "Malthael",
+          "Raynor"
+        ],
+        "strong_maps": [
+          "Garden of Terror",
+          "Infernal Shrines",
+          "Tomb of the Spider Queen",
+          "Volskaya Foundry"
+        ],
+        "weak_maps": [
+          "Battlefield of Eternity",
+          "Warhead Junction"
+        ],
+        "source": "https://www.icy-veins.com/heroes/gall-build-guide",
+        "source_updated": "May 31, 2025",
+        "checked": "2026-09-19"
+      },
+      "Garrosh": {
+        "synergies": [
+          "Hanzo",
+          "Jaina",
+          "Malfurion",
+          "Zarya"
+        ],
+        "countered_by": [
+          "Anduin",
+          "Hanzo",
+          "Jaina",
+          "Johanna",
+          "Malthael"
+        ],
+        "strong_maps": [
+          "Battlefield of Eternity",
+          "Braxis Holdout",
+          "Tomb of the Spider Queen"
+        ],
+        "weak_maps": [
+          "Alterac Pass",
+          "Blackheart's Bay",
+          "Hanamura Temple",
+          "Warhead Junction"
+        ],
+        "source": "https://www.icy-veins.com/heroes/garrosh-build-guide",
+        "source_updated": "Apr 22, 2026",
+        "checked": "2026-09-19"
+      },
+      "Gazlowe": {
+        "synergies": [
+          "Diablo",
+          "E.T.C.",
+          "Jaina",
+          "Johanna",
+          "Kael'thas",
+          "Malfurion"
+        ],
+        "countered_by": [
+          "Chromie",
+          "Gul'dan",
+          "Hanzo",
+          "Li-Ming",
+          "Lunara",
+          "Raynor"
+        ],
+        "strong_maps": [
+          "Alterac Pass",
+          "Braxis Holdout",
+          "Infernal Shrines",
+          "Sky Temple",
+          "Volskaya Foundry",
+          "Warhead Junction"
+        ],
+        "weak_maps": [
+          "Hanamura Temple",
+          "Towers of Doom"
+        ],
+        "source": "https://www.icy-veins.com/heroes/gazlowe-build-guide",
+        "source_updated": "Sep 13, 2026",
+        "checked": "2026-09-19"
+      },
+      "Genji": {
+        "synergies": [
+          "E.T.C.",
+          "Jaina",
+          "Uther"
+        ],
+        "countered_by": [
+          "Lunara",
+          "Malfurion",
+          "Uther",
+          "Varian"
+        ],
+        "strong_maps": [
+          "Braxis Holdout",
+          "Cursed Hollow",
+          "Garden of Terror",
+          "Hanamura Temple",
+          "Infernal Shrines"
+        ],
+        "weak_maps": [
+          "Tomb of the Spider Queen"
+        ],
+        "source": "https://www.icy-veins.com/heroes/genji-build-guide",
+        "source_updated": "Jul 23, 2026",
+        "checked": "2026-09-19"
+      },
+      "Greymane": {
+        "synergies": [
+          "Abathur",
+          "E.T.C.",
+          "Garrosh",
+          "Malthael",
+          "Rehgar",
+          "Tyrael",
+          "Uther"
+        ],
+        "countered_by": [
+          "Arthas",
+          "Brightwing",
+          "Johanna",
+          "Muradin",
+          "The Butcher",
+          "Uther",
+          "Xul"
+        ],
+        "strong_maps": [
+          "Battlefield of Eternity",
+          "Dragon Shire",
+          "Garden of Terror",
+          "Sky Temple",
+          "Tomb of the Spider Queen"
+        ],
+        "weak_maps": [],
+        "source": "https://www.icy-veins.com/heroes/greymane-build-guide",
+        "source_updated": "May 31, 2025",
+        "checked": "2026-09-19"
+      },
+      "Gul'dan": {
+        "synergies": [
+          "Auriel",
+          "E.T.C.",
+          "Malfurion"
+        ],
+        "countered_by": [
+          "Greymane",
+          "Illidan",
+          "Kerrigan",
+          "Tracer"
+        ],
+        "strong_maps": [
+          "Alterac Pass",
+          "Braxis Holdout",
+          "Dragon Shire",
+          "Infernal Shrines",
+          "Sky Temple",
+          "Tomb of the Spider Queen",
+          "Volskaya Foundry"
+        ],
+        "weak_maps": [],
+        "source": "https://www.icy-veins.com/heroes/guldan-build-guide",
+        "source_updated": "Sep 23, 2023",
+        "checked": "2026-09-19"
+      },
+      "Hanzo": {
+        "synergies": [
+          "Blaze",
+          "Diablo",
+          "E.T.C.",
+          "Johanna",
+          "Mal'Ganis",
+          "Zeratul"
+        ],
+        "countered_by": [
+          "Genji",
+          "Illidan",
+          "Zeratul"
+        ],
+        "strong_maps": [
+          "Battlefield of Eternity",
+          "Cursed Hollow",
+          "Dragon Shire",
+          "Infernal Shrines",
+          "Towers of Doom",
+          "Volskaya Foundry"
+        ],
+        "weak_maps": [
+          "Warhead Junction"
+        ],
+        "source": "https://www.icy-veins.com/heroes/hanzo-build-guide",
+        "source_updated": "Sep 25, 2025",
+        "checked": "2026-09-19"
+      },
+      "Hogger": {
+        "synergies": [
+          "Diablo",
+          "Hanzo",
+          "Li-Ming",
+          "Sonya",
+          "Stukov"
+        ],
+        "countered_by": [
+          "Diablo",
+          "Lunara",
+          "Malthael",
+          "Tychus",
+          "Uther"
+        ],
+        "strong_maps": [
+          "Alterac Pass",
+          "Blackheart's Bay",
+          "Cursed Hollow",
+          "Dragon Shire",
+          "Garden of Terror",
+          "Infernal Shrines",
+          "Sky Temple"
+        ],
+        "weak_maps": [
+          "Hanamura Temple"
+        ],
+        "source": "https://www.icy-veins.com/heroes/hogger-build-guide",
+        "source_updated": "Sep 11, 2026",
+        "checked": "2026-09-19"
+      },
+      "Illidan": {
+        "synergies": [
+          "Abathur",
+          "Medivh",
+          "Rehgar",
+          "Tyrael",
+          "Uther",
+          "Zarya"
+        ],
+        "countered_by": [
+          "Arthas",
+          "Brightwing",
+          "E.T.C.",
+          "Johanna",
+          "Li Li",
+          "Muradin",
+          "Sonya",
+          "Uther",
+          "Varian"
+        ],
+        "strong_maps": [
+          "Blackheart's Bay",
+          "Cursed Hollow",
+          "Garden of Terror",
+          "Sky Temple",
+          "Warhead Junction"
+        ],
+        "weak_maps": [
+          "Battlefield of Eternity",
+          "Braxis Holdout",
+          "Towers of Doom",
+          "Volskaya Foundry"
+        ],
+        "source": "https://www.icy-veins.com/heroes/illidan-build-guide",
+        "source_updated": "Sep 01, 2025",
+        "checked": "2026-09-19"
+      },
+      "Imperius": {
+        "synergies": [
+          "Blaze",
+          "E.T.C.",
+          "Fenix",
+          "Jaina",
+          "Mal'Ganis",
+          "Rehgar",
+          "Yrel"
+        ],
+        "countered_by": [
+          "E.T.C.",
+          "Jaina",
+          "Lúcio",
+          "Raynor",
+          "Sgt. Hammer",
+          "Zul'jin"
+        ],
+        "strong_maps": [
+          "Battlefield of Eternity",
+          "Braxis Holdout",
+          "Hanamura Temple"
+        ],
+        "weak_maps": [
+          "Blackheart's Bay",
+          "Garden of Terror",
+          "Sky Temple",
+          "Towers of Doom"
+        ],
+        "source": "https://www.icy-veins.com/heroes/imperius-build-guide",
+        "source_updated": "Aug 31, 2025",
+        "checked": "2026-09-19"
+      },
+      "Jaina": {
+        "synergies": [
+          "E.T.C.",
+          "Johanna",
+          "Maiev",
+          "Malfurion",
+          "Muradin",
+          "Varian",
+          "Xul"
+        ],
+        "countered_by": [
+          "Alarak",
+          "Anub'arak",
+          "Chen",
+          "Genji",
+          "Tracer",
+          "Zeratul"
+        ],
+        "strong_maps": [
+          "Braxis Holdout",
+          "Dragon Shire",
+          "Garden of Terror",
+          "Infernal Shrines",
+          "Tomb of the Spider Queen"
+        ],
+        "weak_maps": [],
+        "source": "https://www.icy-veins.com/heroes/jaina-build-guide",
+        "source_updated": "Mar 16, 2026",
+        "checked": "2026-09-19"
+      },
+      "Johanna": {
+        "synergies": [
+          "Blaze",
+          "Deckard",
+          "Hanzo",
+          "Jaina",
+          "Maiev"
+        ],
+        "countered_by": [
+          "Hanzo",
+          "Leoric",
+          "Varian",
+          "Zeratul"
+        ],
+        "strong_maps": [
+          "Alterac Pass",
+          "Blackheart's Bay",
+          "Infernal Shrines",
+          "Tomb of the Spider Queen",
+          "Towers of Doom",
+          "Volskaya Foundry",
+          "Warhead Junction"
+        ],
+        "weak_maps": [
+          "Battlefield of Eternity",
+          "Braxis Holdout",
+          "Dragon Shire",
+          "Hanamura Temple"
+        ],
+        "source": "https://www.icy-veins.com/heroes/johanna-build-guide",
+        "source_updated": "Jul 20, 2026",
+        "checked": "2026-09-19"
+      },
+      "Junkrat": {
+        "synergies": [
+          "E.T.C.",
+          "Garrosh",
+          "Malfurion",
+          "Uther",
+          "Zeratul"
+        ],
+        "countered_by": [
+          "Genji",
+          "Illidan",
+          "Tracer",
+          "Tyrael",
+          "Zeratul"
+        ],
+        "strong_maps": [
+          "Alterac Pass",
+          "Braxis Holdout",
+          "Cursed Hollow",
+          "Dragon Shire",
+          "Garden of Terror",
+          "Infernal Shrines",
+          "Sky Temple",
+          "Tomb of the Spider Queen",
+          "Towers of Doom",
+          "Volskaya Foundry",
+          "Warhead Junction"
+        ],
+        "weak_maps": [],
+        "source": "https://www.icy-veins.com/heroes/junkrat-build-guide",
+        "source_updated": "Sep 26, 2023",
+        "checked": "2026-09-19"
+      },
+      "Kael'thas": {
+        "synergies": [
+          "Arthas",
+          "E.T.C.",
+          "Malfurion",
+          "Uther"
+        ],
+        "countered_by": [
+          "Illidan",
+          "Kerrigan",
+          "Tracer",
+          "Zeratul"
+        ],
+        "strong_maps": [
+          "Alterac Pass",
+          "Braxis Holdout",
+          "Dragon Shire",
+          "Infernal Shrines",
+          "Tomb of the Spider Queen",
+          "Towers of Doom",
+          "Volskaya Foundry"
+        ],
+        "weak_maps": [
+          "Blackheart's Bay",
+          "Warhead Junction"
+        ],
+        "source": "https://www.icy-veins.com/heroes/kaelthas-build-guide",
+        "source_updated": "Feb 23, 2026",
+        "checked": "2026-09-19"
+      },
+      "Kel'Thuzad": {
+        "synergies": [
+          "Anduin",
+          "Arthas",
+          "Johanna",
+          "Malfurion",
+          "The Butcher",
+          "Valeera",
+          "Varian",
+          "Xul"
+        ],
+        "countered_by": [
+          "Anub'arak",
+          "Chen",
+          "Genji",
+          "Nova",
+          "Samuro",
+          "Tracer",
+          "Valeera",
+          "Zeratul"
+        ],
+        "strong_maps": [
+          "Battlefield of Eternity",
+          "Braxis Holdout",
+          "Towers of Doom"
+        ],
+        "weak_maps": [
+          "Alterac Pass",
+          "Warhead Junction"
+        ],
+        "source": "https://www.icy-veins.com/heroes/kel-thuzad-build-guide",
+        "source_updated": "Apr 27, 2025",
+        "checked": "2026-09-19"
+      },
+      "Kerrigan": {
+        "synergies": [
+          "Medivh",
+          "Tyrael",
+          "Tyrande",
+          "Uther"
+        ],
+        "countered_by": [
+          "Auriel",
+          "E.T.C.",
+          "Garrosh",
+          "Lúcio",
+          "Medivh",
+          "Tyrael",
+          "Uther"
+        ],
+        "strong_maps": [
+          "Alterac Pass",
+          "Braxis Holdout",
+          "Dragon Shire",
+          "Infernal Shrines",
+          "Tomb of the Spider Queen",
+          "Volskaya Foundry"
+        ],
+        "weak_maps": [
+          "Blackheart's Bay",
+          "Warhead Junction"
+        ],
+        "source": "https://www.icy-veins.com/heroes/kerrigan-build-guide",
+        "source_updated": "Jan 29, 2026",
+        "checked": "2026-09-19"
+      },
+      "Kharazim": {
+        "synergies": [
+          "Anub'arak",
+          "E.T.C.",
+          "Garrosh",
+          "Genji"
+        ],
+        "countered_by": [
+          "Auriel",
+          "Johanna",
+          "Medivh",
+          "Uther"
+        ],
+        "strong_maps": [
+          "Battlefield of Eternity",
+          "Dragon Shire",
+          "Hanamura Temple",
+          "Sky Temple"
+        ],
+        "weak_maps": [
+          "Braxis Holdout",
+          "Tomb of the Spider Queen"
+        ],
+        "source": "https://www.icy-veins.com/heroes/kharazim-build-guide",
+        "source_updated": "May 03, 2025",
+        "checked": "2026-09-19"
+      },
+      "Leoric": {
+        "synergies": [
+          "Diablo",
+          "Orphea",
+          "Stukov"
+        ],
+        "countered_by": [
+          "Ana",
+          "Dehaka",
+          "Falstad",
+          "Samuro",
+          "Tracer"
+        ],
+        "strong_maps": [
+          "Cursed Hollow",
+          "Garden of Terror",
+          "Infernal Shrines",
+          "Towers of Doom",
+          "Volskaya Foundry"
+        ],
+        "weak_maps": [
+          "Braxis Holdout",
+          "Sky Temple",
+          "Warhead Junction"
+        ],
+        "source": "https://www.icy-veins.com/heroes/leoric-build-guide",
+        "source_updated": "Apr 18, 2025",
+        "checked": "2026-09-19"
+      },
+      "Li Li": {
+        "synergies": [
+          "Blaze",
+          "Hanzo",
+          "Johanna",
+          "Kael'thas",
+          "Uther"
+        ],
+        "countered_by": [
+          "E.T.C.",
+          "Jaina",
+          "Stukov",
+          "Sylvanas",
+          "Yrel"
+        ],
+        "strong_maps": [
+          "Battlefield of Eternity",
+          "Dragon Shire",
+          "Hanamura Temple",
+          "Volskaya Foundry"
+        ],
+        "weak_maps": [
+          "Blackheart's Bay",
+          "Sky Temple"
+        ],
+        "source": "https://www.icy-veins.com/heroes/li-li-build-guide",
+        "source_updated": "Jul 13, 2026",
+        "checked": "2026-09-19"
+      },
+      "Li-Ming": {
+        "synergies": [
+          "Arthas",
+          "E.T.C.",
+          "Johanna",
+          "Malfurion",
+          "Valeera",
+          "Varian",
+          "Xul"
+        ],
+        "countered_by": [
+          "Anub'arak",
+          "Chen",
+          "Genji",
+          "Samuro",
+          "Tracer",
+          "Valeera",
+          "Zeratul"
+        ],
+        "strong_maps": [
+          "Alterac Pass",
+          "Battlefield of Eternity",
+          "Cursed Hollow",
+          "Infernal Shrines"
+        ],
+        "weak_maps": [
+          "Blackheart's Bay"
+        ],
+        "source": "https://www.icy-veins.com/heroes/li-ming-build-guide",
+        "source_updated": "Oct 27, 2020",
+        "checked": "2026-09-19"
+      },
+      "Lt. Morales": {
+        "synergies": [
+          "Johanna",
+          "Raynor"
+        ],
+        "countered_by": [
+          "Auriel",
+          "Chen",
+          "Chromie",
+          "Garrosh",
+          "Lunara"
+        ],
+        "strong_maps": [
+          "Battlefield of Eternity",
+          "Braxis Holdout",
+          "Hanamura Temple"
+        ],
+        "weak_maps": [
+          "Alterac Pass",
+          "Garden of Terror",
+          "Tomb of the Spider Queen"
+        ],
+        "source": "https://www.icy-veins.com/heroes/lt-morales-build-guide",
+        "source_updated": "Apr 18, 2025",
+        "checked": "2026-09-19"
+      },
+      "Lunara": {
+        "synergies": [
+          "Arthas",
+          "Jaina",
+          "Muradin"
+        ],
+        "countered_by": [
+          "Genji",
+          "Illidan",
+          "Malfurion",
+          "Stukov"
+        ],
+        "strong_maps": [
+          "Battlefield of Eternity"
+        ],
+        "weak_maps": [
+          "Warhead Junction"
+        ],
+        "source": "https://www.icy-veins.com/heroes/lunara-build-guide",
+        "source_updated": "May 21, 2025",
+        "checked": "2026-09-19"
+      },
+      "Lúcio": {
+        "synergies": [
+          "Arthas",
+          "Diablo",
+          "Greymane",
+          "Valla"
+        ],
+        "countered_by": [
+          "Deckard",
+          "Malfurion",
+          "Raynor",
+          "Sgt. Hammer"
+        ],
+        "strong_maps": [
+          "Alterac Pass",
+          "Battlefield of Eternity",
+          "Cursed Hollow",
+          "Towers of Doom",
+          "Volskaya Foundry"
+        ],
+        "weak_maps": [],
+        "source": "https://www.icy-veins.com/heroes/lucio-build-guide",
+        "source_updated": "Aug 24, 2026",
+        "checked": "2026-09-19"
+      },
+      "Maiev": {
+        "synergies": [
+          "Blaze",
+          "Deckard",
+          "E.T.C.",
+          "Jaina",
+          "Malfurion",
+          "Tassadar"
+        ],
+        "countered_by": [
+          "Arthas",
+          "Brightwing",
+          "E.T.C.",
+          "Johanna",
+          "Lunara",
+          "Lúcio",
+          "Tracer",
+          "Tyrael"
+        ],
+        "strong_maps": [
+          "Braxis Holdout",
+          "Cursed Hollow",
+          "Dragon Shire",
+          "Garden of Terror",
+          "Infernal Shrines",
+          "Tomb of the Spider Queen"
+        ],
+        "weak_maps": [
+          "Battlefield of Eternity",
+          "Hanamura Temple",
+          "Warhead Junction"
+        ],
+        "source": "https://www.icy-veins.com/heroes/maiev-build-guide",
+        "source_updated": "Sep 28, 2021",
+        "checked": "2026-09-19"
+      },
+      "Mal'Ganis": {
+        "synergies": [
+          "Jaina",
+          "Malfurion",
+          "Zeratul"
+        ],
+        "countered_by": [
+          "Garrosh",
+          "Hanzo",
+          "Malfurion",
+          "Zeratul"
+        ],
+        "strong_maps": [
+          "Alterac Pass",
+          "Battlefield of Eternity",
+          "Braxis Holdout",
+          "Hanamura Temple",
+          "Infernal Shrines",
+          "Sky Temple",
+          "Towers of Doom"
+        ],
+        "weak_maps": [
+          "Blackheart's Bay",
+          "Tomb of the Spider Queen",
+          "Warhead Junction"
+        ],
+        "source": "https://www.icy-veins.com/heroes/malganis-build-guide",
+        "source_updated": "Jul 20, 2026",
+        "checked": "2026-09-19"
+      },
+      "Malfurion": {
+        "synergies": [
+          "Blaze",
+          "Chromie",
+          "Gul'dan",
+          "Jaina",
+          "Kael'thas",
+          "Kel'Thuzad",
+          "Li-Ming",
+          "Nazeebo",
+          "Ragnaros"
+        ],
+        "countered_by": [
+          "Alarak",
+          "Anub'arak",
+          "Artanis",
+          "Jaina",
+          "Kerrigan",
+          "Li-Ming",
+          "Tracer"
+        ],
+        "strong_maps": [
+          "Cursed Hollow",
+          "Dragon Shire",
+          "Tomb of the Spider Queen"
+        ],
+        "weak_maps": [
+          "Battlefield of Eternity",
+          "Braxis Holdout",
+          "Sky Temple"
+        ],
+        "source": "https://www.icy-veins.com/heroes/malfurion-build-guide",
+        "source_updated": "Sep 20, 2025",
+        "checked": "2026-09-19"
+      },
+      "Malthael": {
+        "synergies": [
+          "Ana",
+          "E.T.C.",
+          "Garrosh",
+          "Greymane",
+          "Malfurion",
+          "Medivh",
+          "Tychus"
+        ],
+        "countered_by": [
+          "Blaze",
+          "Falstad",
+          "Fenix",
+          "Lunara",
+          "Tracer",
+          "Valla"
+        ],
+        "strong_maps": [
+          "Blackheart's Bay",
+          "Dragon Shire",
+          "Garden of Terror",
+          "Infernal Shrines",
+          "Sky Temple",
+          "Tomb of the Spider Queen",
+          "Towers of Doom",
+          "Warhead Junction"
+        ],
+        "weak_maps": [
+          "Battlefield of Eternity",
+          "Hanamura Temple"
+        ],
+        "source": "https://www.icy-veins.com/heroes/malthael-build-guide",
+        "source_updated": "May 02, 2025",
+        "checked": "2026-09-19"
+      },
+      "Medivh": {
+        "synergies": [
+          "Diablo",
+          "Genji",
+          "Greymane",
+          "Illidan",
+          "Stitches",
+          "Tracer"
+        ],
+        "countered_by": [
+          "Garrosh",
+          "Gul'dan",
+          "Lunara",
+          "Malfurion"
+        ],
+        "strong_maps": [
+          "Cursed Hollow",
+          "Sky Temple"
+        ],
+        "weak_maps": [
+          "Battlefield of Eternity",
+          "Braxis Holdout"
+        ],
+        "source": "https://www.icy-veins.com/heroes/medivh-build-guide",
+        "source_updated": "Apr 27, 2026",
+        "checked": "2026-09-19"
+      },
+      "Mei": {
+        "synergies": [
+          "Deckard",
+          "Jaina",
+          "Lunara",
+          "Xul"
+        ],
+        "countered_by": [
+          "Ana",
+          "E.T.C.",
+          "Hanzo",
+          "Junkrat",
+          "Yrel",
+          "Zeratul"
+        ],
+        "strong_maps": [
+          "Braxis Holdout",
+          "Cursed Hollow",
+          "Hanamura Temple"
+        ],
+        "weak_maps": [
+          "Battlefield of Eternity",
+          "Blackheart's Bay",
+          "Dragon Shire",
+          "Garden of Terror",
+          "Towers of Doom",
+          "Volskaya Foundry"
+        ],
+        "source": "https://www.icy-veins.com/heroes/mei-build-guide",
+        "source_updated": "Apr 18, 2025",
+        "checked": "2026-09-19"
+      },
+      "Mephisto": {
+        "synergies": [
+          "Deckard",
+          "Diablo",
+          "E.T.C.",
+          "Zarya"
+        ],
+        "countered_by": [
+          "Anub'arak",
+          "Junkrat",
+          "Kael'thas",
+          "Kel'Thuzad",
+          "Stitches"
+        ],
+        "strong_maps": [
+          "Alterac Pass",
+          "Battlefield of Eternity",
+          "Braxis Holdout",
+          "Infernal Shrines",
+          "Volskaya Foundry"
+        ],
+        "weak_maps": [
+          "Warhead Junction"
+        ],
+        "source": "https://www.icy-veins.com/heroes/mephisto-build-guide",
+        "source_updated": "Mar 07, 2021",
+        "checked": "2026-09-19"
+      },
+      "Muradin": {
+        "synergies": [
+          "Blaze",
+          "Hanzo",
+          "Kael'thas",
+          "Kerrigan",
+          "Malfurion"
+        ],
+        "countered_by": [
+          "E.T.C.",
+          "Jaina",
+          "Malfurion",
+          "Raynor",
+          "Thrall"
+        ],
+        "strong_maps": [
+          "Battlefield of Eternity",
+          "Hanamura Temple"
+        ],
+        "weak_maps": [
+          "Braxis Holdout",
+          "Infernal Shrines",
+          "Tomb of the Spider Queen"
+        ],
+        "source": "https://www.icy-veins.com/heroes/muradin-build-guide",
+        "source_updated": "May 29, 2026",
+        "checked": "2026-09-19"
+      },
+      "Murky": {
+        "synergies": [
+          "Brightwing",
+          "Johanna",
+          "Zarya"
+        ],
+        "countered_by": [
+          "Falstad",
+          "Sonya"
+        ],
+        "strong_maps": [
+          "Dragon Shire",
+          "Garden of Terror",
+          "Infernal Shrines",
+          "Towers of Doom",
+          "Volskaya Foundry"
+        ],
+        "weak_maps": [
+          "Battlefield of Eternity",
+          "Blackheart's Bay",
+          "Braxis Holdout",
+          "Hanamura Temple",
+          "Tomb of the Spider Queen"
+        ],
+        "source": "https://www.icy-veins.com/heroes/murky-build-guide",
+        "source_updated": "May 12, 2026",
+        "checked": "2026-09-19"
+      },
+      "Nazeebo": {
+        "synergies": [
+          "Johanna",
+          "Raynor",
+          "Stukov"
+        ],
+        "countered_by": [
+          "E.T.C.",
+          "Sylvanas"
+        ],
+        "strong_maps": [
+          "Dragon Shire",
+          "Tomb of the Spider Queen",
+          "Volskaya Foundry"
+        ],
+        "weak_maps": [
+          "Battlefield of Eternity",
+          "Blackheart's Bay",
+          "Braxis Holdout",
+          "Sky Temple"
+        ],
+        "source": "https://www.icy-veins.com/heroes/nazeebo-build-guide",
+        "source_updated": "Aug 12, 2026",
+        "checked": "2026-09-19"
+      },
+      "Nova": {
+        "synergies": [
+          "Blaze",
+          "Johanna",
+          "Stukov",
+          "Sylvanas"
+        ],
+        "countered_by": [
+          "Anub'arak",
+          "Brightwing",
+          "Chen",
+          "Genji",
+          "Zarya"
+        ],
+        "strong_maps": [
+          "Dragon Shire",
+          "Hanamura Temple",
+          "Warhead Junction"
+        ],
+        "weak_maps": [
+          "Braxis Holdout",
+          "Garden of Terror",
+          "Infernal Shrines",
+          "Sky Temple",
+          "Towers of Doom"
+        ],
+        "source": "https://www.icy-veins.com/heroes/nova-build-guide",
+        "source_updated": "Apr 18, 2025",
+        "checked": "2026-09-19"
+      },
+      "Orphea": {
+        "synergies": [
+          "Blaze",
+          "Johanna",
+          "Maiev",
+          "Mal'Ganis",
+          "Varian",
+          "Xul"
+        ],
+        "countered_by": [
+          "Anub'arak",
+          "Chen",
+          "Genji",
+          "Johanna",
+          "Lunara",
+          "Muradin"
+        ],
+        "strong_maps": [
+          "Braxis Holdout",
+          "Garden of Terror",
+          "Infernal Shrines",
+          "Sky Temple",
+          "Tomb of the Spider Queen"
+        ],
+        "weak_maps": [
+          "Battlefield of Eternity",
+          "Blackheart's Bay",
+          "Hanamura Temple"
+        ],
+        "source": "https://www.icy-veins.com/heroes/orphea-build-guide",
+        "source_updated": "Mar 11, 2026",
+        "checked": "2026-09-19"
+      },
+      "Probius": {
+        "synergies": [
+          "Anub'arak",
+          "Arthas",
+          "Diablo",
+          "E.T.C.",
+          "Malfurion"
+        ],
+        "countered_by": [
+          "Alarak",
+          "Kerrigan",
+          "Tracer",
+          "Zeratul"
+        ],
+        "strong_maps": [
+          "Alterac Pass",
+          "Braxis Holdout",
+          "Infernal Shrines",
+          "Tomb of the Spider Queen",
+          "Towers of Doom",
+          "Volskaya Foundry"
+        ],
+        "weak_maps": [
+          "Battlefield of Eternity",
+          "Blackheart's Bay"
+        ],
+        "source": "https://www.icy-veins.com/heroes/probius-build-guide",
+        "source_updated": "May 31, 2025",
+        "checked": "2026-09-19"
+      },
+      "Qhira": {
+        "synergies": [
+          "Abathur",
+          "Anub'arak",
+          "Rehgar",
+          "Uther"
+        ],
+        "countered_by": [
+          "Diablo",
+          "E.T.C.",
+          "Garrosh",
+          "Lunara",
+          "Tracer"
+        ],
+        "strong_maps": [
+          "Dragon Shire",
+          "Hanamura Temple",
+          "Tomb of the Spider Queen"
+        ],
+        "weak_maps": [],
+        "source": "https://www.icy-veins.com/heroes/qhira-build-guide",
+        "source_updated": "Aug 24, 2026",
+        "checked": "2026-09-19"
+      },
+      "Ragnaros": {
+        "synergies": [
+          "Ana",
+          "E.T.C.",
+          "Hanzo",
+          "Kael'thas"
+        ],
+        "countered_by": [
+          "Chen",
+          "Garrosh",
+          "Jaina",
+          "Lunara",
+          "Stukov"
+        ],
+        "strong_maps": [
+          "Blackheart's Bay",
+          "Infernal Shrines",
+          "Sky Temple",
+          "Tomb of the Spider Queen",
+          "Volskaya Foundry"
+        ],
+        "weak_maps": [
+          "Battlefield of Eternity",
+          "Braxis Holdout",
+          "Towers of Doom"
+        ],
+        "source": "https://www.icy-veins.com/heroes/ragnaros-build-guide",
+        "source_updated": "Jul 28, 2026",
+        "checked": "2026-09-19"
+      },
+      "Raynor": {
+        "synergies": [
+          "E.T.C.",
+          "Garrosh",
+          "Lt. Morales",
+          "Thrall"
+        ],
+        "countered_by": [
+          "Artanis",
+          "Cassia",
+          "Johanna"
+        ],
+        "strong_maps": [
+          "Battlefield of Eternity",
+          "Dragon Shire",
+          "Infernal Shrines",
+          "Tomb of the Spider Queen",
+          "Towers of Doom"
+        ],
+        "weak_maps": [],
+        "source": "https://www.icy-veins.com/heroes/raynor-build-guide",
+        "source_updated": "May 31, 2025",
+        "checked": "2026-09-19"
+      },
+      "Rehgar": {
+        "synergies": [
+          "Greymane",
+          "Illidan",
+          "Sonya"
+        ],
+        "countered_by": [
+          "Ana",
+          "Muradin",
+          "Tracer",
+          "Varian"
+        ],
+        "strong_maps": [
+          "Blackheart's Bay",
+          "Cursed Hollow",
+          "Garden of Terror",
+          "Sky Temple",
+          "Warhead Junction"
+        ],
+        "weak_maps": [
+          "Braxis Holdout",
+          "Hanamura Temple",
+          "Tomb of the Spider Queen",
+          "Volskaya Foundry"
+        ],
+        "source": "https://www.icy-veins.com/heroes/rehgar-build-guide",
+        "source_updated": "Jan 27, 2026",
+        "checked": "2026-09-19"
+      },
+      "Rexxar": {
+        "synergies": [
+          "Jaina",
+          "Johanna",
+          "Malfurion"
+        ],
+        "countered_by": [
+          "Illidan",
+          "Kharazim",
+          "Qhira",
+          "Tyrael",
+          "Zeratul"
+        ],
+        "strong_maps": [
+          "Braxis Holdout",
+          "Dragon Shire"
+        ],
+        "weak_maps": [
+          "Alterac Pass",
+          "Battlefield of Eternity",
+          "Blackheart's Bay",
+          "Cursed Hollow",
+          "Garden of Terror",
+          "Hanamura Temple",
+          "Infernal Shrines",
+          "Sky Temple",
+          "Towers of Doom",
+          "Volskaya Foundry",
+          "Warhead Junction"
+        ],
+        "source": "https://www.icy-veins.com/heroes/rexxar-build-guide",
+        "source_updated": "Jun 27, 2025",
+        "checked": "2026-09-19"
+      },
+      "Samuro": {
+        "synergies": [
+          "Abathur",
+          "Deckard",
+          "Malfurion",
+          "Sylvanas"
+        ],
+        "countered_by": [
+          "Cassia",
+          "Diablo",
+          "E.T.C.",
+          "Lúcio",
+          "Medivh",
+          "Orphea",
+          "Stukov",
+          "Yrel"
+        ],
+        "strong_maps": [
+          "Alterac Pass",
+          "Battlefield of Eternity",
+          "Braxis Holdout",
+          "Dragon Shire",
+          "Sky Temple",
+          "Towers of Doom"
+        ],
+        "weak_maps": [
+          "Cursed Hollow",
+          "Hanamura Temple",
+          "Tomb of the Spider Queen"
+        ],
+        "source": "https://www.icy-veins.com/heroes/samuro-build-guide",
+        "source_updated": "Sep 14, 2024",
+        "checked": "2026-09-19"
+      },
+      "Sgt. Hammer": {
+        "synergies": [
+          "Ana",
+          "E.T.C.",
+          "Johanna",
+          "Lt. Morales"
+        ],
+        "countered_by": [
+          "Artanis",
+          "Chromie",
+          "Kel'Thuzad",
+          "Li-Ming",
+          "Stitches"
+        ],
+        "strong_maps": [
+          "Battlefield of Eternity",
+          "Braxis Holdout",
+          "Infernal Shrines"
+        ],
+        "weak_maps": [
+          "Blackheart's Bay",
+          "Garden of Terror",
+          "Hanamura Temple",
+          "Tomb of the Spider Queen",
+          "Warhead Junction"
+        ],
+        "source": "https://www.icy-veins.com/heroes/sgt-hammer-build-guide",
+        "source_updated": "Sep 13, 2026",
+        "checked": "2026-09-19"
+      },
+      "Sonya": {
+        "synergies": [
+          "Jaina",
+          "Medivh",
+          "Muradin",
+          "Rehgar",
+          "Tracer"
+        ],
+        "countered_by": [
+          "Brightwing",
+          "E.T.C.",
+          "Leoric",
+          "Sylvanas",
+          "Tychus"
+        ],
+        "strong_maps": [
+          "Blackheart's Bay",
+          "Garden of Terror",
+          "Infernal Shrines"
+        ],
+        "weak_maps": [
+          "Hanamura Temple",
+          "Towers of Doom"
+        ],
+        "source": "https://www.icy-veins.com/heroes/sonya-build-guide",
+        "source_updated": "Aug 22, 2025",
+        "checked": "2026-09-19"
+      },
+      "Stitches": {
+        "synergies": [
+          "Blaze",
+          "Falstad",
+          "Kael'thas",
+          "Malfurion"
+        ],
+        "countered_by": [
+          "Anduin",
+          "Greymane",
+          "Johanna",
+          "Malthael",
+          "Tychus"
+        ],
+        "strong_maps": [
+          "Alterac Pass",
+          "Cursed Hollow",
+          "Tomb of the Spider Queen",
+          "Towers of Doom",
+          "Volskaya Foundry"
+        ],
+        "weak_maps": [
+          "Battlefield of Eternity",
+          "Blackheart's Bay",
+          "Braxis Holdout",
+          "Sky Temple",
+          "Warhead Junction"
+        ],
+        "source": "https://www.icy-veins.com/heroes/stitches-build-guide",
+        "source_updated": "May 26, 2025",
+        "checked": "2026-09-19"
+      },
+      "Stukov": {
+        "synergies": [
+          "E.T.C.",
+          "Raynor",
+          "Sgt. Hammer"
+        ],
+        "countered_by": [
+          "Anub'arak",
+          "Genji",
+          "Uther"
+        ],
+        "strong_maps": [
+          "Braxis Holdout",
+          "Cursed Hollow"
+        ],
+        "weak_maps": [
+          "Battlefield of Eternity"
+        ],
+        "source": "https://www.icy-veins.com/heroes/stukov-build-guide",
+        "source_updated": "Aug 15, 2025",
+        "checked": "2026-09-19"
+      },
+      "Sylvanas": {
+        "synergies": [
+          "Blaze",
+          "Diablo",
+          "E.T.C.",
+          "Genji",
+          "Maiev",
+          "Malfurion",
+          "Malthael"
+        ],
+        "countered_by": [
+          "Chen",
+          "Genji",
+          "Nova",
+          "Valeera",
+          "Zeratul"
+        ],
+        "strong_maps": [
+          "Alterac Pass",
+          "Infernal Shrines",
+          "Tomb of the Spider Queen",
+          "Volskaya Foundry"
+        ],
+        "weak_maps": [
+          "Blackheart's Bay",
+          "Hanamura Temple",
+          "Sky Temple"
+        ],
+        "source": "https://www.icy-veins.com/heroes/sylvanas-build-guide",
+        "source_updated": "Mar 11, 2026",
+        "checked": "2026-09-19"
+      },
+      "Tassadar": {
+        "synergies": [
+          "E.T.C.",
+          "Genji",
+          "Johanna",
+          "Maiev",
+          "Zeratul"
+        ],
+        "countered_by": [
+          "Anub'arak",
+          "Greymane",
+          "Kerrigan",
+          "Tracer",
+          "Zeratul"
+        ],
+        "strong_maps": [
+          "Braxis Holdout",
+          "Garden of Terror",
+          "Infernal Shrines",
+          "Tomb of the Spider Queen",
+          "Volskaya Foundry"
+        ],
+        "weak_maps": [
+          "Battlefield of Eternity",
+          "Cursed Hollow",
+          "Hanamura Temple"
+        ],
+        "source": "https://www.icy-veins.com/heroes/tassadar-build-guide",
+        "source_updated": "Sep 01, 2025",
+        "checked": "2026-09-19"
+      },
+      "The Butcher": {
+        "synergies": [
+          "Abathur",
+          "Tyrael",
+          "Tyrande",
+          "Uther"
+        ],
+        "countered_by": [
+          "Brightwing",
+          "E.T.C.",
+          "Johanna",
+          "Uther"
+        ],
+        "strong_maps": [
+          "Dragon Shire",
+          "Garden of Terror",
+          "Sky Temple",
+          "Tomb of the Spider Queen",
+          "Towers of Doom",
+          "Volskaya Foundry",
+          "Warhead Junction"
+        ],
+        "weak_maps": [
+          "Battlefield of Eternity",
+          "Blackheart's Bay",
+          "Braxis Holdout"
+        ],
+        "source": "https://www.icy-veins.com/heroes/the-butcher-build-guide",
+        "source_updated": "Mar 12, 2025",
+        "checked": "2026-09-19"
+      },
+      "The Lost Vikings": {
+        "synergies": [
+          "Garrosh",
+          "Raynor",
+          "Sgt. Hammer",
+          "Sylvanas",
+          "Zarya"
+        ],
+        "countered_by": [
+          "Dehaka",
+          "Falstad",
+          "Li-Ming",
+          "Nova",
+          "Sonya",
+          "Zagara",
+          "Zeratul"
+        ],
+        "strong_maps": [
+          "Alterac Pass",
+          "Cursed Hollow",
+          "Garden of Terror",
+          "Sky Temple",
+          "Towers of Doom",
+          "Volskaya Foundry",
+          "Warhead Junction"
+        ],
+        "weak_maps": [
+          "Battlefield of Eternity",
+          "Braxis Holdout",
+          "Hanamura Temple",
+          "Tomb of the Spider Queen"
+        ],
+        "source": "https://www.icy-veins.com/heroes/the-lost-vikings-build-guide",
+        "source_updated": "Jun 04, 2021",
+        "checked": "2026-09-19"
+      },
+      "Thrall": {
+        "synergies": [
+          "Chromie",
+          "Diablo",
+          "Fenix",
+          "Rehgar"
+        ],
+        "countered_by": [
+          "Arthas",
+          "Johanna",
+          "Kael'thas",
+          "Lunara",
+          "Malfurion"
+        ],
+        "strong_maps": [
+          "Battlefield of Eternity",
+          "Braxis Holdout",
+          "Hanamura Temple",
+          "Towers of Doom",
+          "Volskaya Foundry"
+        ],
+        "weak_maps": [
+          "Blackheart's Bay",
+          "Garden of Terror",
+          "Tomb of the Spider Queen"
+        ],
+        "source": "https://www.icy-veins.com/heroes/thrall-build-guide",
+        "source_updated": "Jul 28, 2026",
+        "checked": "2026-09-19"
+      },
+      "Tracer": {
+        "synergies": [
+          "Abathur",
+          "Anduin",
+          "Gul'dan",
+          "Jaina",
+          "Kael'thas",
+          "Malfurion",
+          "Tassadar"
+        ],
+        "countered_by": [
+          "Diablo",
+          "Medivh",
+          "Raynor",
+          "Sgt. Hammer",
+          "Varian"
+        ],
+        "strong_maps": [
+          "Cursed Hollow",
+          "Dragon Shire",
+          "Sky Temple",
+          "Towers of Doom",
+          "Volskaya Foundry",
+          "Warhead Junction"
+        ],
+        "weak_maps": [
+          "Infernal Shrines",
+          "Tomb of the Spider Queen"
+        ],
+        "source": "https://www.icy-veins.com/heroes/tracer-build-guide",
+        "source_updated": "Mar 08, 2025",
+        "checked": "2026-09-19"
+      },
+      "Tychus": {
+        "synergies": [
+          "Dehaka",
+          "E.T.C.",
+          "Garrosh",
+          "Uther"
+        ],
+        "countered_by": [
+          "Anub'arak",
+          "Johanna",
+          "Lúcio"
+        ],
+        "strong_maps": [
+          "Cursed Hollow",
+          "Infernal Shrines",
+          "Towers of Doom",
+          "Volskaya Foundry"
+        ],
+        "weak_maps": [
+          "Blackheart's Bay",
+          "Sky Temple",
+          "Warhead Junction"
+        ],
+        "source": "https://www.icy-veins.com/heroes/tychus-build-guide",
+        "source_updated": "Sep 27, 2021",
+        "checked": "2026-09-19"
+      },
+      "Tyrael": {
+        "synergies": [
+          "Alarak",
+          "Blaze",
+          "Illidan",
+          "Lt. Morales",
+          "Sgt. Hammer"
+        ],
+        "countered_by": [
+          "Arthas",
+          "Blaze",
+          "Brightwing",
+          "Medivh",
+          "Zeratul"
+        ],
+        "strong_maps": [
+          "Alterac Pass",
+          "Cursed Hollow",
+          "Infernal Shrines",
+          "Sky Temple",
+          "Warhead Junction"
+        ],
+        "weak_maps": [
+          "Hanamura Temple",
+          "Volskaya Foundry"
+        ],
+        "source": "https://www.icy-veins.com/heroes/tyrael-build-guide",
+        "source_updated": "Jul 15, 2026",
+        "checked": "2026-09-19"
+      },
+      "Tyrande": {
+        "synergies": [
+          "Anub'arak",
+          "Diablo",
+          "E.T.C.",
+          "Greymane",
+          "Hanzo",
+          "Li-Ming",
+          "Raynor",
+          "Varian"
+        ],
+        "countered_by": [
+          "Anub'arak",
+          "Fenix",
+          "Lunara",
+          "Maiev",
+          "Muradin",
+          "Zeratul"
+        ],
+        "strong_maps": [
+          "Battlefield of Eternity",
+          "Dragon Shire",
+          "Infernal Shrines",
+          "Tomb of the Spider Queen"
+        ],
+        "weak_maps": [],
+        "source": "https://www.icy-veins.com/heroes/tyrande-build-guide",
+        "source_updated": "May 08, 2026",
+        "checked": "2026-09-19"
+      },
+      "Uther": {
+        "synergies": [
+          "E.T.C.",
+          "Illidan",
+          "Kerrigan",
+          "Malfurion",
+          "The Butcher",
+          "Zul'jin"
+        ],
+        "countered_by": [
+          "Gul'dan",
+          "Lunara",
+          "Malthael",
+          "Nazeebo",
+          "Sylvanas",
+          "Zagara"
+        ],
+        "strong_maps": [
+          "Infernal Shrines"
+        ],
+        "weak_maps": [
+          "Braxis Holdout",
+          "Warhead Junction"
+        ],
+        "source": "https://www.icy-veins.com/heroes/uther-build-guide",
+        "source_updated": "Mar 16, 2026",
+        "checked": "2026-09-19"
+      },
+      "Valeera": {
+        "synergies": [
+          "Abathur",
+          "E.T.C.",
+          "Garrosh",
+          "Jaina",
+          "Thrall"
+        ],
+        "countered_by": [
+          "Arthas",
+          "E.T.C.",
+          "Lúcio",
+          "Medivh"
+        ],
+        "strong_maps": [
+          "Blackheart's Bay",
+          "Cursed Hollow",
+          "Dragon Shire",
+          "Sky Temple",
+          "Warhead Junction"
+        ],
+        "weak_maps": [
+          "Tomb of the Spider Queen"
+        ],
+        "source": "https://www.icy-veins.com/heroes/valeera-build-guide",
+        "source_updated": "Jun 05, 2022",
+        "checked": "2026-09-19"
+      },
+      "Valla": {
+        "synergies": [
+          "Arthas",
+          "Auriel",
+          "Garrosh",
+          "Uther"
+        ],
+        "countered_by": [
+          "Greymane",
+          "Illidan",
+          "Nova",
+          "The Butcher",
+          "Valeera",
+          "Zeratul"
+        ],
+        "strong_maps": [
+          "Battlefield of Eternity",
+          "Infernal Shrines",
+          "Tomb of the Spider Queen",
+          "Volskaya Foundry"
+        ],
+        "weak_maps": [],
+        "source": "https://www.icy-veins.com/heroes/valla-build-guide",
+        "source_updated": "May 02, 2025",
+        "checked": "2026-09-19"
+      },
+      "Varian": {
+        "synergies": [
+          "Blaze",
+          "E.T.C.",
+          "Li-Ming",
+          "Tyrande"
+        ],
+        "countered_by": [
+          "Arthas",
+          "E.T.C.",
+          "Lunara",
+          "Medivh",
+          "Rehgar"
+        ],
+        "strong_maps": [
+          "Blackheart's Bay",
+          "Braxis Holdout",
+          "Dragon Shire",
+          "Garden of Terror",
+          "Hanamura Temple",
+          "Towers of Doom",
+          "Volskaya Foundry",
+          "Warhead Junction"
+        ],
+        "weak_maps": [
+          "Battlefield of Eternity",
+          "Infernal Shrines",
+          "Sky Temple"
+        ],
+        "source": "https://www.icy-veins.com/heroes/varian-build-guide",
+        "source_updated": "Sep 30, 2025",
+        "checked": "2026-09-19"
+      },
+      "Whitemane": {
+        "synergies": [
+          "Cassia",
+          "Chromie",
+          "Hanzo",
+          "Johanna",
+          "Sonya"
+        ],
+        "countered_by": [
+          "Alarak",
+          "Ana",
+          "Garrosh",
+          "Li-Ming",
+          "Malthael"
+        ],
+        "strong_maps": [
+          "Infernal Shrines",
+          "Towers of Doom"
+        ],
+        "weak_maps": [
+          "Blackheart's Bay",
+          "Braxis Holdout",
+          "Dragon Shire",
+          "Hanamura Temple",
+          "Sky Temple"
+        ],
+        "source": "https://www.icy-veins.com/heroes/whitemane-build-guide",
+        "source_updated": "May 20, 2026",
+        "checked": "2026-09-19"
+      },
+      "Xul": {
+        "synergies": [
+          "Falstad",
+          "Li-Ming",
+          "Medivh",
+          "Tyrande"
+        ],
+        "countered_by": [
+          "Auriel",
+          "E.T.C.",
+          "Jaina",
+          "Johanna",
+          "Sgt. Hammer"
+        ],
+        "strong_maps": [
+          "Blackheart's Bay",
+          "Cursed Hollow",
+          "Garden of Terror",
+          "Infernal Shrines",
+          "Sky Temple",
+          "Tomb of the Spider Queen"
+        ],
+        "weak_maps": [
+          "Battlefield of Eternity",
+          "Braxis Holdout",
+          "Hanamura Temple"
+        ],
+        "source": "https://www.icy-veins.com/heroes/xul-build-guide",
+        "source_updated": "Apr 16, 2021",
+        "checked": "2026-09-19"
+      },
+      "Yrel": {
+        "synergies": [
+          "Garrosh",
+          "Sgt. Hammer",
+          "Whitemane",
+          "Zarya"
+        ],
+        "countered_by": [
+          "Malthael",
+          "Muradin",
+          "Sgt. Hammer",
+          "Stukov",
+          "Tracer"
+        ],
+        "strong_maps": [
+          "Battlefield of Eternity",
+          "Dragon Shire",
+          "Infernal Shrines",
+          "Tomb of the Spider Queen"
+        ],
+        "weak_maps": [
+          "Hanamura Temple"
+        ],
+        "source": "https://www.icy-veins.com/heroes/yrel-build-guide",
+        "source_updated": "Sep 11, 2026",
+        "checked": "2026-09-19"
+      },
+      "Zagara": {
+        "synergies": [
+          "Deckard",
+          "E.T.C.",
+          "Jaina"
+        ],
+        "countered_by": [
+          "Chen",
+          "Falstad",
+          "Illidan",
+          "Zeratul"
+        ],
+        "strong_maps": [
+          "Alterac Pass",
+          "Braxis Holdout",
+          "Cursed Hollow",
+          "Garden of Terror",
+          "Sky Temple",
+          "Towers of Doom",
+          "Warhead Junction"
+        ],
+        "weak_maps": [
+          "Hanamura Temple"
+        ],
+        "source": "https://www.icy-veins.com/heroes/zagara-build-guide",
+        "source_updated": "May 12, 2026",
+        "checked": "2026-09-19"
+      },
+      "Zarya": {
+        "synergies": [
+          "Garrosh",
+          "Malfurion",
+          "Sonya",
+          "Valla"
+        ],
+        "countered_by": [
+          "Auriel",
+          "Garrosh",
+          "Lunara",
+          "Maiev",
+          "Yrel"
+        ],
+        "strong_maps": [
+          "Battlefield of Eternity",
+          "Braxis Holdout",
+          "Hanamura Temple"
+        ],
+        "weak_maps": [
+          "Cursed Hollow",
+          "Garden of Terror",
+          "Warhead Junction"
+        ],
+        "source": "https://www.icy-veins.com/heroes/zarya-build-guide",
+        "source_updated": "Apr 18, 2025",
+        "checked": "2026-09-19"
+      },
+      "Zeratul": {
+        "synergies": [
+          "Abathur",
+          "Diablo",
+          "Garrosh",
+          "Hanzo",
+          "Jaina",
+          "Junkrat",
+          "Kharazim",
+          "Li-Ming",
+          "Malfurion"
+        ],
+        "countered_by": [
+          "Brightwing",
+          "Diablo",
+          "E.T.C.",
+          "Medivh",
+          "Uther",
+          "Varian"
+        ],
+        "strong_maps": [
+          "Cursed Hollow",
+          "Infernal Shrines",
+          "Sky Temple",
+          "Towers of Doom"
+        ],
+        "weak_maps": [
+          "Braxis Holdout",
+          "Tomb of the Spider Queen"
+        ],
+        "source": "https://www.icy-veins.com/heroes/zeratul-build-guide",
+        "source_updated": "Mar 11, 2026",
+        "checked": "2026-09-19"
+      },
+      "Zul'jin": {
+        "synergies": [
+          "Arthas",
+          "E.T.C.",
+          "Medivh",
+          "Tassadar",
+          "Tyrael",
+          "Uther"
+        ],
+        "countered_by": [
+          "Dehaka",
+          "Diablo",
+          "E.T.C.",
+          "Garrosh",
+          "Uther"
+        ],
+        "strong_maps": [],
+        "weak_maps": [],
+        "source": "https://www.icy-veins.com/heroes/zuljin-build-guide",
+        "source_updated": "Feb 11, 2025",
+        "checked": "2026-09-19"
+      }
+    }
+  }
 }

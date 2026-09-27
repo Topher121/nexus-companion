@@ -4,8 +4,8 @@ import sys
 from pathlib import Path
 
 APP_NAME = 'Nexus Forge'
-APP_VERSION = '0.9.0'
-CONTENT_VERSION = '2026.9.19.1'
+APP_VERSION = '0.10.0'
+CONTENT_VERSION = '2026.9.27.1'
 RESOURCE_DIR = Path(__file__).resolve().parent
 FROZEN = bool(getattr(sys, 'frozen', False))
 # Retain the original data folder so the public rename never hides saved records.

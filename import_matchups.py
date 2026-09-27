@@ -13,7 +13,7 @@ ROOT = Path(__file__).resolve().parent
 ALIASES = {'Deckard Cain': 'Deckard', 'Lt. Morales': 'Lt. Morales', 'Lucio': 'Lúcio'}
 
 
-def extract_matchups(html, hero):
+def extract_matchups(html, hero, source=None):
     root = Page(html).root
     result = {}
     for key, cls in [('synergies', 'heroes_synergies'), ('countered_by', 'heroes_counters'),
@@ -36,7 +36,7 @@ def extract_matchups(html, hero):
         result[key] = sorted(set(names))
     if set(result['strong_maps']) & set(result['weak_maps']):
         raise ValueError(f'{hero}: contradictory map ratings')
-    source = PROFILES[hero]
+    source = source or PROFILES[hero]
     result.update(source=source['source'], source_updated=source['source_updated'], checked=source['checked'])
     return result
 
@@ -54,4 +54,4 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    raise SystemExit('Use python refresh_advice.py to stage builds and draft relationships together.')

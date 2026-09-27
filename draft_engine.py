@@ -3,14 +3,13 @@
 Team completion is ordered before preference. Guide relationships are bounded
 signals: two pages listing a pair count once, and silence is not a counter.
 """
-import json
-from pathlib import Path
 from data import HEROES, MAPS
 
 
 def load_guidance():
     try:
-        raw = json.loads(Path(__file__).with_name('draft_catalogue.json').read_text(encoding='utf-8'))
+        from build_library import CATALOGUE
+        raw = CATALOGUE['draft']
         profiles = raw['heroes']
         if raw['version'] != 1 or set(profiles) != set(HEROES):
             raise ValueError('Incomplete catalogue')

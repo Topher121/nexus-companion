@@ -47,7 +47,9 @@ def validate_manifest(value):
 def current_content_version(data_dir=DATA_DIR):
     try:
         value=json.loads((Path(data_dir)/'content'/'active.json').read_text('utf-8'))['version']
-        return value if version(value)>version(CONTENT_VERSION) else CONTENT_VERSION
+        if version(value)<=version(CONTENT_VERSION):return CONTENT_VERSION
+        validate_catalogue(json.loads((Path(data_dir)/'content'/value/'build_catalogue.json').read_text('utf-8')))
+        return value
     except (OSError,ValueError,KeyError,TypeError):return CONTENT_VERSION
 
 def check_updates(feed=DEFAULT_FEED,data_dir=DATA_DIR):

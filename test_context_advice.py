@@ -7,7 +7,7 @@ from build_library import AUTO_BUILD, PROFILES, get_build
 from draft_engine import rank, draft_summary
 from draft_state import teammate_hovers
 from engine import build_details
-from talent_advisor import RULES, enemy_signals
+from talent_advisor import ADVICE, enemy_signals
 
 
 class TalentContextTests(unittest.TestCase):
@@ -32,16 +32,17 @@ class TalentContextTests(unittest.TestCase):
 
     def test_supported_rules_are_legal_and_do_not_modify_catalogue(self):
         before=copy.deepcopy(PROFILES)
-        scenarios=[['Jaina',"Kael'thas"],['Illidan','The Butcher'],['Muradin','Uther'],
-                   ['Johanna','Artanis'],['Anduin'],['Diablo',"Anub'arak"]]
-        for hero,level,talent,signal,minimum,_ in RULES:
-            enemies=next(s for s in scenarios if len(enemy_signals(s)[signal])>=minimum)
-            detail=build_details(hero,enemies)
-            self.assertEqual(next(t['talent'] for t in detail['tiers'] if t['level']==level),talent,(hero,talent))
-            self.assertTrue(detail['selection_reasons'])
-            default=get_build(hero)
-            # No heroic upgrade or other tier is silently dropped by an adjustment.
-            self.assertEqual([t['level'] for t in detail['tiers']],[t['level'] for t in default['tiers']])
+        from data import HEROES
+        self.assertEqual({r['hero'] for r in ADVICE['rules']},set(HEROES))
+        scenarios=[[],['Jaina',"Kael'thas"],['Illidan','The Butcher'],['Muradin','Uther'],
+                   ['Johanna','Artanis'],['Anduin'],['Diablo',"Anub'arak"],
+                   ['Mei','Li Li','Cassia','Garrosh','Stukov']]
+        for hero in HEROES:
+            for enemies in scenarios:
+                detail=build_details(hero,enemies)
+                self.assertTrue(detail['selection_reasons'])
+                self.assertEqual([t['level'] for t in detail['tiers']],
+                                 [t['level'] for t in get_build(hero)['tiers']])
         self.assertEqual(PROFILES,before)
 
     def test_allied_healing_denial_and_varian_plan_are_respected(self):

@@ -43,4 +43,6 @@ def validate_catalogue(value, expected_heroes=None):
                 alternatives=tier.get('alternatives',[])
                 if not isinstance(alternatives,list) or len(alternatives)>12:raise ValueError('Invalid alternatives')
                 for alternative in alternatives:short(alternative,150)
+    from advice_schema import validate_advice
+    validate_advice(value)
     return value

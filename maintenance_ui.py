@@ -24,14 +24,16 @@ class MaintenanceFeatures:
             ttk.Label(page,text=title,style='Section.TLabel').grid(row=row,column=0,sticky='nw',padx=(0,40))
             body=ttk.Frame(page);body.grid(row=row,column=1,sticky='new');return body
         body=group(0,'Updates')
-        ttk.Label(body,text=f'App {APP_VERSION}   ·   Saved builds {current_content_version()}',foreground=MUTED).pack(anchor='w')
+        ttk.Label(body,text=f'App {APP_VERSION}   ·   Advice content {current_content_version()}',foreground=MUTED).pack(anchor='w')
+        from talent_advisor import content_status
+        ttk.Label(body,text=content_status(),style='Dim.TLabel',wraplength=720,justify='left').pack(anchor='w',pady=(6,0))
         self.auto_update_checks=tk.BooleanVar(value=self.settings.get('auto_update_checks',True))
-        ttk.Checkbutton(body,text='Check for app and build updates automatically',variable=self.auto_update_checks,command=self.update_setting_changed).pack(anchor='w',pady=(10,0))
+        ttk.Checkbutton(body,text='Check for app and advice updates automatically',variable=self.auto_update_checks,command=self.update_setting_changed).pack(anchor='w',pady=(10,0))
         ttk.Label(body,text='On launch and once a day. Nothing downloads or restarts until you choose to.',style='Dim.TLabel').pack(anchor='w',padx=(22,0))
         row=ttk.Frame(body);row.pack(fill='x',pady=(12,8))
         self.update_check_button=ttk.Button(row,text='Check for updates',command=self.start_update_check);self.update_check_button.pack(side='left')
         self.update_app_button=ttk.Button(row,text='Download app update',command=lambda:self.start_update_download('app'),state='disabled');self.update_app_button.pack(side='left',padx=8)
-        self.update_build_button=ttk.Button(row,text='Update saved builds',command=lambda:self.start_update_download('builds'),state='disabled');self.update_build_button.pack(side='left')
+        self.update_build_button=ttk.Button(row,text='Update advice content',command=lambda:self.start_update_download('builds'),state='disabled');self.update_build_button.pack(side='left')
         ttk.Button(row,text='View releases',style='Link.TButton',command=lambda:webbrowser.open('https://github.com/Topher121/nexus-companion/releases')).pack(side='left',padx=12)
         self.update_status=ttk.Label(body,text='Checks GitHub releases only. Your match history, collection and screenshots are never sent.',style='Dim.TLabel',wraplength=720,justify='left')
         self.update_status.pack(anchor='w')
@@ -98,12 +100,12 @@ class MaintenanceFeatures:
                         self.update_app_button.configure(state='normal')
                     else:parts.append('App is up to date.')
                     if value['builds_new']:
-                        parts.append('New saved builds are available.' if value['builds_compatible'] else 'New builds require an app update first.')
+                        parts.append('New builds and matchup advice are available.' if value['builds_compatible'] else 'New advice requires an app update first.')
                         if value['builds_compatible']:self.update_build_button.configure(state='normal')
-                    else:parts.append('Saved builds are up to date.')
+                    else:parts.append('Installed advice matches the latest published content.')
                     self.update_status.config(text=' '.join(parts)+f' Checked {datetime.now():%d %b %H:%M}.')
                 elif kind=='builds':
-                    self.update_status.config(text='Saved builds updated and verified. Close and reopen Nexus Forge when convenient to use them.')
+                    self.update_status.config(text='Builds, matchup rules and draft advice updated and verified. Close and reopen Nexus Forge when convenient to use them.')
                 else:
                     self.downloaded_installer=value
                     self.update_status.config(text='Installer downloaded and verified. Open it when you are ready; your personal data will be kept.')
