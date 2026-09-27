@@ -99,9 +99,9 @@ class HistoryFeatures:
             [('date','Date / time',160),('hero','Hero',145),('result','Result',135),('map','Battleground',185),
              ('mode','Mode',125),('source','Logged by',90)],height=2,kind='matches')
         for tree in (self.hero_stats_tree,self.matches_tree):
-            tree.tag_configure('win',foreground='#92dfb1')
-            tree.tag_configure('loss',foreground='#f3a5a5')
-            tree.tag_configure('excluded',foreground='#8993a5')
+            tree.tag_configure('win',foreground=GREEN)
+            tree.tag_configure('loss',foreground=RED)
+            tree.tag_configure('excluded',foreground='#77746b')
         row = ttk.Frame(page);row.pack(side='bottom',fill='x',pady=(8,0),before=tables)
         self.scan_button = ttk.Button(row, text='Scan now', command=lambda:self.start_history_scan(force=True))
         self.scan_button.pack(side='right')

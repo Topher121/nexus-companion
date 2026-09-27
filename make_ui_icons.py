@@ -73,7 +73,7 @@ def render(name, size, color):
 
 if __name__ == '__main__':
     for name in ('draft','heroes','build','collection','history','star','ban','check','play','pause','refresh','photo','search','external','plus','download','trophy','loss','target'):
-        color = '#76dded' if name not in ('loss','trophy','star') else {'loss':'#f49ca7','trophy':'#69d9a6','star':'#edc674'}[name]
+        color = '#e8c987' if name not in ('loss','trophy','star') else {'loss':'#d97b74','trophy':'#91bf82','star':'#d5ae61'}[name]
         for size in (18,24):render(name,size,color)
     for size in (24,48,64):render('nexus',size,'#76dded')
     with Image.open(DEST/'nexus-master.png') as source:

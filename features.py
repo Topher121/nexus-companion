@@ -63,7 +63,7 @@ class Features:
         ttk.Button(live, text='Allow auto corrections', command=self.release_manual).pack(side='right')
         self.live_status = ttk.Label(self.draft, text='Live reader off • HotS can stay behind other windows. Keep it restored, preferably borderless.', wraplength=1110,foreground=MUTED)
         self.live_status.pack(fill='x', before=self.draft.winfo_children()[1], pady=(0, 8))
-        self.draft_warning=ttk.Label(self.draft,text='',foreground='#ffc982',wraplength=1050,justify='left')
+        self.draft_warning=ttk.Label(self.draft,text='',foreground='#d9a852',wraplength=1050,justify='left')
         self.draft_warning.pack(fill='x',after=self.live_status,pady=(0,8))
         self.draft.bind('<Configure>',lambda e:self.draft_warning.configure(wraplength=max(240,e.width-32)),add='+')
         self.collection_page = ScrollPage(self.tabs)
