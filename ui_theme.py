@@ -5,9 +5,9 @@ from tkinter import ttk
 from hero_ids import IDS
 
 ROOT = Path(__file__).resolve().parent
-BG, PANEL, RAISED = '#0d1321', '#141e31', '#1b2940'
-TEXT, MUTED, BLUE = '#e8eef8', '#9baec7', '#76dded'
-BORDER, GREEN, RED, PURPLE = '#2b3c56', '#69d9a6', '#f49ca7', '#b09af9'
+BG, PANEL, RAISED = '#11161e', '#191f28', '#222b36'
+TEXT, MUTED, BLUE = '#e7ebf0', '#a3adb9', '#79c5d2'
+BORDER, GREEN, RED, PURPLE = '#303a46', '#78c6a3', '#dc9299', '#aa9acb'
 
 
 class Art:
@@ -88,23 +88,23 @@ def apply_theme(root):
     style.configure('Muted.TLabel',foreground=MUTED)
     style.configure('Card.TLabel',background=PANEL)
     style.configure('Eyebrow.TLabel',font=('Segoe UI',9,'bold'),foreground=MUTED)
-    style.configure('TButton',background=RAISED,foreground=TEXT,padding=(12,8),borderwidth=0,
+    style.configure('TButton',background=RAISED,foreground=TEXT,padding=(11,7),borderwidth=0,
                     lightcolor=RAISED,darkcolor=RAISED,bordercolor=RAISED,focuscolor=BLUE)
-    style.map('TButton',background=[('disabled',PANEL),('pressed','#354c70'),('active','#293e5c')],
+    style.map('TButton',background=[('disabled',PANEL),('pressed','#344653'),('active','#2a3945')],
               foreground=[('disabled','#71849e')])
-    style.configure('Primary.TButton',background='#285363',foreground='#e8fcff',font=('Segoe UI',10,'bold'))
-    style.map('Primary.TButton',background=[('disabled',PANEL),('pressed','#366a7a'),('active','#356779')])
+    style.configure('Primary.TButton',background='#28515b',foreground='#edf8fa',font=('Segoe UI',10,'bold'))
+    style.map('Primary.TButton',background=[('disabled',PANEL),('pressed','#35636c'),('active','#315d66')])
     style.configure('Support.TButton',background=BG,foreground=PURPLE,font=('Segoe UI',9),padding=(8,4))
     style.map('Support.TButton',background=[('pressed',RAISED),('active',PANEL)],foreground=[('active',TEXT)])
-    style.configure('TNotebook',background=BG,borderwidth=0,tabmargins=(0,0,0,12),bordercolor=BG,lightcolor=BG,darkcolor=BG)
-    style.configure('TNotebook.Tab',background=BG,foreground=MUTED,padding=(13,9),borderwidth=0,
+    style.configure('TNotebook',background=BG,borderwidth=0,tabmargins=(0,0,0,10),bordercolor=BG,lightcolor=BG,darkcolor=BG)
+    style.configure('TNotebook.Tab',background=BG,foreground=MUTED,padding=(14,9),borderwidth=0,
                     font=('Segoe UI',10),focuscolor=BLUE,bordercolor=BG,lightcolor=BG,darkcolor=BG)
-    style.map('TNotebook.Tab',background=[('selected','#23344e'),('active',PANEL)],
-              foreground=[('selected',BLUE),('active',TEXT)],padding=[('selected',(21,13))],
-              font=[('selected',('Segoe UI',11,'bold'))])
+    style.map('TNotebook.Tab',background=[('selected',PANEL),('active','#171e27')],
+              foreground=[('selected',BLUE),('active',TEXT)],padding=[('selected',(14,9))],
+              font=[('selected',('Segoe UI',10,'bold'))])
     # Clam draws pale tab edges even with a dark border colour. Use flat fills.
     tab_images=[]
-    for color in (BG,'#23344e',PANEL):
+    for color in (BG,PANEL,'#171e27'):
         tab=tk.PhotoImage(master=root,width=8,height=8);tab.put(color,to=(0,0,8,8));tab_images.append(tab)
     root._tab_images=tab_images
     style.element_create('Nexus.tab','image',tab_images[0],('selected',tab_images[1]),
@@ -126,18 +126,18 @@ def apply_theme(root):
                   background=[('active','#2b405d'),('!active',RAISED)])
     for option,value in [('background',PANEL),('foreground',TEXT),('selectBackground','#334c70'),('selectForeground',TEXT)]:
         root.option_add('*TCombobox*Listbox.'+option,value)
-    style.configure('Treeview',background=PANEL,fieldbackground=PANEL,foreground=TEXT,rowheight=40,
+    style.configure('Treeview',background=PANEL,fieldbackground=PANEL,foreground=TEXT,rowheight=34,
                     borderwidth=0,font=('Segoe UI',10),bordercolor=PANEL,lightcolor=PANEL,darkcolor=PANEL)
-    style.configure('Treeview.Heading',background=RAISED,foreground=MUTED,padding=(12,9),
+    style.configure('Treeview.Heading',background=RAISED,foreground=MUTED,padding=(11,8),
                     font=('Segoe UI',9,'bold'),relief='flat',borderwidth=0)
     style.map('Treeview',background=[('selected','#304766')],foreground=[('selected','#ffffff')])
-    style.map('Treeview.Heading',background=[('active','#2b405d')])
+    style.map('Treeview.Heading',background=[('active','#2b3946')])
     style.configure('Roster.Treeview.Heading',padding=(4,9))
     style.layout('Treeview.Item',[('Treeitem.padding',{'sticky':'nswe','children':[
         ('Treeitem.image',{'side':'left','sticky':''}),('Treeitem.text',{'side':'left','sticky':''})]})])
-    style.configure('TScrollbar',background='#30425e',troughcolor=PANEL,borderwidth=0,arrowsize=12,
+    style.configure('TScrollbar',background='#37434f',troughcolor=PANEL,borderwidth=0,arrowsize=12,
                     arrowcolor=MUTED,lightcolor=PANEL,darkcolor=PANEL,bordercolor=PANEL,troughborderwidth=0)
-    style.map('TScrollbar',background=[('active','#49668c')])
+    style.map('TScrollbar',background=[('active','#52616f')])
     style.configure('TPanedwindow',background=BG,sashwidth=12)
     style.configure('TSeparator',background=BORDER)
     return style
@@ -145,7 +145,7 @@ def apply_theme(root):
 
 def stripe(tree,index):
     tree.tag_configure('even',background=PANEL)
-    tree.tag_configure('odd',background='#172238')
+    tree.tag_configure('odd',background='#1d2530')
     return 'odd' if index%2 else 'even'
 
 

@@ -453,7 +453,7 @@ class Features:
         manual={(key,i) for key in teams for i,v in enumerate(getattr(self,key)) if str(v) in self.manual}
         problems,marked=draft_health(self.last_read,teams,manual)
         if self.reader_notice:problems.insert(0,self.reader_notice)
-        self.draft_warning.config(text=('CHECK DRAFT · Suggestions use only the heroes recorded below.\n'+'\n'.join('• '+p for p in problems)+'\nCorrect the highlighted slots manually, or wait for another reading.') if problems else '')
+        self.draft_warning.config(text=('Check draft · Suggestions use only the heroes recorded below.\n'+'\n'.join('• '+p for p in problems)+'\nCorrect the highlighted slots manually, or wait for another reading.') if problems else '')
         for key,boxes in getattr(self,'slot_boxes',{}).items():
             for i,box in enumerate(boxes):box.configure(style='Attention.TCombobox' if (key,i) in marked else 'TCombobox')
 

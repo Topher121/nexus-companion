@@ -27,7 +27,7 @@ Version 0.8 adds draft-reading warnings, a minimum-games filter, backup/restore 
 
 **Support development ♥** in the footer opens Pocket Forge Studios' public Ko-fi page in your browser. Support is optional and every app feature remains free. The link opens only when clicked, with no preset amount, recurring-payment request or game/account data attached. Payments are handled by Ko-fi and PayPal; the companion does not collect payment details. The destination is `SUPPORT_URL` in `app.py`.
 
-The interface includes original navigation/action icons, hero portraits, colour-coded teams, a hero banner for builds and result cards for match history. Compact tabs expand for the active page. Replay-folder controls are under **Match history → Replay settings**. Icons always accompany labels, and match results are labelled Win/Loss as well as coloured.
+The interface includes original navigation/action icons, hero portraits, colour-coded teams, a hero banner for builds and result cards for match history. Navigation uses a consistent, compact tab size across pages. Replay-folder controls are under **Match history → Replay settings**. Icons always accompany labels, and match results are labelled Win/Loss as well as coloured.
 
 Version 0.7.2 aligns table headings and talent names, labels hero searches, and adds preference/ownership filters with **Reset filters**. Empty results explain what to do next. Edit and history actions enable when an appropriate row is selected. Collection setup can be expanded when needed, leaving more space for heroes, and ownership buttons stay visible in smaller windows. An unknown unlock level in a rotation entry now excludes only that hero, preserving the other confirmed free heroes.
 

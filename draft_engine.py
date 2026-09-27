@@ -96,7 +96,7 @@ def draft_summary(allies, enemies, plans=None, ally_hovers=(), final=False):
     return ' '.join(messages)
 
 
-def rank(allies, enemies, bans, prefs, map_name, role='Any', for_ban=False, available=None, plans=None, ally_hovers=()):
+def rank(allies, enemies, bans, prefs, map_name, role='Any', for_ban=False, available=None, plans=None, ally_hovers=(), familiarity=None):
     allies = list(dict.fromkeys(h for h in allies if h in HEROES))
     enemies = list(dict.fromkeys(h for h in enemies if h in HEROES))
     bans = list(dict.fromkeys(h for h in bans if h in HEROES))
@@ -107,6 +107,7 @@ def rank(allies, enemies, bans, prefs, map_name, role='Any', for_ban=False, avai
         return []
     used = set(projected + enemies + bans)
     plans = plans or {}
+    familiarity = familiarity or {}
     roles = [effective_role(h, plans) for h in team]
     missing = team_needs(team, plans)
     team_tags = set().union(*(HEROES[h]['tags'] for h in team))
@@ -231,17 +232,28 @@ def rank(allies, enemies, bans, prefs, map_name, role='Any', for_ban=False, avai
         results.append({'hero': hero, 'role': r, 'score': score, 'base_score': score, 'core_risk': core_risk,
                         'why': why, 'warnings': warnings, 'conditions': conditions, 'effects': effects,
                         'sources': sorted(set(x for x in evidence if x)), 'favourite': preference == 'Favourite',
-                        'preference_bonus': 0})
+                        'preference_bonus': 0, 'familiarity_bonus': 0, 'familiarity_games': 0})
 
     # A favourite can only break a close tie among candidates with the best
     # achievable core-role coverage, and never influences bans.
     best_risk = min((x['core_risk'] for x in results), default=0)
     best = max((x['score'] for x in results if x['core_risk'] == best_risk), default=0)
     for x in results:
-        if not for_ban and x['favourite'] and x['core_risk'] == best_risk and x['score'] >= best - 5:
+        if for_ban or x['core_risk'] != best_risk or x['score'] < best - 5:
+            continue
+        if x['favourite']:
             x['score'] += 3
             x['preference_bonus'] = 3
             x['why'].append('Favourite: already among the closest draft fits')
+        games = familiarity.get(x['hero'], 0)
+        if isinstance(games, int) and games > 0:
+            # Familiarity should help choose between near-equal options, never
+            # outweigh core role coverage or a clear draft-fit advantage.
+            bonus = min(3, 1 if games < 5 else 2 if games < 15 else 3, 5 - x['preference_bonus'])
+            if bonus:
+                x['score'] += bonus
+                x['familiarity_bonus'] = bonus
+                x['familiarity_games'] = games
     return sorted(results, key=lambda x: (x['core_risk'], -x['score'], x['hero']))
 
 
@@ -253,6 +265,9 @@ def recommendation_text(result, number, record='', for_ban=False):
     lines.extend('• ' + reason for reason in result['why'][:4])
     if result['preference_bonus']:
         lines.append('Preference: favourite used to break a close fit')
+    if result['familiarity_bonus']:
+        games = result['familiarity_games']
+        lines.append(f"Familiarity: {games} saved {('game' if games == 1 else 'games')} · small tie-break")
     lines.extend('Plan: ' + condition for condition in result['conditions'])
     prefix = 'Lower priority: ' if for_ban else 'Watch out: '
     lines.extend(prefix + warning for warning in result['warnings'])

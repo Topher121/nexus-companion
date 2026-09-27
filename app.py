@@ -11,7 +11,7 @@ from maintenance_ui import MaintenanceFeatures
 from data import HEROES, MAPS, guide_url
 from build_library import AUTO_BUILD, PROFILES, BUILD_COUNT, build_names
 from engine import rank, validate, build_details
-from draft_engine import FLEX_CHOICES, GUIDANCE, draft_summary, recommendation_text
+from draft_engine import FLEX_CHOICES, GUIDANCE, draft_summary, recommendation_text, effective_role
 from history import DRAFT_STAT_MODES
 from ui_theme import Art, ScrollPage, apply_theme, stripe, empty_table, BG, PANEL, TEXT, MUTED, BLUE, BORDER, PURPLE, RED
 
@@ -51,19 +51,19 @@ class Companion(MaintenanceFeatures, HistoryFeatures, Features):
   ttk.Label(brand,text='Your Heroes of the Storm companion',foreground=MUTED,font=('Segoe UI',10)).pack(anchor='w')
   self.on_top=tk.BooleanVar()
   ttk.Checkbutton(head,text='Keep on top',variable=self.on_top,command=lambda:root.attributes('-topmost',self.on_top.get())).pack(side='right')
-  ttk.Label(head,text='PUBLIC BETA',foreground=PURPLE,font=('Segoe UI',9,'bold'),padding=(18,0)).pack(side='right')
+  ttk.Label(head,text='Public beta',foreground=PURPLE,font=('Segoe UI',9),padding=(18,0)).pack(side='right')
   self.tabs=ttk.Notebook(root);self.tabs.pack(fill='both',expand=True,padx=18,pady=(0,8))
   self.draft_page=ScrollPage(self.tabs);self.draft=self.draft_page.body
   self.pool=ttk.Frame(self.tabs,padding=16);self.build=ttk.Frame(self.tabs,padding=16)
   for page,name,icon in [(self.draft_page,'Draft advisor','draft'),(self.pool,'My hero pool','heroes'),(self.build,'Talents & tips','build')]:
-   self.tabs.add(page,text='  '+name,image=self.art.icon(icon,24),compound='left')
+   self.tabs.add(page,text='  '+name,image=self.art.icon(icon,20),compound='left')
   self.make_draft();self.make_pool();self.make_build()
   self.make_features()
   self.make_history()
   self.make_maintenance()
   self.decorate_buttons(root)
   foot=ttk.Frame(root,padding=(22,7));foot.pack(side='bottom',fill='x',before=self.tabs)
-  ttk.Label(foot,text='●  LOCAL & PRIVATE',foreground=BLUE,font=('Segoe UI',8,'bold')).pack(side='left')
+  ttk.Label(foot,text='●  Local & private',foreground=BLUE,font=('Segoe UI',8)).pack(side='left')
   ttk.Label(foot,text='Free app · Optional support',foreground=MUTED,font=('Segoe UI',9)).pack(side='left',padx=18)
   ttk.Label(foot,text='NEXUS  /  '+APP_VERSION,foreground=MUTED,font=('Segoe UI',8,'bold')).pack(side='right')
   self.support_button=ttk.Button(foot,text='Support development ♥',style='Support.TButton',command=self.open_support)
@@ -93,17 +93,19 @@ class Companion(MaintenanceFeatures, HistoryFeatures, Features):
 
  def make_draft(self):
   bar=ttk.Frame(self.draft);bar.pack(fill='x',pady=(0,12))
-  self.map=tk.StringVar(value='Unknown map');self.role=tk.StringVar(value='Any')
+  self.map=tk.StringVar(value='Unknown map');self.role=tk.StringVar(value='Auto')
   stats_mode=self.settings.get('pick_stats_mode','Storm League')
   self.pick_stats_mode=tk.StringVar(value=stats_mode if stats_mode in DRAFT_STAT_MODES else 'Storm League')
   self.pick_stats=None
   ttk.Label(bar,text='Battleground').pack(side='left',padx=(0,8));self.combo(bar,self.map,MAPS,26).pack(side='left')
-  ttk.Label(bar,text='Your role').pack(side='left',padx=12);self.combo(bar,self.role,['Any','Tank','Healer','Bruiser','Ranged','Melee','Support']).pack(side='left')
+  ttk.Label(bar,text='Suggested role').pack(side='left',padx=12)
+  self.combo(bar,self.role,['Auto','Any','Tank','Healer','Bruiser','Ranged','Melee','Support']).pack(side='left')
+  self.role_hint=ttk.Label(bar,text='',foreground=MUTED);self.role_hint.pack(side='left',padx=(8,0))
   ttk.Button(bar,text='Clear draft',command=self.clear).pack(side='right')
   ttk.Label(self.draft,text='Start with Clear draft. Boxes are locked picks. Teammate hovers are shown separately and included in suggestions.',foreground=MUTED,wraplength=900).pack(anchor='w',pady=(0,10))
   board=ttk.Frame(self.draft);board.pack(fill='x')
   self.allies=[];self.enemies=[];self.bans=[];self.slot_portraits=[];self.slot_boxes={'allies':[],'enemies':[],'bans':[]}
-  for col,(label,collection,count) in enumerate([('YOUR TEAM',self.allies,5),('ENEMY TEAM',self.enemies,5),('BANNED · BOTH TEAMS',self.bans,6)]):
+  for col,(label,collection,count) in enumerate([('Your team',self.allies,5),('Enemy team',self.enemies,5),('Bans',self.bans,6)]):
    f=ttk.Frame(board,style='Card.TFrame',padding=(12,10));f.grid(row=0,column=col,sticky='nsew',padx=(0,10 if col<2 else 0));board.columnconfigure(col,weight=1,uniform='teams')
    ttk.Label(f,text=label,foreground=BLUE if col==0 else RED if col==1 else PURPLE,style='Card.TLabel',font=('Segoe UI',9,'bold')).pack(anchor='w',pady=(0,7))
    for i in range(count):
@@ -132,10 +134,10 @@ class Companion(MaintenanceFeatures, HistoryFeatures, Features):
   self.status=ttk.Label(self.draft,text='',foreground='#ffc982',wraplength=1100);self.status.pack(anchor='w',pady=10)
   self.draft.bind('<Configure>',lambda e:self.status.configure(wraplength=max(200,e.width-30)),add='+')
   result=ttk.Frame(self.draft);result.pack(fill='both',expand=True)
-  self.pick_text=self.text_panel(result,'YOUR PICKS',0);self.ban_text=self.text_panel(result,'BAN CANDIDATES',1)
+  self.pick_text=self.text_panel(result,'Your picks',0);self.ban_text=self.text_panel(result,'Ban candidates',1)
   footer=ttk.Frame(self.draft);footer.pack(fill='x',pady=(8,0))
   ttk.Button(footer,text='How suggestions work',command=self.draft_help).pack(side='right',padx=(12,0))
-  ttk.Label(footer,text='Team fit + saved guide matchups. Your win rate is context, not a match prediction.\nPersonal records: selected mode, saved games only. Fewer than 20 games = small sample.',foreground=MUTED,wraplength=780).pack(side='left',anchor='w')
+  ttk.Label(footer,text='Team fit + saved guide matchups. Your win rate is context, not a match prediction.\nPersonal records use the selected mode; saved games played across modes give a small familiarity tie-break among close fits.',foreground=MUTED,wraplength=780).pack(side='left',anchor='w')
 
  def text_panel(self,parent,title,col):
   f=ttk.Frame(parent);f.grid(row=0,column=col,sticky='nsew',padx=(0,12 if col==0 else 0));parent.columnconfigure(col,weight=1,uniform='advice');parent.rowconfigure(0,weight=1)
@@ -165,7 +167,7 @@ class Companion(MaintenanceFeatures, HistoryFeatures, Features):
    if match:
     widget.tag_add('heading',f'{line}.0',f'{line}.end')
     widget.image_create(f'{line}.0',image=self.art.portrait(match.group(1),30),padx=8,align='center')
-   elif value.endswith(' · TALENTS') or value in ('MATCH NOTES','MATCH ADJUSTMENTS','WHY THESE TALENTS') or value.startswith('Waiting for'):
+   elif value.endswith(' · Talents') or value in ('Match notes','Match adjustments','Why these talents') or value.startswith('Waiting for'):
     widget.tag_add('heading',f'{line}.0',f'{line}.end')
    elif value.startswith('Level '):
     widget.tag_add('level',f'{line}.0',f'{line}.{len(value.split(chr(9),1)[0].rstrip())}')
@@ -185,8 +187,10 @@ class Companion(MaintenanceFeatures, HistoryFeatures, Features):
    'Next come named synergies, enemy counters, ability interactions and the map. Watch out highlights drawbacks.\n\n'
    'Bans evaluate who would fit the enemy team, with extra weight on threats to your known picks. '
    'Your ownership and Never suggest choices affect your picks only. Cho/Gall need a coordinated pair and are not suggested.\n\n'
-   'A favourite only gets a small tie-break when already close to the best fit. Personal win rates do not change the order. '
+   'A favourite and saved games played can give a small tie-break only when a hero is already close to the best fit. More games give a slightly larger familiarity nudge, capped so draft fit stays primary. Personal win rates do not change the order. '
    'There is no online win-rate feed or predicted win percentage.\n\n'
+   'Suggested role starts on Auto: it fills a missing tank or healer first, then recommends bruiser or ranged coverage. '
+   'Choose any role in the selector to focus the hero suggestions on it, or choose Any to see every role.\n\n'
    f'Matchup source: {len(GUIDANCE)} saved Icy Veins hero guides, imported 19 September 2026. '
    'Teammate hovers reserve their planned heroes and roles, but stay separate from locked picks. Your own hover is excluded. '
    'Set your player name or slot so the reader can distinguish your hover from your teammates. Hovers can change; recheck suggestions when they do.\n\n'
@@ -308,6 +312,18 @@ class Companion(MaintenanceFeatures, HistoryFeatures, Features):
   self.update_own_hero()
   self.refresh()
 
+ def recommended_role(self, allies):
+  """Choose the next useful role for picks, including tentative allied hovers."""
+  if len(allies) >= 5:
+   return 'Any'
+  plans={hero:var.get() for hero,var in self.flex_plans.items()}
+  roles={effective_role(hero,plans) for hero in allies if hero in HEROES}
+  if 'Tank' not in roles:return 'Tank'
+  if 'Healer' not in roles:return 'Healer'
+  if 'Bruiser' not in roles:return 'Bruiser'
+  if 'Ranged' not in roles:return 'Ranged'
+  return 'Any'
+
  def refresh(self):
   if not hasattr(self,'build_text'):return
   self.update_draft_warning()
@@ -317,6 +333,8 @@ class Companion(MaintenanceFeatures, HistoryFeatures, Features):
   allies=[v.get() for v in self.allies if v.get()];enemies=[v.get() for v in self.enemies if v.get()];bans=[v.get() for v in self.bans if v.get()]
   tentative=self.planned_hovers()
   hover_heroes=list(tentative.values())
+  recommended=self.recommended_role(allies+hover_heroes)
+  self.role_hint.configure(text=(f'Auto: {recommended} · choose another role to explore' if self.role.get()=='Auto' else f'Auto recommends {recommended}'))
   hover_text='Teammate hovers · '+', '.join(f'Slot {i+1}: {h}' for i,h in tentative.items())+' · Included as tentative picks.' if tentative else ''
   if self.ally_hovers and self.own_slot() is None: hover_text='Hovers detected. Set your player name or slot above to include teammates without counting your own hover.'
   self.hover_status.configure(text=hover_text)
@@ -336,7 +354,9 @@ class Companion(MaintenanceFeatures, HistoryFeatures, Features):
    if final:
     self.put(widget,'Draft finished; no further bans.' if is_ban else 'Draft finished. Your locked hero has not been identified yet. Correct your slot and the highlighted hero entries above.');continue
    complete=len(enemies if is_ban else allies)==5 or (is_ban and len(bans)==6)
-   results=rank(allies,enemies,bans,self.prefs,self.map.get(),self.role.get(),is_ban,available=self.available_heroes(),plans=plans,ally_hovers=hover_heroes)
+   requested_role=recommended if self.role.get()=='Auto' else self.role.get()
+   familiarity={hero:stat['games'] for hero,stat in (getattr(self,'familiarity_stats',None) or {}).items()}
+   results=rank(allies,enemies,bans,self.prefs,self.map.get(),requested_role,is_ban,available=self.available_heroes(),plans=plans,ally_hovers=hover_heroes,familiarity=familiarity)
    lines=[]
    for i,x in enumerate(results[:3]):
     record='' if is_ban else self.pick_record(x['hero'])
@@ -361,14 +381,14 @@ class Companion(MaintenanceFeatures, HistoryFeatures, Features):
   self.build_name.config(text=hero);self.build_role.config(text=HEROES[hero]['role']+'  /  MATCH GUIDE')
   self.build_portrait.config(image=self.art.portrait(hero,60))
   if detail:
-   content=detail['name'].upper()+' · TALENTS\n\n'+'\n'.join(f"Level {tier['level']} \t{tier['talent']}" for tier in detail['tiers'])
+   content=detail['name']+' · Talents\n\n'+'\n'.join(f"Level {tier['level']} \t{tier['talent']}" for tier in detail['tiers'])
    if detail['automatic']:
-    content+='\n\nWHY THESE TALENTS\n\n'
+    content+='\n\nWhy these talents\n\n'
     content+='\n\n'.join('• '+n for n in detail['selection_reasons']) or ('Enemy picks are not known yet; using the saved starter build.' if not enemies else 'No specific matchup rule applies here; keeping the saved guide choices.')
     content+='\n\nBased on '+str(len(enemies))+'/5 enemy picks: '+(', '.join(enemies) or 'none yet')+'. Recommendations update as picks are confirmed.'
    notes=list(detail['notes'])
    if HEROES[hero]['role']=='Healer' and 'Deathwing' in allies:notes.append('Deathwing cannot receive your healing.')
-   content+='\n\nMATCH NOTES\n\n'+'\n\n'.join('• '+n for n in notes)
+   content+='\n\nMatch notes\n\n'+'\n\n'.join('• '+n for n in notes)
    content+='\n\nGuide category: '+detail['category']
    if detail['automatic']:content+='\nAuto selects recommended talents here in the companion; it does not click talents in HotS. Matchup rules cover supported choices; other tiers keep their saved guide defaults.'
    else:content+='\nManual choice: this build stays selected as enemy picks change. Its talents are not automatically replaced.'

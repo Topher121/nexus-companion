@@ -75,7 +75,7 @@ class HistoryFeatures:
         self.history_summary = ttk.Label(page, text='', foreground=MUTED)
         metrics=ttk.Frame(page);metrics.pack(fill='x',pady=(0,12))
         self.history_metrics=[]
-        for i,(icon,label,color) in enumerate([('history','MATCHES PLAYED',TEXT),('trophy','VICTORIES',GREEN),('loss','DEFEATS',RED),('target','WIN RATE',PURPLE)]):
+        for i,(icon,label,color) in enumerate([('history','Matches played',TEXT),('trophy','Wins',GREEN),('loss','Losses',RED),('target','Win rate',PURPLE)]):
             card,value=metric(metrics,self.art.icon(icon,24),label,color)
             card.grid(row=0,column=i,sticky='ew',padx=(0,10 if i<3 else 0));metrics.columnconfigure(i,weight=1,uniform='metrics')
             self.history_metrics.append(value)
@@ -85,7 +85,7 @@ class HistoryFeatures:
         tables.columnconfigure(0,weight=1)
         tables.rowconfigure(0,weight=1,uniform='history_tables');tables.rowconfigure(1,weight=1,uniform='history_tables')
         stats_heading=ttk.Frame(stats_frame);stats_heading.pack(fill='x',pady=(0,4))
-        ttk.Label(stats_heading,text='BY HERO · click headings to sort; click a hero to filter matches',foreground=BLUE).pack(side='left')
+        ttk.Label(stats_heading,text='By hero · click a heading to sort, or a hero to filter matches',foreground=MUTED).pack(side='left')
         minimum=ttk.Combobox(stats_heading,textvariable=self.history_min_games,values=['0','5','10','20','50','100'],state='readonly',width=5)
         minimum.pack(side='right');minimum.bind('<<ComboboxSelected>>',lambda e:self.minimum_games_changed())
         ttk.Label(stats_heading,text='Minimum games',foreground=MUTED).pack(side='right',padx=(8,6))
@@ -94,7 +94,7 @@ class HistoryFeatures:
         self.hero_stats_tree = self.history_table(stats_frame,
             [('hero','Hero',220),('games','Played',90),('wins','Wins',90),('losses','Losses',90),('rate','Win rate',100)],height=2,kind='heroes')
         self.hero_stats_tree.bind('<<TreeviewSelect>>', self.select_history_hero)
-        ttk.Label(recent_frame,text='MATCHES · click a heading to sort',foreground=BLUE).pack(anchor='w',pady=(8,4))
+        ttk.Label(recent_frame,text='Matches · click a heading to sort',foreground=MUTED).pack(anchor='w',pady=(8,4))
         self.matches_tree = self.history_table(recent_frame,
             [('date','Date / time',160),('hero','Hero',145),('result','Result',135),('map','Battleground',185),
              ('mode','Mode',125),('source','Logged by',90)],height=2,kind='matches')
@@ -318,6 +318,7 @@ class HistoryFeatures:
         store=getattr(self,'history_store',None)
         if store is None:
             self.pick_stats=None
+            self.familiarity_stats=None
             return
         key=(self.history_profile(),self.pick_stats_mode.get(),str(store.path))
         if not force and getattr(self,'pick_stats_key',None)==key:
@@ -325,8 +326,13 @@ class HistoryFeatures:
         try:
             rows=store.records(key[0],mode=key[1])
             self.pick_stats={s['hero']:s for s in hero_stats(rows)}
+            # Familiarity is useful across modes, unlike the win/loss display
+            # which follows the selected stats mode.
+            all_rows=rows if key[1]=='All modes' else store.records(key[0],mode='All modes')
+            self.familiarity_stats={s['hero']:s for s in hero_stats(all_rows)}
         except Exception:
             self.pick_stats=None
+            self.familiarity_stats=None
         self.pick_stats_key=key
 
     def pick_record(self,hero):
