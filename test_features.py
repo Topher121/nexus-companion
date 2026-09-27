@@ -268,7 +268,7 @@ class LiveStateTests(unittest.TestCase):
                 text = a.build_text.get('1.0','end')
                 self.assertEqual(a.build_name['text'], hero)
                 self.assertEqual(sum(line.startswith('Level ') for line in text.splitlines()), 7)
-                self.assertIn('MATCH NOTES', text)
+                self.assertIn('Match notes', text)
                 self.assertIn('Source: Icy Veins', text)
                 self.assertNotIn('No saved guide', text)
 

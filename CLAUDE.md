@@ -60,3 +60,21 @@ work on it. Consequences:
 - Support email everywhere: PocketForgeStudios@proton.me.
 - Office room: tenant `design`, slug `nexus-companion` (not yet in
   `PhoneApps\projects.json`; add it when there is a reason to).
+
+## Look and feel (redesign 2026-09-27, owner: "make it not look like AI made it")
+Same rules as AddonForge's forge theme; keep them when adding UI:
+- One 44px header bar: nexus mark + Georgia wordmark + text tabs (Draft,
+  Hero pool, Talents, Collection, History, Settings) drawn by `TabBar` in
+  `ui_theme.py`. The ttk.Notebook still holds the pages but its own tabs are
+  hidden; add pages with `self.tabs.add(page, text='Name')` BEFORE the
+  TabBar is built at the end of `Companion.__init__`. Ctrl+1..6 switch tabs.
+- Status bar at the bottom: draft-reader dot + word, Ko-fi link, version.
+- No page titles/taglines, no stat cards, no boxed cards, no icons on
+  buttons, no zebra stripes. Sections = bold label + hairline (`section()`).
+  Stats are an inline strip (bold number + muted word).
+- ONE accent (brass `ACCENT`/`ACCENT2`): active tab, the single primary
+  button per screen (Start live draft), hero names in advice, favourites.
+  Colour otherwise only carries meaning: WARN for draft problems, GREEN/RED
+  for win/loss (row tints in History), DIM for not owned / never suggest.
+- Secondary actions (help, reset filters, view releases) are `Link.TButton`.
+- Scrollbars are thin and arrowless; ScrollPage hides its bar when the page fits.

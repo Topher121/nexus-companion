@@ -8,7 +8,7 @@ from pathlib import Path
 import shutil
 import webbrowser
 from availability import load_json, save_json, parse_collection, eligible, fetch_rotation, rotation_available, rotation_summary
-from ui_theme import BG, PANEL, TEXT, MUTED, BLUE, stripe, empty_table, ScrollPage
+from ui_theme import BG, PANEL, TEXT, MUTED, DIM, BLUE, ACCENT2, WARN, stripe, empty_table, ScrollPage
 
 from app_paths import DATA_DIR as ROOT, RESOURCE_DIR, FROZEN
 
@@ -47,75 +47,80 @@ class Features:
         self.follow_hero = tk.BooleanVar(value=self.settings.get('follow_hero', True))
 
     def make_features(self):
+        first = self.draft.winfo_children()[0]
         live = ttk.Frame(self.draft)
-        live.pack(fill='x', before=self.draft.winfo_children()[0], pady=(0, 12))
+        live.pack(fill='x', before=first, pady=(0, 6))
         self.watch_button = ttk.Button(live, text='Start live draft', command=self.toggle_watch, style='Primary.TButton')
         self.watch_button.pack(side='left')
-        ttk.Button(live, text='Read screenshot', command=self.choose_screenshot).pack(side='left', padx=6)
-        ttk.Label(live, text='Your name').pack(side='left', padx=(10, 4))
-        player = ttk.Entry(live, textvariable=self.player_name, width=12); player.pack(side='left')
+        ttk.Button(live, text='Read screenshot', command=self.choose_screenshot).pack(side='left', padx=(8, 0))
+        slot = ttk.Combobox(live, textvariable=self.self_slot, values=['Auto','1','2','3','4','5'], state='readonly', width=5)
+        slot.pack(side='right')
+        slot.bind('<<ComboboxSelected>>', lambda e: self.identity_changed())
+        ttk.Label(live, text='Slot', foreground=MUTED).pack(side='right', padx=(14, 8))
+        player = ttk.Entry(live, textvariable=self.player_name, width=14); player.pack(side='right')
         player.bind('<FocusOut>', lambda e: self.identity_changed())
         player.bind('<Return>', lambda e: self.identity_changed())
-        ttk.Label(live, text='Your slot').pack(side='left', padx=(8,4))
-        slot = ttk.Combobox(live, textvariable=self.self_slot, values=['Auto','1','2','3','4','5'], state='readonly', width=6)
-        slot.pack(side='left')
-        slot.bind('<<ComboboxSelected>>', lambda e: self.identity_changed())
-        ttk.Button(live, text='Allow auto corrections', command=self.release_manual).pack(side='right')
-        self.live_status = ttk.Label(self.draft, text='Live reader off • HotS can stay behind other windows. Keep it restored, preferably borderless.', wraplength=1110,foreground=MUTED)
-        self.live_status.pack(fill='x', before=self.draft.winfo_children()[1], pady=(0, 8))
-        self.draft_warning=ttk.Label(self.draft,text='',foreground='#d9a852',wraplength=1050,justify='left')
-        self.draft_warning.pack(fill='x',after=self.live_status,pady=(0,8))
-        self.draft.bind('<Configure>',lambda e:self.draft_warning.configure(wraplength=max(240,e.width-32)),add='+')
+        ttk.Label(live, text='Player name', foreground=MUTED).pack(side='right', padx=(0, 8))
+        status_row = ttk.Frame(self.draft)
+        status_row.pack(fill='x', before=first, pady=(0, 4))
+        self.live_status = ttk.Label(status_row, text='Reader off. HotS can stay behind other windows; keep it restored, ideally borderless.', wraplength=1000, style='Dim.TLabel')
+        self.live_status.pack(side='left', fill='x', expand=True)
+        ttk.Button(status_row, text='Allow auto corrections', style='Link.TButton', command=self.release_manual).pack(side='right', anchor='n')
+        self.draft_warning=ttk.Label(self.draft,text='',foreground=WARN,wraplength=1050,justify='left')
+        self.draft_warning.pack(fill='x',before=first)
+        ttk.Separator(self.draft).pack(fill='x', before=first, pady=(8, 14))
+        self.draft.bind('<Configure>',lambda e:[w.configure(wraplength=max(240,e.width-190 if w is self.live_status else e.width-32)) for w in (self.live_status,self.draft_warning)],add='+')
         self.collection_page = ScrollPage(self.tabs)
-        self.tabs.add(self.collection_page, text='  Collection',image=self.art.icon('collection',24),compound='left')
+        self.tabs.add(self.collection_page, text='Collection')
         p = self.collection_page.body
-        ttk.Label(p, text='Your collection', font=('Segoe UI',20,'bold')).pack(anchor='w')
-        ttk.Label(p, text='Track heroes you own and heroes currently free to play. Set favourites in My hero pool.', foreground=MUTED).pack(anchor='w', pady=(6,8))
-        row = ttk.Frame(p); row.pack(fill='x',pady=(0,8))
-        ttk.Label(row,text='Search heroes').pack(side='left',padx=(0,8))
+        row = ttk.Frame(p); row.pack(fill='x',pady=(0,10))
+        ttk.Label(row,text='Search',foreground=MUTED).pack(side='left',padx=(0,8))
         self.collection_search=tk.StringVar();self.collection_filter=tk.StringVar(value='All heroes')
         search=ttk.Entry(row,textvariable=self.collection_search,width=24);search.pack(side='left')
         search.bind('<Escape>',lambda e:self.collection_search.set(''))
         self.collection_search.trace_add('write',lambda *a:self.show_availability())
-        ttk.Label(row,text='Show').pack(side='left',padx=(14,8))
-        picker=ttk.Combobox(row,textvariable=self.collection_filter,values=['All heroes','Owned','Free rotation','Not owned','Unknown'],state='readonly',width=15)
+        ttk.Label(row,text='Show',foreground=MUTED).pack(side='left',padx=(18,8))
+        picker=ttk.Combobox(row,textvariable=self.collection_filter,values=['All heroes','Owned','Free rotation','Not owned','Unknown'],state='readonly',width=14)
         picker.pack(side='left');picker.bind('<<ComboboxSelected>>',lambda e:self.show_availability())
-        ttk.Button(row,text='Reset filters',command=self.reset_collection_filters).pack(side='left',padx=8)
+        ttk.Button(row,text='Reset filters',style='Link.TButton',command=self.reset_collection_filters).pack(side='left',padx=12)
         self.collection_setup_button=ttk.Button(row,text='Collection setup',command=self.toggle_collection_setup)
         self.collection_setup_button.pack(side='right')
-        row = ttk.Frame(p); row.pack(fill='x', pady=(0,4))
-        ttk.Checkbutton(row, text='Suggest only confirmed owned or currently free heroes', variable=self.only_confirmed, command=self.availability_changed).pack(side='left')
-        ttk.Button(row, text='Refresh free rotation', command=self.start_rotation).pack(side='right')
+        ttk.Button(row, text='Refresh free rotation', command=self.start_rotation).pack(side='right', padx=(0,8))
+        row = ttk.Frame(p); row.pack(fill='x', pady=(0,6))
+        ttk.Checkbutton(row, text='Suggest only heroes I own or that are free this week', variable=self.only_confirmed, command=self.availability_changed).pack(side='left')
         self.collection_setup=ttk.Frame(p)
         row=ttk.Frame(self.collection_setup);row.pack(fill='x',pady=(0,6))
         ttk.Button(row, text='Import replay export', command=self.import_collection).pack(side='left')
         ttk.Button(row, text='Set up collection exporter', command=self.exporter_setup).pack(side='left', padx=8)
-        ttk.Label(row, text='Account level').pack(side='left', padx=(15,5))
+        ttk.Label(row, text='Account level', foreground=MUTED).pack(side='left', padx=(16,8))
         level = ttk.Entry(row, textvariable=self.account_level, width=7); level.pack(side='left')
         level.bind('<FocusOut>', lambda e: self.availability_changed())
         level.bind('<Return>', lambda e: self.availability_changed())
-        ttk.Label(self.collection_setup,text='Enter your account level for free-hero unlocks. Re-import after buying heroes; ownership is not detected live.',foreground=MUTED,wraplength=860).pack(anchor='w')
-        self.collection_status = ttk.Label(p, text='', wraplength=1080); self.collection_status.pack(anchor='w', pady=(6,4))
-        self.rotation_status = ttk.Label(p, text='', wraplength=1080,foreground=MUTED); self.rotation_status.pack(anchor='w', pady=(0,4))
+        ttk.Label(self.collection_setup,text='Account level decides which free-rotation heroes you can play. Re-import after buying heroes; ownership is not read live.',style='Dim.TLabel',wraplength=860).pack(anchor='w')
+        self.collection_status = ttk.Label(p, text='', wraplength=1080); self.collection_status.pack(anchor='w', pady=(6,2))
+        self.rotation_status = ttk.Label(p, text='', wraplength=1080,style='Dim.TLabel'); self.rotation_status.pack(anchor='w', pady=(0,8))
         p.bind('<Configure>',lambda e:[label.configure(wraplength=max(240,e.width-32)) for label in (self.collection_status,self.rotation_status)])
-        table=ttk.Frame(p);table.pack(fill='both',expand=True,pady=8)
+        table=ttk.Frame(p);table.pack(fill='both',expand=True)
+        ttk.Separator(table).pack(side='top',fill='x')
         self.availability_tree = ttk.Treeview(table, columns=('hero','state'), show='tree headings', selectmode='extended', height=5, style='Roster.Treeview')
-        self.availability_tree.column('#0',width=38,minwidth=38,stretch=False)
+        self.availability_tree.column('#0',width=42,minwidth=42,stretch=False)
         self.availability_tree.heading('#0',text='')
         for key,label in [('hero','Hero'),('state','Availability')]:
             self.availability_tree.heading(key,text=label,anchor='w')
             self.availability_tree.column(key,width=360,minwidth=180,anchor='w')
+        self.availability_tree.tag_configure('Free rotation',foreground=ACCENT2)
+        self.availability_tree.tag_configure('Not owned',foreground=DIM)
+        self.availability_tree.tag_configure('Unknown',foreground=DIM)
         scroll=ttk.Scrollbar(table,command=self.availability_tree.yview);scroll.pack(side='right',fill='y')
         self.availability_tree.configure(yscrollcommand=scroll.set);self.availability_tree.pack(fill='both',expand=True)
-        controls=ttk.Frame(self.collection_page,padding=(16,8,16,0))
+        controls=ttk.Frame(self.collection_page,padding=(20,10,20,12))
         controls.pack(side='bottom',fill='x',before=self.collection_page.canvas)
         self.collection_selection_status=ttk.Label(controls,text='',foreground=MUTED)
-        self.collection_selection_status.pack(anchor='w',pady=(0,8))
-        row = ttk.Frame(controls); row.pack(fill='x')
+        self.collection_selection_status.pack(side='left')
         self.collection_buttons=[]
-        for label, value in [('Mark owned', True), ('Mark not owned', False), ('Reset to unknown', None)]:
-            button=ttk.Button(row, text=label, command=lambda v=value: self.mark_owned(v),state='disabled')
-            button.pack(side='left', padx=(0,8));self.collection_buttons.append(button)
+        for label, value in [('Reset to unknown', None), ('Mark not owned', False), ('Mark owned', True)]:
+            button=ttk.Button(controls, text=label, command=lambda v=value: self.mark_owned(v),state='disabled')
+            button.pack(side='right', padx=(8,0));self.collection_buttons.insert(0,button)
         self.availability_tree.bind('<<TreeviewSelect>>',lambda e:self.collection_selection_changed())
         self.show_availability()
         if not self.owned:self.toggle_collection_setup()
@@ -167,7 +172,7 @@ class Features:
             visible={'All heroes':True,'Owned':self.owned.get(hero) is True,'Free rotation':hero in free,
                      'Not owned':self.owned.get(hero) is False,'Unknown':hero not in self.owned}
             if self.collection_search.get().strip().casefold() not in hero.casefold() or not visible.get(category,True):continue
-            self.availability_tree.insert('', 'end', iid=hero, image=self.art.portrait(hero),values=(hero,state),tags=(stripe(self.availability_tree,i),))
+            self.availability_tree.insert('', 'end', iid=hero, image=self.art.portrait(hero),values=(hero,state),tags=(stripe(self.availability_tree,i),state))
         self.availability_tree.selection_set([h for h in selected if self.availability_tree.exists(h)])
         if position:self.availability_tree.yview_moveto(position[0])
         empty_table(self.availability_tree,'No heroes match these filters.\nTry Reset filters.')
@@ -188,7 +193,7 @@ class Features:
     def collection_selection_changed(self):
         count=len(self.availability_tree.selection())
         for button in self.collection_buttons:button.configure(state='normal' if count else 'disabled')
-        message=f'{count} selected' if count else 'Select heroes to edit ownership. Ctrl-click selects several.'
+        message=f'{count} selected' if count else 'Select heroes to change ownership'
         self.collection_selection_status.config(text=f'{len(self.availability_tree.get_children())} heroes shown · {message}')
 
     def store_collection(self):
@@ -342,7 +347,7 @@ class Features:
         self.previous_sample.clear()
         self.clear_hovers()
         self.previous_self_slot = None
-        self.watch_button.config(text='Stop live draft' if self.watch else 'Start live draft',image=self.art.icon('pause' if self.watch else 'play'),compound='left')
+        self.watch_button.config(text='Stop live draft' if self.watch else 'Start live draft')
         self.live_status.config(text='Watching for the HotS draft window…' if self.watch else 'Live reader stopped.')
         if self.watch:
             self.schedule_read()
@@ -455,7 +460,7 @@ class Features:
         if self.reader_notice:problems.insert(0,self.reader_notice)
         self.draft_warning.config(text=('Check draft · Suggestions use only the heroes recorded below.\n'+'\n'.join('• '+p for p in problems)+'\nCorrect the highlighted slots manually, or wait for another reading.') if problems else '')
         for key,boxes in getattr(self,'slot_boxes',{}).items():
-            for i,box in enumerate(boxes):box.configure(style='Attention.TCombobox' if (key,i) in marked else 'TCombobox')
+            for i,box in enumerate(boxes):box.configure(style='SlotAttention.TCombobox' if (key,i) in marked else 'Slot.TCombobox')
 
     def poll_events(self):
         try:

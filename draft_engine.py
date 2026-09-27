@@ -70,7 +70,7 @@ def draft_summary(allies, enemies, plans=None, ally_hovers=(), final=False):
     enemies = [h for h in enemies if h in HEROES]
     if final:
         if len(allies) == len(enemies) == 5:
-            return 'Draft finished. All 10 heroes recorded. Review Talents & tips.'
+            return 'Draft finished. All 10 heroes recorded. Review Talents.'
         return (f'Draft finished in HotS. Recorded {len(allies)}/5 allies and {len(enemies)}/5 enemies. '
                 'Highlighted blanks are unread locked picks, not open draft slots. Match advice uses the recorded heroes.')
     plans = plans or {}
@@ -78,7 +78,7 @@ def draft_summary(allies, enemies, plans=None, ally_hovers=(), final=False):
     missing = team_needs(allies + tentative, plans)
     messages = []
     if len(allies) == 5:
-        messages.append('Draft complete. Review Talents & tips.')
+        messages.append('Draft complete. Review Talents.')
     else:
         messages.append(f'{len(allies)}/5 allies locked. {len(tentative)} teammate hover(s) included.' if tentative else f'{5-len(allies)} allied slot(s) left.')
     if missing:

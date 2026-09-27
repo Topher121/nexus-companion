@@ -9,7 +9,7 @@ import os
 import webbrowser
 
 from app_paths import APP_VERSION,DATA_DIR
-from ui_theme import BLUE,MUTED,ScrollPage
+from ui_theme import MUTED,ScrollPage
 from updates import DEFAULT_FEED,CONTENT_VERSION,current_content_version,check_updates,download_installer,install_builds
 from backup import create_backup,read_backup,restore_backup
 
@@ -17,31 +17,36 @@ class MaintenanceFeatures:
     def make_maintenance(self):
         self.maintenance_events=queue.Queue();self.update_busy=False;self.update_result=None
         self.maintenance_page=ScrollPage(self.tabs);page=self.maintenance_page.body
-        self.tabs.add(self.maintenance_page,text='  Settings & backups',image=self.art.icon('collection',24),compound='left')
-        ttk.Label(page,text='Keep your companion up to date',font=('Segoe UI',20,'bold')).pack(anchor='w')
-        ttk.Label(page,text=f'App {APP_VERSION} · Saved builds {current_content_version()}',foreground=BLUE).pack(anchor='w',pady=(8,14))
-        ttk.Label(page,text='Updates',font=('Segoe UI',14,'bold')).pack(anchor='w')
+        self.tabs.add(self.maintenance_page,text='Settings')
+        page.columnconfigure(0,minsize=150);page.columnconfigure(1,weight=1)
+        def group(row,title):
+            if row:ttk.Separator(page).grid(row=row-1,column=0,columnspan=2,sticky='ew',pady=18)
+            ttk.Label(page,text=title,style='Section.TLabel').grid(row=row,column=0,sticky='nw',padx=(0,40))
+            body=ttk.Frame(page);body.grid(row=row,column=1,sticky='new');return body
+        body=group(0,'Updates')
+        ttk.Label(body,text=f'App {APP_VERSION}   ·   Saved builds {current_content_version()}',foreground=MUTED).pack(anchor='w')
         self.auto_update_checks=tk.BooleanVar(value=self.settings.get('auto_update_checks',True))
-        ttk.Checkbutton(page,text='Check for app and build updates automatically',variable=self.auto_update_checks,command=self.update_setting_changed).pack(anchor='w',pady=(8,4))
-        ttk.Label(page,text='Checks on launch and daily while open. You choose when to download or install. Nothing restarts during a game.',foreground=MUTED,wraplength=850).pack(anchor='w')
-        row=ttk.Frame(page);row.pack(fill='x',pady=12)
+        ttk.Checkbutton(body,text='Check for app and build updates automatically',variable=self.auto_update_checks,command=self.update_setting_changed).pack(anchor='w',pady=(10,0))
+        ttk.Label(body,text='On launch and once a day. Nothing downloads or restarts until you choose to.',style='Dim.TLabel').pack(anchor='w',padx=(22,0))
+        row=ttk.Frame(body);row.pack(fill='x',pady=(12,8))
         self.update_check_button=ttk.Button(row,text='Check for updates',command=self.start_update_check);self.update_check_button.pack(side='left')
         self.update_app_button=ttk.Button(row,text='Download app update',command=lambda:self.start_update_download('app'),state='disabled');self.update_app_button.pack(side='left',padx=8)
         self.update_build_button=ttk.Button(row,text='Update saved builds',command=lambda:self.start_update_download('builds'),state='disabled');self.update_build_button.pack(side='left')
-        ttk.Button(row,text='View releases',command=lambda:webbrowser.open('https://github.com/Topher121/nexus-companion/releases')).pack(side='left',padx=8)
-        self.update_status=ttk.Label(page,text='Ready to check GitHub releases. Your match history, collection and screenshots are never sent.',foreground=MUTED,wraplength=850,justify='left')
-        self.update_status.pack(anchor='w',pady=(0,16))
-        ttk.Separator(page).pack(fill='x',pady=10)
-        ttk.Label(page,text='Back up or move your data',font=('Segoe UI',14,'bold')).pack(anchor='w',pady=(8,6))
-        ttk.Label(page,text='Save your favourites, excluded heroes, owned collection, settings and complete match history in one file.\nReplays and app files are not included. Keep backups somewhere safe: they contain your player name and local folder paths.',foreground=MUTED,wraplength=850,justify='left').pack(anchor='w')
-        row=ttk.Frame(page);row.pack(fill='x',pady=12)
+        ttk.Button(row,text='View releases',style='Link.TButton',command=lambda:webbrowser.open('https://github.com/Topher121/nexus-companion/releases')).pack(side='left',padx=12)
+        self.update_status=ttk.Label(body,text='Checks GitHub releases only. Your match history, collection and screenshots are never sent.',style='Dim.TLabel',wraplength=720,justify='left')
+        self.update_status.pack(anchor='w')
+        body=group(2,'Backups')
+        ttk.Label(body,text='One file with your favourites, excluded heroes, collection, settings and full match history. Replays and app files are not included.',wraplength=720,justify='left').pack(anchor='w')
+        ttk.Label(body,text='Backups contain your player name and local folder paths, so keep them somewhere private.',style='Dim.TLabel',wraplength=720,justify='left').pack(anchor='w',pady=(2,0))
+        row=ttk.Frame(body);row.pack(fill='x',pady=(12,8))
         ttk.Button(row,text='Export backup…',command=self.export_backup).pack(side='left')
         ttk.Button(row,text='Restore backup…',command=self.import_backup).pack(side='left',padx=8)
-        ttk.Button(row,text='Open data folder',command=lambda:os.startfile(DATA_DIR)).pack(side='left')
-        self.backup_status=ttk.Label(page,text='Restore replaces your current data. A safety backup is made first, and the app closes after a successful restore.',foreground=MUTED,wraplength=850,justify='left')
+        self.backup_status=ttk.Label(body,text='Restoring replaces your current data. A safety backup is made first, and the app closes afterwards.',style='Dim.TLabel',wraplength=720,justify='left')
         self.backup_status.pack(anchor='w')
-        ttk.Label(page,text='Personal data folder: '+str(DATA_DIR),foreground=MUTED,wraplength=850).pack(anchor='w',pady=(20,0))
-        page.bind('<Configure>',lambda e:[w.configure(wraplength=max(240,e.width-32)) for w in page.winfo_children() if isinstance(w,ttk.Label) and int(float(w.cget('wraplength') or 0))>0])
+        body=group(4,'Data folder')
+        ttk.Label(body,text=str(DATA_DIR),foreground=MUTED,wraplength=720).pack(anchor='w')
+        ttk.Button(body,text='Open data folder',command=lambda:os.startfile(DATA_DIR)).pack(anchor='w',pady=(10,0))
+        page.bind('<Configure>',lambda e:[w.configure(wraplength=max(240,e.width-200)) for w in (self.update_status,self.backup_status)])
         self.root.after(250,self.poll_maintenance)
         self.root.after(2500,self.update_tick)
 

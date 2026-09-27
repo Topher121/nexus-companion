@@ -8,7 +8,7 @@ from tkinter import ttk, filedialog, messagebox
 
 from data import HEROES, MAPS
 from history import HistoryStore, hero_stats, replay_folders, profile_from_path, scan_replays, MODES, personal_record_label
-from ui_theme import BG, TEXT, BLUE, MUTED, GREEN, RED, PURPLE, metric, stripe, ScrollPage, empty_table
+from ui_theme import BG, TEXT, BLUE, MUTED, DIM, GREEN, RED, PURPLE, ACCENT2, stripe, section, ScrollPage, empty_table
 
 
 class HistoryFeatures:
@@ -43,80 +43,75 @@ class HistoryFeatures:
         self.history_trees = {}
         self.history_container = ScrollPage(self.tabs)
         self.history_page = self.history_container.body
-        self.tabs.add(self.history_container, text='  Match history',image=self.art.icon('history',24),compound='left')
+        self.tabs.add(self.history_container, text='History')
         page = self.history_page
-        row = ttk.Frame(page); row.pack(fill='x')
-        ttk.Label(row, text='Your match history', font=('Segoe UI',20,'bold')).pack(side='left')
-        ttk.Checkbutton(row, text='Automatically log completed games', variable=self.auto_results,
-                        command=self.history_settings_changed).pack(side='right')
-        ttk.Label(page, text='Wins, losses and win rate from your saved replays. New results appear after the game saves its replay.',
-                  foreground=MUTED, wraplength=1080).pack(anchor='w', pady=(6,8))
         row = ttk.Frame(page)
         self.replay_settings_row=row
-        ttk.Label(row, text='Replay folder').pack(side='left', padx=(0,8))
+        ttk.Label(row, text='Replay folder', foreground=MUTED).pack(side='left', padx=(0,8))
         folder_box = ttk.Combobox(row, textvariable=self.replay_folder, values=[str(p) for p in folders], state='readonly')
         folder_box.pack(side='left', fill='x', expand=True)
         folder_box.bind('<<ComboboxSelected>>', lambda e:self.history_folder_changed())
         ttk.Button(row, text='Choose folder', command=self.choose_replay_folder).pack(side='left', padx=(8,0))
-        self.history_status = ttk.Label(page, text=storage_error or 'Ready to read your saved results.', wraplength=1080, foreground=MUTED)
-        self.history_status.pack(anchor='w', pady=8)
-        row = ttk.Frame(page); row.pack(fill='x', pady=(0,8))
+        row = ttk.Frame(page); row.pack(fill='x', pady=(0,10))
         self.history_filter_row=row
         for label, variable, values, width in (
-                ('Hero',self.history_hero,['All heroes']+sorted(HEROES),20),
-                ('Mode',self.history_mode,['All modes']+MODES,16),
-                ('Period',self.history_period,['All time','Last 30 days','Last 7 days'],13)):
-            ttk.Label(row,text=label).pack(side='left',padx=(0,6))
+                ('Hero',self.history_hero,['All heroes']+sorted(HEROES),18),
+                ('Mode',self.history_mode,['All modes']+MODES,15),
+                ('Period',self.history_period,['All time','Last 30 days','Last 7 days'],12)):
+            ttk.Label(row,text=label,foreground=MUTED).pack(side='left',padx=(0 if label=='Hero' else 18,8))
             box = ttk.Combobox(row,textvariable=variable,values=values,state='readonly',width=width)
-            box.pack(side='left',padx=(0,14));box.bind('<<ComboboxSelected>>',lambda e:self.refresh_history())
-        self.log_result_button=ttk.Button(row, text='Log result',image=self.art.icon('plus'),compound='left',command=self.manual_result)
+            box.pack(side='left');box.bind('<<ComboboxSelected>>',lambda e:self.refresh_history())
+        ttk.Button(row,text='Reset filters',style='Link.TButton',command=self.reset_history_filters).pack(side='left',padx=12)
+        self.log_result_button=ttk.Button(row, text='Log result',command=self.manual_result)
         self.log_result_button.pack(side='right')
-        ttk.Button(row,text='Reset filters',command=self.reset_history_filters).pack(side='right',padx=(0,8))
         self.history_summary = ttk.Label(page, text='', foreground=MUTED)
-        metrics=ttk.Frame(page);metrics.pack(fill='x',pady=(0,12))
+        strip=ttk.Frame(page);strip.pack(fill='x',pady=(0,4))
         self.history_metrics=[]
-        for i,(icon,label,color) in enumerate([('history','Matches played',TEXT),('trophy','Wins',GREEN),('loss','Losses',RED),('target','Win rate',PURPLE)]):
-            card,value=metric(metrics,self.art.icon(icon,24),label,color)
-            card.grid(row=0,column=i,sticky='ew',padx=(0,10 if i<3 else 0));metrics.columnconfigure(i,weight=1,uniform='metrics')
+        for label,color in (('played',TEXT),('won',GREEN),('lost',RED),('win rate',ACCENT2)):
+            value=ttk.Label(strip,text='—',font=('Segoe UI',10,'bold'),foreground=color);value.pack(side='left')
+            ttk.Label(strip,text=label,foreground=MUTED).pack(side='left',padx=(5,22))
             self.history_metrics.append(value)
-        tables = ttk.Frame(page); tables.pack(fill='both',expand=True)
+        self.history_status = ttk.Label(strip, text=storage_error or 'Ready to read your saved results.', style='Dim.TLabel')
+        self.history_status.pack(side='right')
+        tables = ttk.Frame(page); tables.pack(fill='both',expand=True,pady=(12,0))
         stats_frame = ttk.Frame(tables); recent_frame = ttk.Frame(tables)
-        stats_frame.grid(row=0,column=0,sticky='nsew',pady=(0,12));recent_frame.grid(row=1,column=0,sticky='nsew')
+        stats_frame.grid(row=0,column=0,sticky='nsew',pady=(0,16));recent_frame.grid(row=1,column=0,sticky='nsew')
         tables.columnconfigure(0,weight=1)
         tables.rowconfigure(0,weight=1,uniform='history_tables');tables.rowconfigure(1,weight=1,uniform='history_tables')
-        stats_heading=ttk.Frame(stats_frame);stats_heading.pack(fill='x',pady=(0,4))
-        ttk.Label(stats_heading,text='By hero · click a heading to sort, or a hero to filter matches',foreground=MUTED).pack(side='left')
-        minimum=ttk.Combobox(stats_heading,textvariable=self.history_min_games,values=['0','5','10','20','50','100'],state='readonly',width=5)
-        minimum.pack(side='right');minimum.bind('<<ComboboxSelected>>',lambda e:self.minimum_games_changed())
-        ttk.Label(stats_heading,text='Minimum games',foreground=MUTED).pack(side='right',padx=(8,6))
-        self.minimum_games_note=ttk.Label(stats_frame,text='',foreground=MUTED)
-        self.minimum_games_note.pack(anchor='w',pady=(0,4))
+        stats_heading=section(stats_frame,'By hero')
+        minimum=ttk.Combobox(stats_heading,textvariable=self.history_min_games,values=['0','5','10','20','50','100'],state='readonly',width=4,style='Slot.TCombobox')
+        minimum.pack(side='right',pady=(0,3),anchor='s');minimum.bind('<<ComboboxSelected>>',lambda e:self.minimum_games_changed())
+        ttk.Label(stats_heading,text='Minimum games',style='Dim.TLabel').pack(side='right',padx=(0,2),pady=(0,4),anchor='s')
+        self.minimum_games_note=ttk.Label(stats_heading,text='',style='Dim.TLabel')
+        self.minimum_games_note.pack(side='left',padx=(12,0),pady=(0,3),anchor='s')
         self.hero_stats_tree = self.history_table(stats_frame,
             [('hero','Hero',220),('games','Played',90),('wins','Wins',90),('losses','Losses',90),('rate','Win rate',100)],height=2,kind='heroes')
         self.hero_stats_tree.bind('<<TreeviewSelect>>', self.select_history_hero)
-        ttk.Label(recent_frame,text='Matches · click a heading to sort',foreground=MUTED).pack(anchor='w',pady=(8,4))
+        section(recent_frame,'Matches')
         self.matches_tree = self.history_table(recent_frame,
-            [('date','Date / time',160),('hero','Hero',145),('result','Result',135),('map','Battleground',185),
+            [('date','Date / time',160),('hero','Hero',145),('result','Result',110),('map','Battleground',185),
              ('mode','Mode',125),('source','Logged by',90)],height=2,kind='matches')
         for tree in (self.hero_stats_tree,self.matches_tree):
-            tree.tag_configure('win',foreground=GREEN)
-            tree.tag_configure('loss',foreground=RED)
-            tree.tag_configure('excluded',foreground='#77746b')
-        row = ttk.Frame(page);row.pack(side='bottom',fill='x',pady=(8,0),before=tables)
+            tree.tag_configure('win',background='#1b211a')
+            tree.tag_configure('loss',background='#231b1a')
+            tree.tag_configure('excluded',foreground=DIM,background=BG)
+        row = ttk.Frame(page);row.pack(side='bottom',fill='x',pady=(10,0),before=tables)
         self.scan_button = ttk.Button(row, text='Scan now', command=lambda:self.start_history_scan(force=True))
         self.scan_button.pack(side='right')
         ttk.Button(row,text='Replay settings',command=self.toggle_replay_settings).pack(side='right',padx=8)
+        ttk.Checkbutton(row, text='Log finished games automatically', variable=self.auto_results,
+                        command=self.history_settings_changed).pack(side='right',padx=(0,12))
         self.exclude_button=ttk.Button(row,text='Exclude selected',command=lambda:self.exclude_history(True),state='disabled');self.exclude_button.pack(side='left')
         self.restore_button=ttk.Button(row,text='Restore selected',command=lambda:self.exclude_history(False),state='disabled');self.restore_button.pack(side='left',padx=8)
         self.matches_tree.bind('<<TreeviewSelect>>',lambda e:self.history_selection_changed())
-        ttk.Checkbutton(row,text='Show excluded',variable=self.show_excluded,command=self.refresh_history).pack(side='left')
-        ttk.Button(row,text='Import details',command=self.history_import_details).pack(side='right',padx=(0,8))
-        ttk.Label(page,text='Only saved games for this account are counted. Excluded games stay excluded after rescanning. Small samples can be misleading.',
-                  foreground=MUTED,wraplength=1080).pack(side='bottom',anchor='w',pady=(8,0),before=tables)
+        ttk.Checkbutton(row,text='Show excluded',variable=self.show_excluded,command=self.refresh_history).pack(side='left',padx=(4,0))
+        ttk.Button(row,text='Import details',style='Link.TButton',command=self.history_import_details).pack(side='left',padx=(12,0))
+        ttk.Label(page,text='Only saved games for this account are counted. Excluded games stay excluded after rescanning. Small samples can mislead.',
+                  style='Dim.TLabel').pack(side='bottom',anchor='w',pady=(8,0),before=tables)
         if storage_error:
             self.scan_button.configure(state='disabled')
             self.log_result_button.configure(state='disabled')
-        page.bind('<Configure>',lambda e:self.history_status.configure(wraplength=max(240,e.width-32)))
+        page.bind('<Configure>',lambda e:self.history_status.configure(wraplength=max(240,e.width-420)))
         self.refresh_history()
         self.history_poll_timer = self.root.after(250,self.poll_history)
         self.history_scan_timer = self.root.after(1200,self.history_tick)
@@ -295,7 +290,7 @@ class HistoryFeatures:
         self.hero_stats_tree.delete(*self.hero_stats_tree.get_children())
         minimum=int(self.history_min_games.get())
         stats=hero_stats(all_heroes);visible=[s for s in stats if s['games']>=minimum]
-        self.minimum_games_note.config(text=f'{len(visible)} of {len(stats)} heroes shown · Minimum applies to this table, using the selected mode and period. Totals and match list stay unchanged.')
+        self.minimum_games_note.config(text=f'{len(visible)} of {len(stats)} heroes' if len(visible)!=len(stats) else f'{len(stats)} heroes')
         for i,stat in enumerate(self.sorted_history_rows('heroes',visible)):
             self.hero_stats_tree.insert('', 'end',iid=stat['hero'],image=self.art.portrait(stat['hero']),values=(stat['hero'],stat['games'],stat['wins'],stat['losses'],f"{stat['rate']:.1f}%"),tags=(stripe(self.hero_stats_tree,i),))
         if self.hero_stats_tree.exists(self.history_hero.get()):self.hero_stats_tree.selection_set(self.history_hero.get())

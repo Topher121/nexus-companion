@@ -138,11 +138,11 @@ class LiveContextTests(unittest.TestCase):
             {'side':'enemies','index':1,'hero':"Kael'thas",'locked':True}]}
         a.apply_read(frame,screenshot=True)
         text=a.build_text.get('1.0','end')
-        self.assertIn('Pixie Power',text);self.assertIn('WHY THESE TALENTS',text)
+        self.assertIn('Pixie Power',text);self.assertIn('Why these talents',text)
         self.assertIn("Jaina, Kael'thas",text)
         a.build_variant.set('Critical Mist Build');a.refresh()
         self.assertIn('Safety Dust',a.build_text.get('1.0','end'))
-        self.assertNotIn('WHY THESE TALENTS',a.build_text.get('1.0','end'))
+        self.assertNotIn('Why these talents',a.build_text.get('1.0','end'))
         a.build_variant.set(AUTO_BUILD);a.refresh()
         self.assertIn('Pixie Power',a.build_text.get('1.0','end'))
 
