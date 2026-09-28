@@ -1,11 +1,14 @@
-# Nexus Forge 0.10.0 — local development, not published
+# Nexus Forge 0.10.0 — public beta
 
-- Adds 130 conditional talent rules covering all 90 heroes. Auto can choose a complete build, then compatible alternatives, using recorded enemies, confirmed allies, explicit role plans and battleground where supported.
-- Explains retained choices as well as changed talents. Shows the enemy lineup, incomplete-draft notice and reader warnings on the Talents page. Manual builds remain unchanged.
-- Corrects Varian's tank-plan selection: defensive Taunt responds to burst rather than being forced for every tank matchup.
-- Builds, matchup rules and draft relationships now update as one validated content package. Guide dates and stale-content reminders are visible in Settings.
-- Adds a staged guide-refresh tool and weekly GitHub review workflow; neither activates or publishes advice automatically. Current full refresh was blocked by HTTP 403, so the guide check date remains 2026-09-19.
-- Preserves the recently redesigned interface, role selector and familiarity-based pick weighting.
+- New look. One header bar with text tabs, a status bar showing whether the draft reader is on, plain sections instead of boxed cards, and one accent colour.
+- Draft page rearranged: the draft board is a column on the left, with each team's bans under it, and the pick and ban advice fills the right-hand side so all three suggestions are visible without scrolling. Picks and bans stack when the window is narrow.
+- Hero pool: double-click a hero to step it through Allowed, Favourite and Never suggest.
+- Auto talents now cover all 90 heroes with 130 matchup rules. Auto can choose a complete build, then compatible alternatives, using recorded enemies, confirmed allies, role plans and the battleground where supported. It explains the choices it kept as well as the ones it changed.
+- The Talents page shows the enemy lineup it is working from and says when the draft is incomplete. Manual builds are never changed.
+- Varian: defensive Taunt is chosen against burst, not forced for every tank matchup.
+- Picks can take your saved games on a hero into account as a small tie-break. Your win rate never changes the order.
+- Builds, matchup rules and draft relationships update together as one checked content package. Guide dates are shown in Settings.
+- Existing settings, collection, history and backups carry over from 0.9.0.
 
 # Nexus Forge 0.9.0 — public beta
 

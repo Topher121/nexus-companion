@@ -1,19 +1,27 @@
-# Nexus Forge 0.9.0 — public beta
+# Nexus Forge 0.10.0 — public beta
 
 Your Heroes of the Storm companion, by Pocket Forge Studios. Previously Nexus
 Companion; still free, with optional support and no account or API key required.
 
 ## Download and start
 
-Download **NexusForge-Setup-0.9.0.exe**, run it, then open **Nexus Forge** from
+Download **NexusForge-Setup-0.10.0.exe**, run it, then open **Nexus Forge** from
 the Start menu or desktop. Python and the app's dependencies are included.
 Windows 10 1903 or newer (64-bit) and Windows English OCR support are required.
 The installer is unsigned, so Windows may show an unknown-publisher warning.
 
-The `latest.json` and `builds-2026.9.19.1.json` files are for the update checker;
-you only need the installer. Updates from Nexus Companion 0.8.0 preserve saved
-settings, hero ownership and match history. Source-project users can continue
+The `latest.json` and `builds-2026.9.27.1.json` files are for the update checker;
+you only need the installer. Already on 0.9.0? Open Settings and press Check for
+updates. Updates preserve saved settings, hero ownership and match history. Source-project users can continue
 using their launcher or use Settings & backups to move their data to the app.
+
+## New in 0.10.0
+
+- New look, and a Draft page laid out so the pick and ban advice is always in
+  view: draft board on the left, advice on the right.
+- Auto talents cover all 90 heroes, with 130 matchup rules, and explain their
+  choices.
+- Double-click a hero in Hero pool to change its preference.
 
 ## Included
 
@@ -25,13 +33,13 @@ using their launcher or use Settings & backups to move their data to the app.
   talent adjustments explain which confirmed enemies prompted each choice.
 - Personal match history and win rates from saved replays, sortable hero
   statistics, collection import, backup/restore and verified update downloads.
-- New Nexus Forge name and icon. Optional support opens the studio Ko-fi page.
+- Optional support opens the studio Ko-fi page.
 
 ## Beta limitations
 
 Draft recognition can leave slots unread; check the recorded teams. Start each
 match with Clear draft. Saved guides do not automatically track game patches,
-and matchup talent rules do not cover every hero or team composition. Personal
+and matchup talent rules do not cover every team composition. Personal
 win rates describe your recorded games; they do not predict a match result.
 The community collection exporter needs a first-use replay check; manual
 ownership entry is also available.
