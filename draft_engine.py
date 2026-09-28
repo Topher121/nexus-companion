@@ -263,10 +263,10 @@ def recommendation_text(result, number, record='', for_ban=False):
         lines.append(record)
     lines.extend('• ' + reason for reason in result['why'][:4])
     if result['preference_bonus']:
-        lines.append('Preference: favourite used to break a close fit')
+        lines.append('Preference: one of your favourites')
     if result['familiarity_bonus']:
         games = result['familiarity_games']
-        lines.append(f"Familiarity: {games} saved {('game' if games == 1 else 'games')} · small tie-break")
+        lines.append(f"Familiarity: you have {games} saved {('game' if games == 1 else 'games')} on this hero")
     lines.extend('Plan: ' + condition for condition in result['conditions'])
     prefix = 'Lower priority: ' if for_ban else 'Watch out: '
     lines.extend(prefix + warning for warning in result['warnings'])

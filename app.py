@@ -95,37 +95,56 @@ class Companion(MaintenanceFeatures, HistoryFeatures, Features):
   box.bind('<<ComboboxSelected>>',lambda e:self.manual_selection(var));return box
 
  def make_draft(self):
-  bar=ttk.Frame(self.draft);bar.pack(fill='x',pady=(0,14))
+  # The page reads left to right: what has been drafted, then what to do
+  # about it. The board is a fixed column so the advice gets the full height.
   self.map=tk.StringVar(value='Unknown map');self.role=tk.StringVar(value='Auto')
   stats_mode=self.settings.get('pick_stats_mode','Storm League')
   self.pick_stats_mode=tk.StringVar(value=stats_mode if stats_mode in DRAFT_STAT_MODES else 'Storm League')
   self.pick_stats=None
-  ttk.Label(bar,text='Map',foreground=MUTED).pack(side='left',padx=(0,8));self.combo(bar,self.map,MAPS,24).pack(side='left')
-  ttk.Label(bar,text='Suggest',foreground=MUTED).pack(side='left',padx=(18,8))
-  self.combo(bar,self.role,['Auto','Any','Tank','Healer','Bruiser','Ranged','Melee','Support'],11).pack(side='left')
-  self.role_hint=ttk.Label(bar,text='',foreground=DIM);self.role_hint.pack(side='left',padx=(10,0))
-  ttk.Button(bar,text='Clear draft',command=self.clear).pack(side='right')
-  board=ttk.Frame(self.draft);board.pack(fill='x')
+  # Reader buttons and status are added to these by make_features.
+  self.live_bar=ttk.Frame(self.draft);self.live_bar.pack(fill='x')
+  ttk.Button(self.live_bar,text='Clear draft',command=self.clear).pack(side='right')
+  self.warning_slot=ttk.Frame(self.draft);self.warning_slot.pack(fill='x')
+  ttk.Separator(self.draft).pack(fill='x',pady=(12,14))
+  body=ttk.Frame(self.draft);body.pack(fill='both',expand=True)
+  body.columnconfigure(0,minsize=440);body.columnconfigure(1,weight=1);body.rowconfigure(0,weight=1)
+  left=ttk.Frame(body);left.grid(row=0,column=0,sticky='nsew',padx=(0,28))
+  right=ttk.Frame(body);right.grid(row=0,column=1,sticky='nsew')
+
+  row=ttk.Frame(left);row.pack(fill='x',pady=(0,14))
+  ttk.Label(row,text='Map',foreground=MUTED).pack(side='left',padx=(0,8))
+  self.combo(row,self.map,MAPS,24).pack(side='left',fill='x',expand=True)
+  board=ttk.Frame(left);board.pack(fill='x')
   self.allies=[];self.enemies=[];self.bans=[];self.slot_portraits=[];self.slot_boxes={'allies':[],'enemies':[],'bans':[]}
-  for col,(label,collection,count,colour) in enumerate([('Your team',self.allies,5,'#8fb4d9'),('Enemy team',self.enemies,5,RED),('Bans',self.bans,6,DIM)]):
-   f=ttk.Frame(board);f.grid(row=0,column=col,sticky='nsew',padx=(0,24 if col<2 else 0));board.columnconfigure(col,weight=1,uniform='teams')
+  def slot(parent,collection,key,col):
+   v=tk.StringVar();collection.append(v)
+   line=ttk.Frame(parent);line.pack(fill='x',pady=2)
+   icon=ttk.Label(line,image=self.art.blank(30));icon.pack(side='left',padx=(0,6))
+   box=self.combo(line,v,['']+sorted(HEROES),12,'Slot.TCombobox');box.pack(side='left',fill='x',expand=True)
+   self.slot_boxes[key].append(box);self.slot_portraits.append((v,icon,col))
+  columns=[]
+  for col,(label,collection,key,colour) in enumerate([('Your team',self.allies,'allies','#8fb4d9'),('Enemy team',self.enemies,'enemies',RED)]):
+   f=ttk.Frame(board);f.grid(row=0,column=col,sticky='nsew',padx=(0,16) if col==0 else 0);board.columnconfigure(col,weight=1,uniform='teams')
    ttk.Label(f,text=label,style='Section.TLabel').pack(anchor='w',pady=(0,5))
    tk.Frame(f,bg=colour,height=2).pack(fill='x',pady=(0,6))
-   for i in range(count):
-    v=tk.StringVar();collection.append(v)
-    row=ttk.Frame(f);row.pack(fill='x',pady=2)
-    icon=ttk.Label(row,image=self.art.blank(30))
-    icon.pack(side='left',padx=(0,6))
-    box=self.combo(row,v,['']+sorted(HEROES),18,'Slot.TCombobox');box.pack(side='left',fill='x',expand=True)
-    self.slot_boxes[('allies','enemies','bans')[col]].append(box)
-    self.slot_portraits.append((v,icon,col))
-  self.hover_status=ttk.Label(self.draft,text='',foreground=ACCENT2,wraplength=900)
-  self.hover_status.pack(anchor='w',pady=(8,0))
-  self.draft.bind('<Configure>',lambda e:self.hover_status.configure(wraplength=max(200,e.width-30)),add='+')
-  self.ban_notice=ttk.Label(self.draft,text='Only confirmed bans are listed. Blank ban slots may be skipped or unread; check them in HotS.',style='Dim.TLabel',wraplength=900)
-  self.ban_notice.pack(anchor='w',pady=(4,0))
-  self.draft.bind('<Configure>',lambda e:self.ban_notice.configure(wraplength=max(200,e.width-30)),add='+')
-  self.flex_bar=ttk.Frame(self.draft)
+   for i in range(5):slot(f,collection,key,col)
+   columns.append(f)
+  # Bans sit under the team that made them: the reader numbers the left three 0-2, the right three 3-5.
+  for f,label in zip(columns,('Your bans','Their bans')):
+   ttk.Label(f,text=label,style='Eyebrow.TLabel').pack(anchor='w',pady=(14,4))
+   tk.Frame(f,bg=LINE,height=1).pack(fill='x',pady=(0,6))
+   for i in range(3):slot(f,self.bans,'bans',2)
+  self.ban_notice=ttk.Label(left,text='',style='Dim.TLabel',wraplength=430,justify='left')
+  self.ban_notice.pack(anchor='w',pady=(8,0))
+  self.hover_status=ttk.Label(left,text='',foreground=ACCENT2,wraplength=430,justify='left')
+  self.hover_status.pack(anchor='w',pady=(4,0))
+  # Who you are in the lobby; filled by make_features.
+  self.identity_row=ttk.Frame(left);self.identity_row.pack(side='bottom',fill='x',pady=(14,0))
+
+  self.status=ttk.Label(right,text='',foreground=TEXT,wraplength=700,justify='left')
+  self.status.pack(anchor='w',fill='x')
+  right.bind('<Configure>',lambda e:self.status.configure(wraplength=max(200,e.width-8)),add='+')
+  self.flex_bar=ttk.Frame(right)
   self.flex_plans={hero:tk.StringVar(value='Unconfirmed') for hero in FLEX_CHOICES}
   self.flex_controls={}
   for hero,choices in FLEX_CHOICES.items():
@@ -133,23 +152,44 @@ class Companion(MaintenanceFeatures, HistoryFeatures, Features):
    label=ttk.Label(control,text=hero+' plan',foreground=MUTED);label.pack(side='left',padx=(0,8))
    box=ttk.Combobox(control,textvariable=self.flex_plans[hero],values=choices,state='readonly',width=17)
    box.pack(side='left',padx=(0,18));box.bind('<<ComboboxSelected>>',lambda e:self.refresh())
-  self.status=ttk.Label(self.draft,text='',foreground=WARN,wraplength=1100);self.status.pack(anchor='w',pady=(12,14))
-  self.draft.bind('<Configure>',lambda e:self.status.configure(wraplength=max(200,e.width-30)),add='+')
-  result=ttk.Frame(self.draft);result.pack(fill='both',expand=True)
-  self.pick_text=self.text_panel(result,'Your picks',0);self.ban_text=self.text_panel(result,'Ban candidates',1)
-  footer=ttk.Frame(self.draft);footer.pack(fill='x',pady=(10,0))
-  ttk.Label(footer,text='Ranked on team fit and saved guide matchups. Your record is shown for context and does not change the order.',style='Dim.TLabel').pack(side='left')
-  ttk.Button(footer,text='How suggestions work',style='Link.TButton',command=self.draft_help).pack(side='left',padx=(8,0))
+  tools=ttk.Frame(right);tools.pack(fill='x',pady=(12,0))
+  ttk.Label(tools,text='Suggest',foreground=MUTED).pack(side='left',padx=(0,8))
+  self.combo(tools,self.role,['Auto','Any','Tank','Healer','Bruiser','Ranged','Melee','Support'],11).pack(side='left')
+  self.role_hint=ttk.Label(tools,text='',foreground=DIM);self.role_hint.pack(side='left',padx=(10,0))
+  mode=ttk.Combobox(tools,textvariable=self.pick_stats_mode,values=DRAFT_STAT_MODES,state='readonly',width=14)
+  mode.pack(side='right');mode.bind('<<ComboboxSelected>>',self.pick_stats_changed)
+  ttk.Label(tools,text='Your record in',foreground=MUTED).pack(side='right',padx=(0,8))
+  footer=ttk.Frame(right);footer.pack(side='bottom',fill='x',pady=(8,0))
+  ttk.Button(footer,text='How suggestions work',style='Link.TButton',command=self.draft_help).pack(side='left')
+  self.advice=ttk.Frame(right);self.advice.pack(fill='both',expand=True,pady=(10,0))
+  self.pick_panel,self.pick_text=self.text_panel(self.advice,'Your picks')
+  self.ban_panel,self.ban_text=self.text_panel(self.advice,'Ban candidates')
+  self.advice_wide=None
+  self.advice.bind('<Configure>',self.arrange_advice)
+  self.arrange_advice()
 
- def text_panel(self,parent,title,col):
-  f=ttk.Frame(parent);f.grid(row=0,column=col,sticky='nsew',padx=(0,24 if col==0 else 0));parent.columnconfigure(col,weight=1,uniform='advice');parent.rowconfigure(0,weight=1)
-  heading=section(f,title)
-  if col==0:
-   mode=ttk.Combobox(heading,textvariable=self.pick_stats_mode,values=DRAFT_STAT_MODES,state='readonly',width=14,style='Slot.TCombobox')
-   mode.pack(side='right',pady=(0,3),anchor='s');mode.bind('<<ComboboxSelected>>',self.pick_stats_changed)
-   ttk.Label(heading,text='Your record in',style='Dim.TLabel').pack(side='right',padx=(0,2),pady=(0,4),anchor='s')
+ def arrange_advice(self,event=None):
+  """Picks and bans side by side when there is room, stacked when there is not."""
+  wide=(event.width if event else self.advice.winfo_width())>=640
+  if wide==self.advice_wide:return
+  self.advice_wide=wide
+  for i in (0,1):self.advice.columnconfigure(i,weight=0,uniform='');self.advice.rowconfigure(i,weight=0)
+  if wide:
+   self.pick_panel.grid(row=0,column=0,sticky='nsew',padx=(0,24),pady=0)
+   self.ban_panel.grid(row=0,column=1,sticky='nsew',padx=0,pady=0)
+   for i in (0,1):self.advice.columnconfigure(i,weight=1,uniform='advice')
+   self.advice.rowconfigure(0,weight=1)
+  else:
+   self.pick_panel.grid(row=0,column=0,sticky='nsew',padx=0,pady=(0,10))
+   self.ban_panel.grid(row=1,column=0,sticky='nsew',padx=0,pady=0)
+   self.advice.columnconfigure(0,weight=1)
+   self.advice.rowconfigure(0,weight=3);self.advice.rowconfigure(1,weight=2)
+
+ def text_panel(self,parent,title):
+  f=ttk.Frame(parent)
+  section(f,title)
   body=ttk.Frame(f);body.pack(fill='both',expand=True)
-  text=tk.Text(body,bg=BG,fg=TEXT,wrap='word',height=13,width=30,font=(FONT,10),padx=0,pady=2,relief='flat',
+  text=tk.Text(body,bg=BG,fg=TEXT,wrap='word',height=6,width=30,font=(FONT,10),padx=0,pady=2,relief='flat',
                borderwidth=0,highlightthickness=0,state='disabled',cursor='arrow',spacing1=1,spacing3=1)
   scroll=ttk.Scrollbar(body,command=text.yview)
   def autohide(first,last):
@@ -157,7 +197,7 @@ class Companion(MaintenanceFeatures, HistoryFeatures, Features):
    elif not scroll.winfo_manager():scroll.pack(side='right',fill='y',before=text)
    scroll.set(first,last)
   text.configure(yscrollcommand=autohide);text.pack(side='left',fill='both',expand=True)
-  return text
+  return f,text
 
  def put(self,widget,text):
   if widget.get('1.0','end-1c')==text:return
@@ -221,7 +261,7 @@ class Companion(MaintenanceFeatures, HistoryFeatures, Features):
    else:
     control.pack_forget();self.flex_plans[hero].set('Unconfirmed')
   if present & set(FLEX_CHOICES):
-   if not self.flex_bar.winfo_manager():self.flex_bar.pack(fill='x',before=self.status,pady=(10,0))
+   if not self.flex_bar.winfo_manager():self.flex_bar.pack(fill='x',after=self.status,pady=(10,0))
   else:self.flex_bar.pack_forget()
 
  def make_pool(self):
@@ -251,7 +291,18 @@ class Companion(MaintenanceFeatures, HistoryFeatures, Features):
   self.tree.configure(yscrollcommand=scroll.set);self.tree.pack(fill='both',expand=True)
   ttk.Label(self.pool,text='Favourites get a small boost when they already fit the draft. Never suggest keeps a hero out of your picks.',style='Dim.TLabel').pack(anchor='w',pady=(8,0))
   self.tree.bind('<<TreeviewSelect>>',lambda e:self.pool_selection_changed())
+  self.tree.bind('<Double-1>',self.cycle_pref)
   self.fill_pool()
+
+ def cycle_pref(self,event):
+  """Double-click a hero to step it through Allowed, Favourite, Never suggest."""
+  hero=self.tree.identify_row(event.y)
+  if not hero:return
+  order=('Allowed','Favourite','Never suggest')
+  current=self.prefs.get(hero,'Allowed')
+  self.tree.selection_set(hero)
+  self.set_pref(order[(order.index(current)+1)%3] if current in order else 'Allowed')
+  return 'break'
 
  def reset_pool_filters(self):
   self.pool_filter.set('All preferences');self.search.set('')
@@ -272,7 +323,7 @@ class Companion(MaintenanceFeatures, HistoryFeatures, Features):
   if not reset_scroll and position:self.tree.yview_moveto(position[0])
   empty_table(self.tree,'No heroes match these filters.\nTry Reset filters.')
   shown=len(self.tree.get_children())
-  self.pool_status.config(text=(f'{shown} of {len(HEROES)} heroes' if shown!=len(HEROES) else f'{shown} heroes')+' · Ctrl-click or Shift-click to select several')
+  self.pool_status.config(text=(f'{shown} of {len(HEROES)} heroes' if shown!=len(HEROES) else f'{shown} heroes')+' · Double-click a hero to change it, or select several and use the buttons')
   self.pool_selection_changed()
 
  def set_pref(self,mode):
@@ -345,6 +396,12 @@ class Companion(MaintenanceFeatures, HistoryFeatures, Features):
  def refresh(self):
   if not hasattr(self,'build_text'):return
   self.update_draft_warning()
+  # The warning only takes up room while there is one.
+  warning=getattr(self,'draft_warning',None)
+  if warning is not None and warning.cget('text'):
+   if not warning.winfo_manager():warning.pack(fill='x',pady=(10,0))
+  elif warning is not None and warning.winfo_manager():
+   warning.pack_forget();self.warning_slot.configure(height=1)
   self.load_pick_stats()
   for variable,label,col in self.slot_portraits:
    label.configure(image=self.art.portrait(variable.get(),30) if variable.get() else self.art.blank(30))
@@ -360,8 +417,9 @@ class Companion(MaintenanceFeatures, HistoryFeatures, Features):
   self.update_flex_controls(allies+hover_heroes,enemies)
   plans={hero:var.get() for hero,var in self.flex_plans.items()}
   final=self.last_read.get('phase')=='starting'
-  self.ban_notice.configure(text='Draft finished. Bans are retained from earlier readings; they are not shown on the final-team screen.' if final else 'Only confirmed bans are listed. Blank ban slots may be skipped or unread; check them in HotS.')
-  self.status.config(text=error or draft_summary(allies,enemies,plans,hover_heroes,final=final))
+  # Only worth saying once the reader has looked at a draft.
+  self.ban_notice.configure(text='' if not self.last_read else 'Draft finished. Bans are kept from earlier readings.' if final else 'A blank ban may just be unread. Check it in HotS.')
+  self.status.config(text=error or draft_summary(allies,enemies,plans,hover_heroes,final=final),foreground=WARN if error else TEXT)
   if error:
    self.put(self.pick_text,'Fix the draft above to see suggestions.');self.put(self.ban_text,'Fix the draft above to see suggestions.');self.put(self.build_text,'Fix duplicate or invalid draft entries first.');return
   for is_ban,widget in [(False,self.pick_text),(True,self.ban_text)]:
@@ -412,11 +470,9 @@ class Companion(MaintenanceFeatures, HistoryFeatures, Features):
    notes=list(detail['notes'])
    if HEROES[hero]['role']=='Healer' and 'Deathwing' in allies:notes.append('Deathwing cannot receive your healing.')
    content+='\n\nMatch notes\n\n'+'\n\n'.join('• '+n for n in notes)
-   content+='\n\nGuide category: '+detail['category']
-   if detail['automatic']:content+='\nAuto checks rules for all 90 heroes. It recommends choices here; it does not click talents in HotS or know enemy talent choices. Other tiers keep their guide defaults.\n'+detail['content_status']
-   else:content+='\nManual choice: this build stays selected as enemy picks change. Its talents are not automatically replaced.'
-   content+='\nSource: Icy Veins · '+detail['source']+'\nGuide updated: '+detail['source_updated']+' · Imported: '+detail['checked']
-   content+='\nSaved for offline use. Future patch changes require a catalogue update.'
+   content+='\n\n'
+   if not detail['automatic']:content+='Manual choice: this build stays selected as enemy picks change.\n'
+   content+='Source: Icy Veins · '+detail['source']+'\nGuide updated: '+detail['source_updated']+' · '+detail['category']+' build'
   else:content=hero+'\n\nNo saved guide is available. Use Open talent guide.'
   self.put(self.build_text,content)
 

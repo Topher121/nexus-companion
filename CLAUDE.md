@@ -78,3 +78,22 @@ Same rules as AddonForge's forge theme; keep them when adding UI:
   for win/loss (row tints in History), DIM for not owned / never suggest.
 - Secondary actions (help, reset filters, view releases) are `Link.TButton`.
 - Scrollbars are thin and arrowless; ScrollPage hides its bar when the page fits.
+
+## Draft page layout (2026-09-28, owner: "make it easy to use")
+- Two columns. LEFT (fixed 440px): Map, Your team / Enemy team side by
+  side, each with its own three bans underneath ("Your bans" = reader ban
+  index 0-2, "Their bans" = 3-5), then your HotS name + slot pinned to the
+  bottom. RIGHT: the draft summary line, Suggest role + "Your record in",
+  then the advice (`self.advice`): picks and bans side by side when the
+  column is 640px or wider, stacked when narrower (`arrange_advice`).
+- `make_draft` builds the frames; `make_features` only fills
+  `self.live_bar` (reader buttons + status), `self.warning_slot`
+  (`draft_warning`, packed only while it has text) and `self.identity_row`.
+  Do not go back to inserting widgets "before the first child".
+- The summary (`self.status`) is normal text; amber only for a draft error.
+  The ban caveat shows only after the reader has read something.
+- Hero pool: double-click steps a hero through Allowed / Favourite /
+  Never suggest (`cycle_pref`); the buttons remain for multi-select.
+- Copy: keep captions short and unhedged. The Talents footer is just the
+  source and guide date. Wording pinned by tests ("slot(s) left",
+  "small sample") was left as it was.
