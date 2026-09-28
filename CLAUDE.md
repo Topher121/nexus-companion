@@ -43,6 +43,7 @@ work on it. Consequences:
 - Don't cut a release from a tree with someone else's half-done work in it.
 
 ## Studio hooks
+- 0.10.0 was published 2026-09-28 (owner asked). Say "publish", not "cut": the owner reads "cut" as remove.
 - Repo: `Topher121/nexus-companion` (public GitHub), branch `main`.
   Ship = commit AND push.
 - Version lives in `app_paths.py` (`APP_VERSION`); `build_release.py` runs
